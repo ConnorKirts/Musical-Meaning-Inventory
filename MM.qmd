@@ -1,0 +1,2028 @@
+---
+title: "Musical Meaning Instrument Development: EFA & CFA"
+author: "Connor Kirts & Tuomas Eerola"
+format: html
+---
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| id: workshop
+
+#packages
+library(tidyr)
+library(dplyr)
+library(stringr)
+library(here)
+library(psych)
+library(GPArotation)
+library(ggplot2)
+library(ggpattern)
+library(lmerTest)
+library(emmeans)
+library(lavaan)
+library(semTools)
+library(BifactorIndicesCalculator)
+library(knitr)
+library(kableExtra)
+
+#custom functions
+source('scr/read_qualtrics.R')          # Needs filename & controlQ specified
+source('scr/make_it_long.R')            # Makes the data long (not ready for FA)
+source('scr/participant_reliability.R') # Reliability filter of "bad" participants
+source('scr/descriptives.R')            # Descriptive stats function for all data
+source('scr/prepare_EFA.R')             # Makes long & renaming (for FA ready data frames)
+source('scr/extract_fa_fit.R')          # Function to extract GoF for EFA
+source('scr/collect_fit.R')             # Table for CFA fit indices
+source('scr/delta_fit.R')               # Comparing models via Δ fit indices
+source('scr/make_loading_table.R')      # Loading & descriptive table of model items
+
+```
+
+# Load and Preprocess Data
+
+There are three separate samples which were taken from Prolific between the 3rd and 27th of March, 2026. 
+
+The first data set corresponds to the 1st EFA condition (participants only saw 1 of the vignettes), the second data set reflects the 2nd EFA condition (participants saw all 3 vignettes, randomised), and the third set of data is the sample collected for the CFA (participants saw all 3 vignettes, randomised). 
+
+```{r}
+#| echo: true
+#| id: datain
+
+# EFA sample for Condition 1 ---------------------------------------------------
+fn <- ('data/Musical Meaning - Condition 1_March 3, 2026_12.25.csv')
+d1 <- read_qualtrics(filename = fn, controlQ = "MM_25", condition = "between") 
+df1 <- make_it_long(d1, verbose = FALSE)
+df1b <- participant_reliability(df1, THRESHOLD = 0.001) 
+
+# EFA sample for Condition 2 ---------------------------------------------------
+fn <- ('data/Musical Meaning - Condition 2_March 5, 2026_10.05.csv')
+d2 <- read_qualtrics(filename = fn, controlQ = c("MM1_25","MM2_25","MM3_25"), 
+                     condition = "within")
+df2 <- make_it_long(d2, verbose = FALSE)
+df2b <- participant_reliability(df2, THRESHOLD = 0.001)
+
+# CFA sample -------------------------------------------------------------------
+fn <- ('data/Musical Meaning - CFA_March 27, 2026_10.47.csv')
+d3 <- read_qualtrics(filename = fn, controlQ = c("MM1_24","MM2_24","MM3_24"), 
+                     condition = "CFA")
+df3 <- make_it_long(d3, verbose = FALSE)
+df3b <- participant_reliability(df3, THRESHOLD = 0.001)
+
+```
+
+## Descriptive Statistics (EFA Con. 1, EFA Con. 2, & CFA)
+
+```{r}
+#| echo: true
+#| id: descriptives
+
+des_table <- rbind(descriptives(df1b, "EFA Con. 1"), 
+                   descriptives(df2b, "EFA Con. 2"),
+                   descriptives(df3b, "CFA"))
+
+knitr::kable(des_table, caption = "Descriptives Statistics",
+  align = c("l", "c", "r", "r", "r", "c", "r", "r"))
+
+```
+
+## Is the EFA Data Suitable for Factor Analysis?
+
+Checking whether the data is suitable with KMO and Bartlett's test.
+
+```{r}
+#| echo: true
+#| id: prepEFA
+
+# Condition 1: all vignettes ---------------------------------------------------
+Con1_all <- prepare_EFA(df1b, vignette_filter = "ALL")
+  
+  cm <- cor(Con1_all, method = "pearson")
+  KMO(cm)
+  cortest.bartlett(cm, n = nrow(Con1_all))
+
+# Condition 2: by vignette -----------------------------------------------------
+Con2_ST <- prepare_EFA(df2b, vignette_filter = 1)
+Con2_SE <- prepare_EFA(df2b, vignette_filter = 2)
+Con2_SO <- prepare_EFA(df2b, vignette_filter = 3)
+
+# Aggregate
+Con2_ST$vignette<-1
+Con2_SE$vignette<-2
+Con2_SO$vignette<-3
+
+ stopifnot(ncol(Con2_SE) == ncol(Con2_ST),
+          ncol(Con2_SO) == ncol(Con2_ST))
+
+colnames(Con2_SE)<-colnames(Con2_ST)
+colnames(Con2_SO)<-colnames(Con2_ST)
+
+Con2_all <- rbind(Con2_ST, Con2_SE, Con2_SO) # ready for EFA analysis
+
+# Con2_all suitability check
+Con2_all_no_vig <- dplyr::select(Con2_all,-vignette)
+
+cm <- cor(Con2_all_no_vig, method = "pearson")
+  KMO(cm)
+  cortest.bartlett(cm, n = nrow(Con2_all_no_vig))
+
+```
+
+# Comparing Conditions
+
+## Cleaning prior to comparison of Within and Between conditions
+
+For comparison, we need to remove the nine items which were added between the two EFA conditions.
+
+```{r}
+#| echo: true
+#| id: clean
+
+df1b$Type<-"Con. 1: Between"
+df2b$Type<-"Con. 2: Within"
+
+Data <- rbind(df1b,df2b)
+
+# table(Data$Vignette,Data$Type) 
+# works, but note that extra items for the second data set are still included
+
+remove_these <- c("ST1_8","ST2_8","ST3_8",
+                  "SE1_11","SE2_11","SE3_11",
+                  "SE1_12","SE2_12","SE3_12",
+                  "SE1_13","SE2_13","SE3_13",
+                  "SO1_8","SO2_8","SO3_8",
+                  "SO1_9","SO2_9","SO3_9",
+                  "SO1_10","SO2_10","SO3_10",
+                  "SO1_11","SO2_11","SO3_11",
+                  "SO1_12","SO2_12","SO3_12")
+
+df2b_filt <- dplyr::filter(df2b,!item %in% remove_these)
+# table(df2b_filt$item) # cursory check
+
+Data <- rbind(df1b, df2b_filt)
+# table(Data$Vignette,Data$Type) # cursory check 
+
+Data$item_code <- "Emotion"
+Data$item_code[str_starts(Data$item,"S")]<-"Scale"
+Data_items <- dplyr::filter(Data,item_code=="Scale")
+#table(Data_items$Vignette,Data_items$Type) # cursory check
+
+```
+
+# Any difference between the conditions?
+
+```{r}
+#| echo: true
+#| id: difference
+
+m1 <- lmer(value ~ Type + (1|ID), data = Data_items)
+summary(m1)
+# Seems there is no significant difference between the conditions!
+
+S <- summarise(group_by(Data_items, Type), M=mean(value), SD=sd(value))
+print(S)
+
+# Cursory double check that the items are the same in the conditions
+#between <- table(dplyr::filter(Data_items,Type=="Between")$item)
+#within <- table(dplyr::filter(Data_items,Type=="Within")$item)
+
+```
+
+## Plotting differences
+
+```{r}
+#| echo: true
+#| warning: false
+#| id: diff_plot
+
+g2 <- ggplot(Data_items, aes(x = value, fill = Type, pattern = Type)) +
+  geom_bar_pattern(
+    position = "dodge",
+    colour = "black",
+    pattern_fill = "black",
+    pattern_spacing = 0.04,
+    pattern_density = 0.1
+  ) +
+  theme_bw() +
+  scale_fill_manual(values = c("Con. 1: Between" = "#b8b8b8", "Con. 2: Within" = "#707070")) +
+  scale_pattern_manual(values = c("Con. 1: Between" = 'stripe', "Con. 2: Within" = 'none')) +
+  labs(
+    x = "Scale values: Strongly disagree (1) - Strongly agree (5)",
+    y = "Count",
+    fill = "Condition",
+    pattern = "Condition"
+  )
+g2
+
+```
+
+# Running the EFA
+
+We conducted a parallel analysis for each condition separately. We removed items with low communialities (commented out) and reran the EFA analysis for both conditions.
+
+There is a issue between set.seed and fa.parallel, where fa.parallel simulations do not abide by the set.seed call. So, we conducted a simulation of fa.parallel for each condition to see which factor model is supported by a majority of simulations. Because of this, the plotting occasionally report different results than the majority opinion (5 factors are hard coded following simulation of 1000 fa.parallel simulations).
+
+```{r}
+#| echo: true
+#| id: EFA
+set.seed(3108)
+
+# simple function for obtaining communality descriptions of models
+comm_table <- function(x) list(
+  Mean = mean(x$communality),
+  Median = median(x$communality),
+  Range = range(x$communality))
+
+#-------------------------------------------------------------------------------
+# Condition 1: EFA
+
+#output <- fa.parallel(Con1_all, fm = "ml",sim = FALSE)
+#
+##### Special section to check the number of factors with extra simulation
+#simulate_simulation<-FALSE
+#if(simulate_simulation==TRUE){
+#  NFACT<-NULL
+#  for (k in 1:1000) {
+#    output <- fa.parallel(Con1_all, fm = "ml",plot=FALSE)
+#    NFACT[k]<-output$nfact
+#  }
+#}
+##table(NFACT)
+## NFACT
+## 4     5 
+##   331   669 
+## 0.331 0.669
+#
+#output$nfact <- 5 # Hard coded to reflect the majority from the simulation
+#
+#fa_solution_Con1 <- fa(Con1_all, nfactors = output$nfact, n.iter = 0, 
+#                  rotate = "oblimin", missing = TRUE, warnings = TRUE, 
+#                  fm = "ml")
+#
+#print(fa_solution_Con1)
+#print(fa_solution_Con1$loadings, cutoff = 0.2)
+#
+#print(fa_solution_Con1$communality)
+#comm_table(fa_solution_Con1)
+
+#-------------------------------------------------------------------------------
+# Condition 1: EFA with item communalities less than .4 removed
+Con1_all_con <- dplyr::select(Con1_all,-ST_7,-SE_5,-SO_6)
+
+output <- fa.parallel(Con1_all_con, fm = "ml")
+
+# Simulating fa.parallel simulation --------------------------------------------
+
+#simulate_simulation <- FALSE
+#if(simulate_simulation==TRUE){
+#  NFACT<-NULL
+#  for (k in 1:1000) {
+#    output <- fa.parallel(Con1_all_con, fm = "ml",plot=FALSE)
+#    NFACT[k]<-output$nfact
+#  }
+#}
+# table(NFACT)
+#   4     5
+#   229   771
+# 0.229 0.771
+
+output$nfact <- 5 # Hard coded to reflect the majority of simulations
+
+# EFA on Condition 1 -----------------------------------------------------------
+fa_solution_Con1_clean <- fa(Con1_all_con, nfactors = output$nfact, n.iter = 0, 
+                             rotate = "oblimin", missing = TRUE, 
+                             warnings = TRUE, fm = "ml")
+
+print(fa_solution_Con1_clean)
+print(fa_solution_Con1_clean$loadings, cutoff = 0.2)
+
+print(fa_solution_Con1_clean$communality)
+comm_table(fa_solution_Con1_clean)
+
+#-------------------------------------------------------------------------------
+# Condition 2: EFA
+#Con2_all_no_vig <- dplyr::select(Con2_all,-vignette)
+#
+#output <- fa.parallel(Con2_all_no_vig, fm = "ml")
+#
+#simulate_simulation <- FALSE
+#if(simulate_simulation==TRUE){
+#  NFACT<-NULL
+#  for (k in 1:1000) {
+#    print(k)
+#    output <- fa.parallel(Con2_all_no_vig, fm = "ml",plot=FALSE)
+#    NFACT[k]<-output$nfact
+#  }
+#}
+## table(NFACT)
+##   4   5 
+## 184 816 
+## 0.184 0.816 
+#
+#output$nfact <- 5 # Hard coded to reflect the majority from the simulation
+#
+#fa_solution_Con2 <- fa(Con2_all_no_vig, nfactors = output$nfact, n.iter = 0, 
+#                  rotate = "oblimin", missing = TRUE, warnings = TRUE, 
+#                  fm = "ml") #an option, needs to match the preregistration
+#print(fa_solution_Con2)
+#print(fa_solution_Con2$loadings, cutoff = 0.2)
+#
+#print(fa_solution_Con2$communality)
+#comm_table(fa_solution_Con2)
+
+#-------------------------------------------------------------------------------
+# Condition 2: Removing cross loaded / no factor items 
+Con2_all_no_vig_con <- dplyr::select(Con2_all,-vignette, -SO1_9, -ST1_7,-SE1_11)
+
+output <- fa.parallel(Con2_all_no_vig_con, fm = "ml") # simulation
+
+# Simulating the fa.parallel simulation 
+#simulate_simulation <- FALSE
+#if(simulate_simulation==TRUE){
+#  NFACT<-NULL
+#  for (k in 1:1000) {
+#    print(k)
+#    output <- fa.parallel(Con2_all_no_vig_con, fm = "ml",plot=FALSE)
+#    NFACT[k]<-output$nfact
+#  }
+#}
+# table(NFACT)
+#  4   5 
+#  9 991 
+# 0.09 0.991 
+
+output$nfact <- 5 # Hard coded to reflect the majority from the simulation
+
+# EFA on Condition 2 -----------------------------------------------------------
+fa_solution_Con2_clean <- fa(Con2_all_no_vig_con, nfactors = output$nfact,
+                             n.iter = 0, rotate = "oblimin", missing = TRUE, 
+                             warnings = TRUE, fm = "ml")
+
+print(fa_solution_Con2_clean)
+print(fa_solution_Con2_clean$loadings, cutoff = 0.2)
+
+print(fa_solution_Con2_clean$communality)
+comm_table(fa_solution_Con2_clean)
+
+```
+
+### Which EFA Models look best
+
+```{r}
+#| echo: true
+#| id: fit_EFA
+
+fit_table <- rbind(
+  #extract_fa_fit(fa_solution_Con1, label = "Con1 Full"),
+  extract_fa_fit(fa_solution_Con1_clean, label = "EFA: Con. 1 - Cleaned"),
+  #extract_fa_fit(fa_solution_Con2,       label = "Con2 Full"),
+  extract_fa_fit(fa_solution_Con2_clean, label = "EFA: Con. 2 - Cleaned"))
+
+knitr::kable(fit_table,caption = "EFA Model Fit Measures",
+             align = c("l", "r", "r", "r", "r", "r", "c", "r", "r", "r", "r"))
+
+# The top 3 items from EFA 1 ---------------------------------------------------
+
+# Structure:  ST_2 + ST_6 + ST_1
+# Memory:     SE_2 + SE_1 + SE_3
+# Identity:   SE_7 + SE_10 + SE_6
+# Object:     SO_5 + SO_4 + SO_2
+# Culture:    SO1_3 + SO1_7
+
+# The top 3 items from EFA 2 ---------------------------------------------------
+
+# Structure:  ST1_3 + ST1_6 + ST1_2
+# Memory:     SE1_2 + SE1_1 + SE1_3
+# Identity:   SE1_13 + SE1_10 + SE1_12
+# Object:     SO1_4 + SO1_5 + SO1_2
+# Culture:    SO1_3 + SO1_7 + SO1_12
+
+# Differences between EFA best factor items-------------------------------------
+
+# ST_1 is not cross loaded in EFA 1, might explain why ST_3 came ahead in EFA 2.
+# Adding the new items for Identity refocused the factor, ST_7 & ST_6 get dropped
+# SO_12 works as a third item for the Culture factor.
+
+```
+
+## Preliminary look at existing measure correlations with the EFA results (Con. 1 & 2)
+
+```{r}
+#| echo: true
+#| id: EFA_correlations
+
+#Adding a column and renaming things for easier comparison
+meem <- c("EDR","FM","CB","PEP","AIA")
+
+Data$Construct <- str_replace(Data$item,"MEEM_1$",meem[1])
+Data$Construct <- str_replace(Data$Construct,"MEEM_2$",meem[1])
+Data$Construct <- str_replace(Data$Construct,"MEEM_3$",meem[1])
+Data$Construct <- str_replace(Data$Construct,"MEEM_4$",meem[1])
+Data$Construct <- str_replace(Data$Construct,"MEEM_5$",meem[1])
+Data$Construct <- str_replace(Data$Construct,"MEEM_6$",meem[1])
+Data$Construct <- str_replace(Data$Construct,"MEEM_7$",meem[1])
+Data$Construct <- str_replace(Data$Construct,"MEEM_8$",meem[1])
+Data$Construct <- str_replace(Data$Construct,"MEEM_9$",meem[1])
+Data$Construct <- str_replace(Data$Construct,"MEEM_10$",meem[2])
+Data$Construct <- str_replace(Data$Construct,"MEEM_11$",meem[2])
+Data$Construct <- str_replace(Data$Construct,"MEEM_12$",meem[2])
+Data$Construct <- str_replace(Data$Construct,"MEEM_13$",meem[2])
+Data$Construct <- str_replace(Data$Construct,"MEEM_14$",meem[2])
+Data$Construct <- str_replace(Data$Construct,"MEEM_15$",meem[2])
+Data$Construct <- str_replace(Data$Construct,"MEEM_16$",meem[3])
+Data$Construct <- str_replace(Data$Construct,"MEEM_17$",meem[3])
+Data$Construct <- str_replace(Data$Construct,"MEEM_18$",meem[3])
+Data$Construct <- str_replace(Data$Construct,"MEEM_19$",meem[3])
+Data$Construct <- str_replace(Data$Construct,"MEEM_20$",meem[3])
+Data$Construct <- str_replace(Data$Construct,"MEEM_21$",meem[3])
+Data$Construct <- str_replace(Data$Construct,"MEEM_22$",meem[4])
+Data$Construct <- str_replace(Data$Construct,"MEEM_23$",meem[4])
+Data$Construct <- str_replace(Data$Construct,"MEEM_24$",meem[4])
+Data$Construct <- str_replace(Data$Construct,"MEEM_25$",meem[4])
+Data$Construct <- str_replace(Data$Construct,"MEEM_26$",meem[4])
+Data$Construct <- str_replace(Data$Construct,"MEEM_27$",meem[4])
+Data$Construct <- str_replace(Data$Construct,"MEEM_28$",meem[5])
+Data$Construct <- str_replace(Data$Construct,"MEEM_29$",meem[5])
+Data$Construct <- str_replace(Data$Construct,"MEEM_30$",meem[5])
+Data$Construct <- str_replace(Data$Construct,"MEEM_31$",meem[5])
+Data$Construct <- str_replace(Data$Construct,"MEEM_32$",meem[5])
+Data$Construct <- str_replace(Data$Construct,"MEEM_33$",meem[5])
+Data$Construct <- str_replace(Data$Construct,"MEEM_34$",meem[5])
+Data$Construct <- str_replace(Data$Construct,"MEEM_35$",meem[5])
+
+# Data_Mec, 1 - Brain stem reflex; 2 - Entrainment; 3 - Evaluative conditioning; 4 - Contagion; 5 - Visual imagery; 6 - Episodic memory; 7 - Expectancy; 8 - Aesthetic judgment
+mec <- c("Brain stem reflex","Entrainment","Evaluative conditioning","Contagion","Visual imagery","Episodic memory","Expectancy","Aesthetic judgment")
+ 
+Data$Construct <- str_replace(Data$Construct,"MecScale_1",mec[1])
+Data$Construct <- str_replace(Data$Construct,"MecScale_2",mec[2])
+Data$Construct <- str_replace(Data$Construct,"MecScale_3",mec[3])
+Data$Construct <- str_replace(Data$Construct,"MecScale_4",mec[4])
+Data$Construct <- str_replace(Data$Construct,"MecScale_5",mec[5])
+Data$Construct <- str_replace(Data$Construct,"MecScale_6",mec[6])
+Data$Construct <- str_replace(Data$Construct,"MecScale_7",mec[7])
+Data$Construct <- str_replace(Data$Construct,"MecScale_8",mec[8])
+
+# Data_HAAS, 1 - Interested; 2 - Active; 3 - Strong; 4 - Calm; 5 - Placid; 6 - Content; 7 - Anxious; 8 - Irritable; 9 - Guilty; 10 - Bored; 11 - Sad; 12 - Tired
+haas <- c("Interested","Active","Strong","Calm","Placid","Content","Anxious","Irritable","Guilty","Bored","Sad","Tired")
+haas_quad <- c("pos_high","pos_low","neg_high","neg_low")
+
+Data$Construct <- str_replace(Data$Construct,"HAAS_1$",haas_quad[1])
+Data$Construct <- str_replace(Data$Construct,"HAAS_2$",haas_quad[1])
+Data$Construct <- str_replace(Data$Construct,"HAAS_3$",haas_quad[1])
+Data$Construct <- str_replace(Data$Construct,"HAAS_4$",haas_quad[2])
+Data$Construct <- str_replace(Data$Construct,"HAAS_5$",haas_quad[2])
+Data$Construct <- str_replace(Data$Construct,"HAAS_6$",haas_quad[2])
+Data$Construct <- str_replace(Data$Construct,"HAAS_7$",haas_quad[3])
+Data$Construct <- str_replace(Data$Construct,"HAAS_8$",haas_quad[3])
+Data$Construct <- str_replace(Data$Construct,"HAAS_9$",haas_quad[3])
+Data$Construct <- str_replace(Data$Construct,"HAAS_10$",haas_quad[4])
+Data$Construct <- str_replace(Data$Construct,"HAAS_11$",haas_quad[4])
+Data$Construct <- str_replace(Data$Construct,"HAAS_12$",haas_quad[4])
+
+# Data_items
+mmi <- c("Structure","Memory","Identiy","Object","Culture")
+
+Data$Construct <- str_replace(Data$Construct,"ST_1$",mmi[1])
+Data$Construct <- str_replace(Data$Construct,"ST_2$",mmi[1])
+Data$Construct <- str_replace(Data$Construct,"ST_3$",mmi[1])
+Data$Construct <- str_replace(Data$Construct,"ST_4$",mmi[1])
+Data$Construct <- str_replace(Data$Construct,"ST_5$",mmi[1])
+Data$Construct <- str_replace(Data$Construct,"ST_6$",mmi[1])
+#Data$Construct <- str_replace(Data$Construct,"ST_7$",mmi[x]) # Cross-loaded
+Data$Construct <- str_replace(Data$Construct,"ST_8$",mmi[1])
+Data$Construct <- str_replace(Data$Construct,"SE_1$",mmi[2])
+Data$Construct <- str_replace(Data$Construct,"SE_2$",mmi[2])
+Data$Construct <- str_replace(Data$Construct,"SE_3$",mmi[2])
+Data$Construct <- str_replace(Data$Construct,"SE_4$",mmi[2])
+Data$Construct <- str_replace(Data$Construct,"SE_5$",mmi[2])
+Data$Construct <- str_replace(Data$Construct,"SE_6$",mmi[2])
+Data$Construct <- str_replace(Data$Construct,"SE_7$",mmi[2])
+Data$Construct <- str_replace(Data$Construct,"SE_8$",mmi[3])
+Data$Construct <- str_replace(Data$Construct,"SE_9$",mmi[2])
+Data$Construct <- str_replace(Data$Construct,"SE_10$",mmi[3])
+#Data$Construct <- str_replace(Data$Construct,"SE_11$",mmi[x]) # Cross-loaded
+Data$Construct <- str_replace(Data$Construct,"SE_12$",mmi[3])
+Data$Construct <- str_replace(Data$Construct,"SE_13$",mmi[3])
+Data$Construct <- str_replace(Data$Construct,"SO_1$",mmi[4])
+Data$Construct <- str_replace(Data$Construct,"SO_2$",mmi[4])
+Data$Construct <- str_replace(Data$Construct,"SO_3$",mmi[5])
+Data$Construct <- str_replace(Data$Construct,"SO_4$",mmi[4])
+Data$Construct <- str_replace(Data$Construct,"SO_5$",mmi[4])
+Data$Construct <- str_replace(Data$Construct,"SO_6$",mmi[4])
+Data$Construct <- str_replace(Data$Construct,"SO_7$",mmi[5])
+Data$Construct <- str_replace(Data$Construct,"SO_8$",mmi[4])
+#Data$Construct <- str_replace(Data$Construct,"SO_9$",mmi[x]) # Cross-loaded
+Data$Construct <- str_replace(Data$Construct,"SO_10$",mmi[4])
+Data$Construct <- str_replace(Data$Construct,"SO_11$",mmi[2])
+Data$Construct <- str_replace(Data$Construct,"SO_12$",mmi[5])
+
+
+valid_constructs <- c(meem, mec, haas_quad, mmi)
+
+# Running a correlation for the EFA --------------------------------------------
+construct_scores <- Data %>%
+  filter(Construct %in% valid_constructs) %>%
+  filter(Construct != item) %>%
+  group_by(ID, VigNro, Construct) %>%
+  summarise(score = mean(value, na.rm = TRUE), .groups = "drop") %>%
+  pivot_wider(names_from = Construct, values_from = score)
+
+cor_matrix <- construct_scores %>%
+  select(-ID, -VigNro) %>%
+  cor(use = "pairwise.complete.obs")
+
+factor_names <- c("Structure", "Memory", "Identiy", "Object", "Culture")
+
+external_names <- c("EDR","FM","CB","PEP","AIA",
+                    "pos_high","pos_low","neg_high","neg_low",
+                    "Brain stem reflex","Entrainment","Evaluative conditioning",
+                    "Contagion","Visual imagery","Episodic memory",
+                    "Expectancy","Aesthetic judgment")
+
+val_cors <- cor_matrix[factor_names, external_names]
+
+knitr::kable(
+  round(val_cors, 3),
+  caption = "Convergent Validity: EFA Factor Scores vs. External Measures",
+  booktabs = TRUE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 12
+  ) %>%
+  kableExtra::add_header_above(
+    c(" " = 1,
+      "MEEM" = 5,
+      "HAAS" = 4,
+      "MEC" = 8)
+  ) %>%
+  kableExtra::column_spec(1, bold = TRUE)
+
+```
+
+# CFA Analysis
+
+## Prepping the data for CFA analysis
+
+Includes renaming of columns for aggregation and binding the vignettes into a single object to put forward for lavaan. Also, a check of the suitability of the data for factor analysis.
+
+```{r}
+#| echo: true
+#| id: prepCFA
+
+prep_with_id <- function(df3b, vignette_num) {
+  tmp <- prepare_EFA(df3b, vignette_filter = vignette_num)
+  tmp$ID       <- rownames(tmp)
+  tmp$vignette <- vignette_num
+  tmp
+}
+
+CFA_ST <- prep_with_id(df3b, 1)
+CFA_SE <- prep_with_id(df3b, 2)
+CFA_SO <- prep_with_id(df3b, 3)
+
+ stopifnot(ncol(CFA_SE) == ncol(CFA_ST),
+          ncol(CFA_SO) == ncol(CFA_ST))
+
+colnames(CFA_SE)<-colnames(CFA_ST)
+colnames(CFA_SO)<-colnames(CFA_ST)
+
+CFA_all <- rbind(CFA_ST,CFA_SE,CFA_SO)    # ready for CFA
+
+CFA_all_no_vig <- dplyr::select(CFA_all,-vignette, -ID)
+
+#Checking suitability fo CFA_all
+cm <- cor(CFA_all_no_vig, method = "pearson")
+  print(KMO(cm))
+  print(cortest.bartlett(cm, n = length(unique(CFA_all$ID))))
+
+# What about the skew and kurtosis of the CFA data
+CFA_item_stats <- psych::describe(CFA_all_no_vig, na.rm=FALSE, interp = TRUE, skew = TRUE, ranges = FALSE, quant = c(.25,.75))
+
+knitr::kable(CFA_item_stats, digits = 3, caption = "CFA: Item Level Statistics",
+  align = c("c", "c", "r", "r", "r", "r", "r", "r", "r", "r"))
+
+```
+
+# Running a CFA
+
+Corresponds to the third data sample collected (df3b). First, we take the best 3 items from the EFA to confirm the EFA model. Second, we evaluate which items are best from the new sample and tier our CFA analysis (e.g., all from EFA, best 4, best 3).
+
+```{r}
+#| echo: true
+#| id: CFA
+set.seed(3108)
+
+# Best 3 items from EFA condition 2 taken into a CFA model
+MMgEFA <- '
+Structure =~ ST1_3 + ST1_6 + ST1_2
+Memory =~ SE1_2 + SE1_1 + SE1_3
+Identity =~ SE1_13 + SE1_10 + SE1_12
+Object =~ SO1_4 + SO1_5 + SO1_2
+Culture =~ SO1_3 + SO1_7 + SO1_12
+'
+
+fit_groupEFA <- lavaan::cfa(model = MMgEFA, data = CFA_all, meanstructure = TRUE, 
+                            estimator = "MLR", cluster = "ID") 
+print(summary(fit_groupEFA, standardized = TRUE, fit.measures = TRUE))
+
+fit.measEFA <- lavaan::fitMeasures(fit_groupEFA, c("tli","chisq","df","pvalue",
+                                                   "cfi","rmsea","srmr"))
+print(fit.measEFA)
+
+lavaan::lavInspect(fit_groupEFA, "cor.lv")
+
+AVE(fit_groupEFA)
+
+compRelSEM(fit_groupEFA, tau.eq = FALSE, ord.scale = FALSE)
+
+# Great model!
+# We know that this model is suitable and it confirms the EFA. 
+# Considering the items differ, are there other models which fit the five factors?
+
+#-------------------------------------------------------------------------------
+# CFA on all of the high loading EFA items, lets see if a good model is in there.
+
+MMg <- '
+Structure =~  ST1_1 + ST1_2 + ST1_3 + ST1_4 + ST1_5 + ST1_6 + ST1_8
+Memory =~     SE1_1 + SE1_2 + SE1_3 + SE1_4 + SE1_5 + SE1_6 + SE1_7 + SE1_9 + SO1_11
+Identity =~   SE1_8 + SE1_10 + SE1_12 + SE1_13
+Object =~     SO1_1 + SO1_2 + SO1_4 + SO1_5 + SO1_6 + SO1_8 + SO1_10
+Culture =~    SO1_3 + SO1_7 + SO1_12
+'
+
+fit_group1 <- lavaan::cfa(model = MMg, data = CFA_all, meanstructure = TRUE,
+                          estimator = "MLR", cluster = "ID")
+print(summary(fit_group1, standardized = TRUE, fit.measures = TRUE))
+
+fit.meas_g1 <- lavaan::fitMeasures(fit_group1, c("tli","chisq","df","pvalue", 
+                                                 "cfi", "rmsea", "srmr"))
+print(fit.meas_g1)
+
+# Let's take the top 4 loading items forward (3 for Culture)
+
+#-------------------------------------------------------------------------------
+MMg2 <- '
+Structure =~  ST1_4 + ST1_6 + ST1_2 + ST1_5
+Memory =~     SE1_9 + SE1_2 + SE1_1 + SE1_3
+Identity =~   SE1_8 + SE1_10 + SE1_12 + SE1_13
+Object =~     SO1_4 + SO1_5 + SO1_10 + SO1_2
+Culture =~    SO1_3 + SO1_7 + SO1_12
+'
+
+fit_group2 <- lavaan::cfa(model = MMg2, data = CFA_all, meanstructure = TRUE,
+                          estimator = "MLR", cluster = "ID")
+print(summary(fit_group2, standardized = TRUE, fit.measures = TRUE))
+
+fit.meas_g2 <- lavaan::fitMeasures(fit_group2, c("tli","chisq","df","pvalue", 
+                                                 "cfi", "rmsea", "srmr"))
+print(fit.meas_g2)
+
+# Now let's evaluate how well the best 3 items work as a model.
+
+#-------------------------------------------------------------------------------
+MMg3 <- '
+Structure =~  ST1_4 + ST1_6 + ST1_2
+Memory =~     SE1_9 + SE1_2 + SE1_1
+Identity =~   SE1_8 + SE1_10 + SE1_13
+Object =~     SO1_4 + SO1_5 + SO1_2
+Culture =~    SO1_3 + SO1_7 + SO1_12
+'
+
+fit_group3 <- lavaan::cfa(model = MMg3, data = CFA_all, meanstructure = TRUE,
+                          estimator = "MLR", cluster = "ID")
+print(summary(fit_group3, standardized = TRUE, fit.measures = TRUE))
+
+fit.meas_g3 <- lavaan::fitMeasures(fit_group3, c("tli","chisq","df","pvalue", 
+                                                 "cfi", "rmsea", "srmr"))
+print(fit.meas_g3)
+
+lavaan::lavInspect(fit_group3, "cor.lv")
+
+AVE(fit_group3)
+
+compRelSEM(fit_group3, tau.eq = FALSE, ord.scale = FALSE)
+
+```
+
+## Comparing the fit of the CFA models
+
+```{r}
+#| echo: true
+#| id: fit_tables
+
+fit_table <- rbind(
+  collect_fit(fit_groupEFA, "M1: EFA", 15, include_ic = TRUE),
+  collect_fit(fit_group1,   "M2: All", 30, include_ic = TRUE),
+  collect_fit(fit_group2,   "M3: Top-4", 19, include_ic = TRUE),
+  collect_fit(fit_group3,   "M4: Top-3", 15, include_ic = TRUE))
+
+knitr::kable(fit_table, caption = "Model fit comparision", 
+             align = c("l", "c", "r", "r", "r", "r", "r", "r", "c", "r", "r", "r"))
+
+comp <- delta_fit(fit_groupEFA, fit_group3, "M1: EFA", "M4: Top-3")
+
+knitr::kable(comp, caption = "M1:EFA vs. top-3 after loading: Delta",
+             align = c("l", "l", "c", "c", "l", "r", "r", "r", "c", "r", "r", "r"))
+
+```
+
+# Testing Measurement Invariance and Discriminat Validity
+
+Let's compare configural, metric, scalar, and strict invariance for the two best models
+
+```{r}
+#| echo: true
+#| id: MI_discriminat
+set.seed(3108)
+
+# Model 4 - Top 3 items from CFA item loading filer process --------------------
+
+fit_config3 <- lavaan::cfa(model = MMg3, data = CFA_all, estimator = "MLR",
+                           meanstructure = TRUE, group = "vignette")
+
+fit_metric3 <- lavaan::cfa(model = MMg3, data = CFA_all, estimator = "MLR",
+                           meanstructure = TRUE, group = "vignette", 
+                           group.equal = "loadings")
+
+fit_scalar3 <- lavaan::cfa(model = MMg3, data = CFA_all, estimator = "MLR",
+                           meanstructure = TRUE, group = "vignette", 
+                           group.equal = c("loadings","intercepts"))
+
+fit_strict3 <- lavaan::cfa(model = MMg3, data = CFA_all, estimator = "MLR",
+                           meanstructure = TRUE, group = "vignette", 
+                           group.equal = c("loadings","intercepts","residuals"))
+
+lavaan::lavTestLRT(fit_config3, fit_metric3, fit_scalar3, fit_strict3)
+
+# Looks like Model 4 passes metric invariance but failed scalar 
+
+# Full fit table for the invariance sequence Model 4 ---------------------------
+inv3 <- rbind(collect_fit(fit_config3, "Configural", include_ic = FALSE), 
+              collect_fit(fit_metric3, "Metric", include_ic = FALSE), 
+              collect_fit(fit_scalar3, "Scalar", include_ic = FALSE), 
+              collect_fit(fit_strict3, "Strict", include_ic = FALSE))
+
+knitr::kable(inv3, caption = "Model 4: Measurement Invariance Fit Indices", 
+             align = c("l", "r", "r", "r", "r", "r", "r", "c", "r"))
+
+# Δ fit indices table Model 4 --------------------------------------------------
+delta3 <- rbind(delta_fit(fit_config3, fit_metric3, "Configural", "Metric"),
+                delta_fit(fit_metric3, fit_scalar3, "Metric", "Scalar"),
+                delta_fit(fit_scalar3, fit_strict3, "Scalar", "Strict"))
+
+knitr::kable(delta3,caption = "Model 4: Δ Invariance Tests", 
+             align = c("l", "r", "r", "r", "c", "r", "r"))
+
+# Looking at the discriminat validity for Model 4 ------------------------------
+semTools::discriminantValidity(object = fit_group3, cutoff = 0.85)
+semTools::htmt(model = MMg3, data = CFA_all)
+lavaan::lavInspect(fit_group3, "cor.lv")
+
+# For both, all of the factor correlations pass the strict cutoff of 0.85
+# Identity-Structure and Culture-Identity have the highest
+
+#-------------------------------------------------------------------------------
+# Model 1 - Top 3 items from EFA
+
+fit_configEFA <- lavaan::cfa(model = MMgEFA, data = CFA_all, estimator = "MLR",
+                             meanstructure = TRUE, group = "vignette")
+
+fit_metricEFA <- lavaan::cfa(model = MMgEFA, data = CFA_all, estimator = "MLR",
+                             meanstructure = TRUE, group = "vignette", 
+                             group.equal = "loadings")
+
+fit_scalarEFA <- lavaan::cfa(model = MMgEFA, data = CFA_all, estimator = "MLR",
+                             meanstructure = TRUE, group = "vignette", 
+                             group.equal = c("loadings","intercepts"))
+
+fit_strictEFA <- lavaan::cfa(model = MMgEFA, data = CFA_all, estimator = "MLR",
+                             meanstructure = TRUE, group = "vignette", 
+                             group.equal = c("loadings","intercepts","residuals"))
+
+lavaan::lavTestLRT(fit_configEFA, fit_metricEFA, fit_scalarEFA, fit_strictEFA)
+
+# Looks like the confirmed EFA model passes all invariance
+
+# Full fit table for the invariance sequence for EFA model ---------------------
+invEFA <- rbind(collect_fit(fit_configEFA, "Configural", include_ic = FALSE), 
+                collect_fit(fit_metricEFA, "Metric", include_ic = FALSE), 
+                collect_fit(fit_scalarEFA, "Scalar", include_ic = FALSE), 
+                collect_fit(fit_strictEFA, "Strict", include_ic = FALSE))
+
+knitr::kable(invEFA, caption = "Model EFA: Measurement Invariance Fit Indices", 
+             align = c("l", "r", "r", "r", "r", "r", "r", "c", "r"))
+
+
+# Δ fit indices table for EFA model --------------------------------------------
+deltaEFA <- rbind(delta_fit(fit_configEFA, fit_metricEFA, "Configural", "Metric"),
+                  delta_fit(fit_metricEFA, fit_scalarEFA, "Metric", "Scalar"),
+                  delta_fit(fit_scalarEFA, fit_strictEFA, "Scalar", "Strict"))
+
+knitr::kable(deltaEFA, caption = "Model EFA: Δ Invariance Tests", 
+             align = c("l", "r", "r", "r", "c", "r", "r"))
+
+# Discriminant validity for EFA model ------------------------------------------
+semTools::discriminantValidity(object = fit_groupEFA, cutoff = 0.85)
+semTools::htmt(model = MMgEFA, data = CFA_all)
+lavaan::lavInspect(fit_groupEFA, "cor.lv")
+
+# All of the factor correlations pass the strict cutoff of 0.85
+# Identity-Structure and Culture-Identity are again highest correlations
+# Not as strong as in the Model 4 but Identity still has correlations across all factors
+
+```
+
+## Making a Item Description Table for the Best Models
+
+```{r}
+#| echo: true
+#| id: summarize-loadings
+
+make_loading_table(fit_groupEFA, CFA_all, "CFA Loadings: EFA Model Confirmation")
+make_loading_table(fit_group3, CFA_all, "CFA Loadings: Model 4")
+
+```
+
+# Testing dimensiality of constructs (unidimensional, bifactor, hierarchical)
+
+```{r}
+#| echo: true
+#| id: bifactor
+
+# Check whether a general factor underlies five-factor solution ----------------
+uni <- '
+uni =~ SE1_13 + SE1_10 + SE1_12 + ST1_3 + ST1_6 + ST1_2 + SE1_2 + SE1_1 + SE1_3 + SO1_4 + SO1_5 + SO1_2 + SO1_3 + SO1_7 + SO1_12
+'
+
+fit_uni <- lavaan::cfa(model = uni, data = CFA_all, meanstructure = TRUE, 
+                            estimator = "MLR", cluster = "ID")
+#summary(fit_uni, standardized = TRUE, fit.measures = TRUE)
+fit.measuni <- lavaan::fitMeasures(fit_uni, c("tli","chisq","df","pvalue",
+                                                   "cfi","rmsea","srmr","mfi"))
+fit.measuni
+
+# a general factor alone is poor compared to the Model 1 fit
+
+# Testing a bifactor model -----------------------------------------------------
+# for bifactorIndices, the model architecture needs to be redone.
+bifac <- '
+general =~ ST1_3 + ST1_6 + ST1_2 + SE1_2 + SE1_1 + SE1_3 + SE1_13 + SE1_10 + SE1_12 + SO1_4 + SO1_5 + SO1_2 + SO1_3 + SO1_7 + SO1_12
+
+Structure =~ ST1_3 + ST1_6 + ST1_2
+Memory =~ SE1_2 + SE1_1 + SE1_3
+Identity =~ SE1_13 + SE1_10 + SE1_12
+Object =~ SO1_4 + SO1_5 + SO1_2
+Culture =~ SO1_3 + SO1_7 + SO1_12
+
+SE1_12 ~~ 0.005*SE1_12
+'
+#constrained heywood case
+fit_bifac <- lavaan::cfa(model = bifac, data = CFA_all, meanstructure = TRUE,
+                         estimator = "MLR", cluster = "ID", orthogonal = 
+                           TRUE, std.lv = TRUE)
+#summary(fit_bifac, standardized = TRUE, fit.measures = TRUE)
+fit.measbi <- lavaan::fitMeasures(fit_bifac, c("tli","chisq","df","pvalue",
+                                                "cfi","rmsea","srmr","mfi"))
+fit.measbi
+
+# ωH: hierarchical omega
+compRelSEM(fit_bifac, tau.eq = FALSE, ord.scale = FALSE, true = "omega.H")
+
+# ωT: sub scale omega for each factor
+compRelSEM(fit_bifac, tau.eq = FALSE, ord.scale = FALSE)
+
+# ω for subscales are all strong (.814-.907), factors seem stable independent of a general factor.
+# Identity may be functioning as the general factor given it's correlations
+
+bifactorIndices(fit_bifac, UniLambda = fit_uni)
+
+# ECV (explained common variance) & PUC (Percent Uncontaminated Correlations) from a bifactor model. The bifactorIndices requires a slightly different configuration than compRelSEM but generally the same model.
+
+# ECV below .6 indicates that the general factor may not be a strong justification
+# hierarchical Omega > .8 would suggest general factor is dominant regardless of ECV
+# PUC is similar to hierarchical ω, > .8 may still support unidimensionality
+# H Index > .7 indicates well-defined by indicators
+
+# bi-factor is likely not supported, ECV is below .60 (.49) and hierarchical ω is borderline > .8 (.79). Although, PUC is supported > .8 (.86), and H index for 2 factors (Identity, Structure & Culture) fall below > .7 which indicates the general factor may take more 
+
+#----------------------------------------------------------------------------
+
+second <- '
+Structure =~ ST1_3 + ST1_6 + ST1_2
+Memory =~ SE1_2 + SE1_1 + SE1_3
+Identity =~ SE1_13 + SE1_10 + SE1_12
+Object =~ SO1_4 + SO1_5 + SO1_2
+Culture =~ SO1_3 + SO1_7 + SO1_12
+
+f1 =~ Identity + Memory 
+f2 =~ Object + Culture
+'
+
+fit_second <- lavaan::cfa(model = second, data = CFA_all, meanstructure = TRUE,
+                         estimator = "MLR", cluster = "ID")
+summary(fit_second, standardized = TRUE, fit.measures = TRUE)
+fit.measSec <- lavaan::fitMeasures(fit_second, c("tli","chisq","df","pvalue",
+                                                "cfi","rmsea","srmr","mfi"))
+fit.measSec
+
+compRelSEM(fit_second, tau.eq = FALSE, ord.scale = FALSE)
+
+```
+
+# Covergent Validity / Correlations
+
+What are the relationships the MMI has with other external measures?
+
+```{r}
+#| echo: true
+#| id: CFA_correlations
+
+CFA_Data <- df3b
+CFA_Data$item <- str_replace(CFA_Data$item, "^(MEEM|GEMS|HAAS|MecScale|BASIC|ST|SE|SO)(\\d+)_", "\\1_")
+CFA_Data$item_code <- CFA_Data$item
+
+CFA_Data$item_code[str_starts(CFA_Data$item, "MEEM")] <- "MEEM"
+CFA_Data$item_code[str_starts(CFA_Data$item, "GEMS")] <- "GEMS"
+
+# MEEM labeling ----------------------------------------------------------------
+meem <- c("EDR","FM","CB","PEP","AIA")
+
+CFA_Data$Construct <- str_replace(CFA_Data$item,"MEEM_1$",meem[1])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_2$",meem[1])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_3$",meem[1])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_4$",meem[1])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_5$",meem[1])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_6$",meem[1])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_7$",meem[1])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_8$",meem[1])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_9$",meem[1])
+
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_10$",meem[2])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_11$",meem[2])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_12$",meem[2])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_13$",meem[2])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_14$",meem[2])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_15$",meem[2])
+
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_16$",meem[3])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_17$",meem[3])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_18$",meem[3])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_19$",meem[3])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_20$",meem[3])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_21$",meem[3])
+
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_22$",meem[4])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_23$",meem[4])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_24$",meem[4])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_25$",meem[4])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_26$",meem[4])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_27$",meem[4])
+
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_28$",meem[5])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_29$",meem[5])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_30$",meem[5])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_31$",meem[5])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_32$",meem[5])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_33$",meem[5])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_34$",meem[5])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"MEEM_35$",meem[5])
+
+# GEMS labeling ----------------------------------------------------------------
+gems <- c("Wonder","Transcendence","Tenderness","Peacefulness","Nostalgia","Joyful Activation","Power","Sadness","Tension")
+
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"GEMS_1$",gems[1])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"GEMS_2$",gems[2])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"GEMS_3$",gems[3])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"GEMS_4$",gems[4])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"GEMS_5$",gems[5])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"GEMS_6$",gems[6])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"GEMS_7$",gems[7])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"GEMS_8$",gems[8])
+CFA_Data$Construct <- str_replace(CFA_Data$Construct,"GEMS_9$",gems[9])
+
+# MMI setup --------------------------------------------------------------------
+factor_scores <- as.data.frame(lavaan::predict(fit_groupEFA))
+factor_scores$ID      <- CFA_all$ID
+factor_scores$vignette <- CFA_all$vignette
+
+factor_names <- c("Structure", "Memory", "Identity", "Object", "Culture")
+
+score_external <- function(data, prefix, label) {
+  data %>%
+    dplyr::filter(str_starts(Construct, prefix)) %>%
+    dplyr::group_by(ID, VigNro) %>%
+    dplyr::summarise(!!label := mean(value, na.rm = TRUE), .groups = "drop")
+}
+
+EDR_scores <-score_external(CFA_Data, "EDR", "EDR")
+FM_scores <-score_external(CFA_Data, "FM", "FM")
+CB_scores <-score_external(CFA_Data, "CB", "CB")
+PEP_scores <-score_external(CFA_Data, "PEP", "PEP")
+AIA_scores <-score_external(CFA_Data, "AIA", "AIA")
+
+Wond_scores <-score_external(CFA_Data, "Wonder", "Wonder")
+Tran_scores <-score_external(CFA_Data, "Transcendence", "Transcendence")
+Tend_scores <-score_external(CFA_Data, "Tenderness", "Tenderness")
+Peac_scores <-score_external(CFA_Data, "Peacefulness", "Peacefulness")
+Nost_scores <-score_external(CFA_Data, "Nostalgia", "Nostalgia")
+JoyA_scores <-score_external(CFA_Data, "Joyful Activation", "Joyful Activation")
+Powr_scores <-score_external(CFA_Data, "Power", "Power")
+Sadn_scores <-score_external(CFA_Data, "Sadness", "Sadness")
+Tens_scores <-score_external(CFA_Data, "Tension", "Tension")
+
+external_df <- EDR_scores %>%
+  dplyr::left_join(FM_scores, by = c("ID", "VigNro")) %>%
+  dplyr::left_join(CB_scores, by = c("ID", "VigNro")) %>%
+  dplyr::left_join(PEP_scores, by = c("ID", "VigNro")) %>%
+  dplyr::left_join(AIA_scores, by = c("ID", "VigNro")) %>%
+  dplyr::left_join(Wond_scores,  by = c("ID", "VigNro")) %>%
+  dplyr::left_join(Tran_scores,  by = c("ID", "VigNro")) %>%
+  dplyr::left_join(Tend_scores,  by = c("ID", "VigNro")) %>%
+  dplyr::left_join(Peac_scores,  by = c("ID", "VigNro")) %>%
+  dplyr::left_join(Nost_scores,  by = c("ID", "VigNro")) %>%
+  dplyr::left_join(JoyA_scores,  by = c("ID", "VigNro")) %>%
+  dplyr::left_join(Powr_scores,  by = c("ID", "VigNro")) %>%
+  dplyr::left_join(Sadn_scores,  by = c("ID", "VigNro")) %>%
+  dplyr::left_join(Tens_scores,  by = c("ID", "VigNro")) %>%
+  dplyr::rename(vignette = VigNro) 
+
+validity_df <- factor_scores %>%
+  dplyr::left_join(external_df, by = c("ID", "vignette"))
+
+external_names <- c("EDR","FM","CB","PEP","AIA","Wonder","Transcendence","Tenderness","Peacefulness","Nostalgia","Joyful Activation","Power","Sadness","Tension")
+
+# Running a correlation --------------------------------------------------------
+cor_matrix <- cor(
+  validity_df[, c(factor_names, external_names)],
+  use = "pairwise.complete.obs"
+)
+
+validity_cors <- cor_matrix[factor_names, external_names]
+
+knitr::kable(round(validity_cors, 3),
+             caption = "Convergent Validity: CFA Factor Scores vs. External Measures")
+
+# Correlation test -------------------------------------------------------------
+cor_tests <- psych::corr.test(
+  validity_df[, factor_names],
+  validity_df[, external_names],
+  use   = "pairwise",
+  adjust = "fdr"
+)
+print(cor_tests, short = FALSE)
+
+```
+
+# Visualising the Vignettes
+
+```{r}
+#| echo: true
+#| id: vignettes-described
+
+# vignette labels --------------------------------------------------------------
+vig_labels <- c("1" = "Vignette 1 (Structure)",
+                "2" = "Vignette 2 (Self)",
+                "3" = "Vignette 3 (Source)")
+
+vig_colours <- c("1" = "#4D7EA8", "2" = "#E07B39", "3" = "#5B9E6A")
+
+efa2_long        <- df2b
+efa2_long$Source <- "EFA"
+
+cfa_long         <- df3b
+cfa_long$Source  <- "CFA"
+
+all_long <- dplyr::bind_rows(
+  dplyr::mutate(df2b, Source = "EFA"),
+  dplyr::mutate(df3b, Source = "CFA")
+) %>%
+  dplyr::mutate(Scale = dplyr::case_when(
+    str_starts(item, "HAAS")     ~ "HAAS",
+    str_starts(item, "MecScale") ~ "MecScale",
+    str_starts(item, "GEMS")     ~ "GEMS",
+    str_starts(item, "MEEM")     ~ "MEEM",
+    TRUE                         ~ NA_character_
+  ))
+# HAAS valence/arousal quadrants -----------------------------------------------
+haas_quad_map <- c(
+  HAAS_1  = "High Arousal Positive",  # Interested
+  HAAS_2  = "High Arousal Positive",  # Active
+  HAAS_3  = "High Arousal Positive",  # Strong
+  HAAS_4  = "Low Arousal Positive",   # Calm
+  HAAS_5  = "Low Arousal Positive",   # Placid
+  HAAS_6  = "Low Arousal Positive",   # Content
+  HAAS_7  = "High Arousal Negative",  # Anxious
+  HAAS_8  = "High Arousal Negative",  # Irritable
+  HAAS_9  = "High Arousal Negative",  # Guilty
+  HAAS_10 = "Low Arousal Negative",   # Bored
+  HAAS_11 = "Low Arousal Negative",   # Sad
+  HAAS_12 = "Low Arousal Negative"    # Tired
+)
+
+haas_item_map <- c(
+  HAAS_1  = "Interested", HAAS_2  = "Active",    HAAS_3  = "Strong",
+  HAAS_4  = "Calm",       HAAS_5  = "Placid",    HAAS_6  = "Content",
+  HAAS_7  = "Anxious",    HAAS_8  = "Irritable", HAAS_9  = "Guilty",
+  HAAS_10 = "Bored",      HAAS_11 = "Sad",       HAAS_12 = "Tired"
+)
+
+# mechanism labels -------------------------------------------------------------
+mec_item_map <- c(
+  MecScale_1 = "Brain Stem Reflex",   MecScale_2 = "Entrainment",
+  MecScale_3 = "Eval. Condit.",  MecScale_4 = "Contagion",
+  MecScale_5 = "Visual Imagery",      MecScale_6 = "Episodic Mem.",
+  MecScale_7 = "Expectancy",           MecScale_8 = "Aesthetic Judgment"
+)
+
+# GEMS items -------------------------------------------------------------------
+gems_item_map <- c(
+  GEMS_1 = "Wonder",          GEMS_2 = "Transcendence",
+  GEMS_3 = "Tenderness",      GEMS_4 = "Peacefulness",
+  GEMS_5 = "Nostalgia",       GEMS_6 = "Joyful Activ.",
+  GEMS_7 = "Power",           GEMS_8 = "Sadness",
+  GEMS_9 = "Tension"
+)
+
+# MEEM items -------------------------------------------------------------------
+meem_sub_map <- c(
+  setNames(rep("EDR", 9), paste0("MEEM_",  1:9)),
+  setNames(rep("FM",  6), paste0("MEEM_", 10:15)),
+  setNames(rep("CB",  6), paste0("MEEM_", 16:21)),
+  setNames(rep("PEP", 6), paste0("MEEM_", 22:27)),
+  setNames(rep("AIA", 8), paste0("MEEM_", 28:35))
+)
+
+meem_full_map <- c(
+  EDR = "EDR",
+  FM  = "FM",
+  CB  = "CB",
+  PEP = "PEP",
+  AIA = "AIA"
+)
+
+# MMI items --------------------------------------------------------------------
+
+factor_items_efa <- list(
+  Structure = c("ST1_1","ST1_2","ST1_3","ST1_4","ST1_5","ST1_6","ST1_8"),
+  Memory    = c("SE1_1","SE1_2","SE1_3","SE1_4","SE1_5","SE1_6","SE1_7","SE1_9","SO1_11"),
+  Identity  = c("SE1_8","SE1_10","SE1_12","SE1_13"),
+  Object    = c("SO1_1","SO1_2","SO1_4","SO1_5","SO1_6","SO1_8","SO1_10"),
+  Culture   = c("SO1_3", "SO1_7", "SO1_12")
+)
+
+factor_items_cfa <- list(
+  Structure = c("ST1_3", "ST1_6", "ST1_2"),
+  Memory    = c("SE1_2", "SE1_1", "SE1_3"),
+  Identity  = c("SE1_13", "SE1_10", "SE1_12"),
+  Object    = c("SO1_4", "SO1_5", "SO1_2"),
+  Culture   = c("SO1_3", "SO1_7", "SO1_12")
+)
+
+factor_items <- list(
+  Structure = c("ST1_3", "ST1_6", "ST1_2"),
+  Memory    = c("SE1_2", "SE1_1", "SE1_3"),
+  Identity  = c("SE1_13", "SE1_10", "SE1_12"),
+  Object    = c("SO1_4", "SO1_5", "SO1_2"),
+  Culture   = c("SO1_3", "SO1_7", "SO1_12")
+)
+
+################################################################################
+#-------------------------------- MecScale ------------------------------------- 
+################################################################################
+
+mec_data <- all_long %>%
+  filter(Scale == "MecScale") %>%
+  mutate(
+    item_key = str_replace(item, "^MecScale\\d+_", "MecScale_"),
+    Mechanism = mec_item_map[item_key],
+    VigNro    = as.character(VigNro)
+  ) %>%
+  filter(!is.na(Mechanism))
+
+# Mechanisms mean ratings by vignette ------------------------------------------
+
+mec_sum <- mec_data %>%
+  group_by(Source, VigNro, Mechanism) %>%
+  summarise(
+    M  = mean(value, na.rm = TRUE),
+    SE = sd(value, na.rm = TRUE) / sqrt(n()),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    VigNro    = factor(VigNro, levels = c("1","2","3")),
+    Mechanism = factor(Mechanism, levels = unique(mec_item_map))
+  )
+
+p_mec <- ggplot(mec_sum, aes(x = Mechanism, y = M,
+                              colour = VigNro, group = VigNro)) +
+  geom_line(linewidth = 0.8) +
+  geom_point(size = 2.5) +
+  geom_errorbar(aes(ymin = M - SE, ymax = M + SE), width = 0.2) +
+  facet_wrap(~ Source, labeller = labeller(Source = c(EFA = "EFA (Con. 2)"))) +
+  scale_colour_manual(values = vig_colours,
+                      labels = c("1" = "Vignette 1 (Structure)",
+                                 "2" = "Vignette 2 (Self)",
+                                 "3" = "Vignette 3 (Source)"),
+                      name = NULL) +
+  scale_y_continuous(limits = c(1, 5), breaks = 1:5) +
+  labs(title = "MecScale: Mean ratings for each mechanism ",
+       x = NULL, y = "Mean Rating (1–5)") +
+  theme_bw(base_size = 11) +
+  theme(axis.text.x  = element_text(size = 8, angle = 15, hjust = 1),
+        legend.position = "bottom",
+        strip.background = element_rect(fill = "#e8e8e8"),
+        panel.grid.major.x = element_blank())
+
+print(p_mec)
+
+# MecScale descriptive table ---------------------------------------------------
+mec_desc <- mec_data %>%
+  group_by(Source, VigNro, Mechanism) %>%
+  summarise(
+    M  = round(mean(value, na.rm = TRUE), 2),
+    SD = round(sd(value,   na.rm = TRUE), 2),
+    .groups = "drop"
+  ) %>%
+  pivot_wider(names_from = Source,
+              values_from = c(M, SD),
+              names_glue = "{Source}_{.value}") %>%
+  mutate(VigNro = paste0("Vignette ", VigNro)) %>%
+  rename(Vignette = VigNro)
+
+knitr::kable(mec_desc,
+             caption = "MecScale Mechanism Descriptives by Vignette",
+             digits  = 2,
+             align   = c("l","l","r","r","r","r"))
+
+# MecScale differences across vignettes ----------------------------------------
+
+prop_max <- function(x, max_val) x / max_val
+
+mec_lmer_data <- all_long %>%
+  filter(Scale == "MecScale", Source == "EFA") %>%
+  mutate(
+    item_key   = str_replace(item, "^MecScale\\d+_", "MecScale_"),
+    Mechanism  = mec_item_map[item_key],
+    VigNro     = factor(as.character(VigNro), levels = c("1","2","3")),
+    prop_score = prop_max(value, 5)
+  ) %>%
+  filter(!is.na(Mechanism))
+
+# lmer on item-level data; (1|Mechanism) accounts for scale differences
+mec_lmer <- lmer(prop_score ~ VigNro + (1|ID) + (1|Mechanism),
+                 data = mec_lmer_data)
+print(summary(mec_lmer))
+
+# MecScale: pairwise contrasts
+mec_emm   <- emmeans(mec_lmer, ~ VigNro)
+mec_pairs <- pairs(mec_emm, adjust = "fdr")
+print(mec_pairs)
+
+# Sub-scale proportions per vignette
+mec_prop_sub <- mec_lmer_data %>%
+  group_by(VigNro, Mechanism) %>%
+  summarise(pct    = round(mean(prop_score, na.rm = TRUE) * 100, 1),
+            .groups = "drop")
+#print(mec_prop_sub)
+
+knitr::kable(mec_prop_sub,
+             caption = "MecScale Mechanism Proportions by Vignette (EFA Sample)",
+             digits  = 2,
+             align   = c("l","l","l"))
+
+################################################################################
+# --------------------------------- GEMS ---------------------------------------
+################################################################################
+
+gems_data <- all_long %>%
+  filter(Scale == "GEMS") %>%
+  mutate(
+    item_key = str_replace(item, "^GEMS\\d+_", "GEMS_"),
+    Emotion = gems_item_map[item_key],
+    VigNro    = as.character(VigNro)
+  ) %>%
+  filter(!is.na(Emotion))
+
+gems_sum <- gems_data %>%
+  group_by(Source, VigNro, Emotion) %>%
+  summarise(
+    M  = mean(value, na.rm = TRUE),
+    SE = sd(value, na.rm = TRUE) / sqrt(n()),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    VigNro    = factor(VigNro, levels = c("1","2","3")),
+    Emotion = factor(Emotion, levels = unique(gems_item_map))
+  )
+
+# GEMS: individual-level distributions -----------------------------------------
+gems_cfa <- gems_data %>%
+  filter(Source == "CFA") %>%
+  mutate(
+    VigNro  = factor(VigNro,  levels = c("1","2","3")),
+    Emotion = factor(Emotion, levels = unique(gems_item_map))
+  ) %>%
+  filter(!is.na(value), is.finite(value))
+
+p_gems_violin <- ggplot(gems_cfa,
+                        aes(x = VigNro, y = value,
+                            fill = VigNro, colour = VigNro)) +
+  geom_violin(alpha = 0.35, linewidth = 0.4, trim = FALSE, na.rm = TRUE) + 
+  geom_boxplot(width = 0.18, outlier.size = 0.6,
+               alpha = 0.85, colour = "black", linewidth = 0.4, na.rm = TRUE) + 
+  facet_wrap(~ Emotion, nrow = 3) +
+  scale_fill_manual(values   = vig_colours, guide = "none") +
+  scale_colour_manual(values = vig_colours, guide = "none") +
+  scale_x_discrete(labels = c("1" = "V1","2" = "V2","3" = "V3")) +
+  scale_y_continuous(limits = c(0, 100), breaks = c(25, 50, 75)) +
+  labs(
+    title    = "GEMS: Participant Distributions by Vignette (CFA Sample)",
+    x = NULL, y = "Rating (0-100)"
+  ) +
+  theme_bw(base_size = 10) +
+  theme(
+    strip.background = element_rect(fill = "#e8e8e8"),
+    strip.text       = element_text(size = 8),
+    axis.text.x      = element_text(size = 8)
+  )
+
+print(p_gems_violin)
+
+# GEMS descriptive table -------------------------------------------------------
+gems_desc <- gems_data %>%
+  group_by(Source, VigNro, Emotion) %>%
+  summarise(
+    M  = round(mean(value, na.rm = TRUE), 2),
+    SD = round(sd(value,   na.rm = TRUE), 2),
+    .groups = "drop"
+  ) %>%
+  pivot_wider(names_from = Source,
+              values_from = c(M, SD),
+              names_glue = "{Source}_{.value}") %>%
+  mutate(VigNro = paste0("Vignette ", VigNro)) %>%
+  rename(Vignette = VigNro)
+
+knitr::kable(gems_desc,
+             caption = "GEMS Emotion Descriptives by Vignette and Sample",
+             digits  = 2,
+             align   = c("l","l","r","r","r","r"))
+
+# GEMS differences between vignettes -------------------------------------------
+
+gems_lmer_data <- all_long %>%
+  filter(Scale == "GEMS", Source == "CFA") %>%
+  mutate(
+    item_key   = str_replace(item, "^GEMS\\d+_", "GEMS_"),
+    Emotion    = gems_item_map[item_key],
+    VigNro     = factor(as.character(VigNro), levels = c("1","2","3")),
+    prop_score = prop_max(value, 100)
+  ) %>%
+  filter(!is.na(Emotion))
+
+gems_lmer <- lmer(prop_score ~ VigNro + (1|ID) + (1|Emotion),
+                  data = gems_lmer_data)
+print(summary(gems_lmer))
+
+gems_emm   <- emmeans(gems_lmer, ~ VigNro)
+gems_pairs <- pairs(gems_emm, adjust = "fdr")
+print(gems_pairs)
+
+# Sub-scale proportions per vignette
+gems_prop_sub <- gems_lmer_data %>%
+  group_by(VigNro, Emotion) %>%
+  summarise(pct    = round(mean(prop_score, na.rm = TRUE) * 100, 1),
+            .groups = "drop")
+#print(gems_prop_sub)
+
+knitr::kable(gems_prop_sub,
+             caption = "GEMS Proportions by Vignette",
+             digits  = 2,
+             align   = c("l","l","l"))
+
+################################################################################
+# ----------------------------------- MEEM -------------------------------------
+################################################################################
+
+meem_data <- all_long %>%
+  filter(Scale == "MEEM") %>%
+  mutate(
+    item_key = str_replace(item, "^MEEM\\d+_", "MEEM_"),
+    Subscale = meem_sub_map[item_key],
+    VigNro   = as.character(VigNro)
+  ) %>%
+  filter(!is.na(Subscale), !is.na(value))   
+
+# MEEM scale means by vignette -------------------------------------------------
+
+meem_sum <- meem_data %>%
+  group_by(Source, VigNro, Subscale) %>%
+  summarise(
+    M  = mean(value, na.rm = TRUE),
+    SE = sd(value,   na.rm = TRUE) / sqrt(n()),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    VigNro   = factor(VigNro,   levels = c("1","2","3")),
+    Subscale = factor(Subscale, levels = c("EDR","FM","CB","PEP","AIA"))
+  ) %>%
+  filter(!is.na(M))
+
+p_meem <- ggplot(meem_sum, aes(x = Subscale, y = M, fill = VigNro)) +
+  geom_col(position = position_dodge(0.8), width = 0.7,
+           colour = "black", linewidth = 0.3) +
+  geom_errorbar(aes(ymin = M - SE, ymax = M + SE),
+                position = position_dodge(0.8), width = 0.25) +
+  facet_wrap(~ Source,
+             labeller = labeller(Source = c(EFA = "EFA (Con. 2)",
+                                            CFA = "CFA Sample"))) +
+  scale_fill_manual(
+    values = vig_colours,
+    labels = c("1" = "Vignette 1 (Structure)",
+               "2" = "Vignette 2 (Self)",
+               "3" = "Vignette 3 (Source)"),
+    name = NULL
+  ) +
+  scale_x_discrete(labels = meem_full_map, drop = FALSE) +
+  scale_y_continuous(
+    limits = c(0, 5.5), 
+    breaks = 0:5,
+    expand = expansion(mult = c(0, 0.02))
+  ) +
+  labs(
+    title    = "MEEM: Mean ratings per subscale by vignette",
+    subtitle = "Mean ± SE per subscale; scale range 1–5",
+    x = NULL,
+    y = "Mean Rating (1–5)"
+  ) +
+  theme_bw(base_size = 11) +
+  theme(
+    axis.text.x      = element_text(size = 8, angle = 15, hjust = 1),
+    legend.position  = "bottom",
+    strip.background = element_rect(fill = "#e8e8e8"),
+    panel.grid.major.x = element_blank()
+  )
+
+print(p_meem)
+
+# MEEM descriptive table -------------------------------------------------------
+
+meem_desc <- meem_data %>%
+  group_by(Source, VigNro, Subscale) %>%
+  summarise(
+    M  = round(mean(value, na.rm = TRUE), 2),
+    SD = round(sd(value,   na.rm = TRUE), 2),
+    .groups = "drop"
+  ) %>%
+  pivot_wider(names_from = Source,
+              values_from = c(M, SD),
+              names_glue = "{Source}_{.value}") %>%
+  mutate(VigNro = paste0("Vignette ", VigNro)) %>%
+  rename(Vignette = VigNro)
+
+knitr::kable(meem_desc,
+             caption = "MEEM Subscale Descriptives by Vignette and Sample",
+             digits  = 2,
+             align   = c("l","l","r","r","r","r"))
+
+# MEEM differences between vignettes -------------------------------------------
+
+meem_lmer_data <- all_long %>%
+  filter(Scale == "MEEM", Source == "CFA") %>%
+  mutate(
+    item_key   = str_replace(item, "^MEEM\\d+_", "MEEM_"),
+    Subscale   = meem_sub_map[item_key],
+    VigNro     = factor(as.character(VigNro), levels = c("1","2","3")),
+    prop_score = prop_max(value, 5)
+  ) %>%
+  filter(!is.na(Subscale))
+
+meem_lmer <- lmer(prop_score ~ VigNro + (1|ID) + (1|Subscale),
+                  data = meem_lmer_data)
+print(summary(meem_lmer))
+
+# Sub-scale proportions per vignette
+meem_prop_sub <- meem_lmer_data %>%
+  group_by(VigNro, Subscale) %>%
+  summarise(prop_M = mean(prop_score, na.rm = TRUE),
+            pct    = round(mean(prop_score, na.rm = TRUE) * 100, 1),
+            .groups = "drop")
+#print(meem_prop_sub)
+
+knitr::kable(meem_prop_sub,
+             caption = "MEEM Proportions by Vignette",
+             digits  = 2,
+             align   = c("l","l","l"))
+
+################################################################################
+# ----------------------- HAAS: Valence & Arousal ------------------------------
+################################################################################
+
+haas_data <- all_long %>%
+  filter(Scale == "HAAS") %>%
+  mutate(
+    item_key = str_replace(item, "^HAAS\\d+_", "HAAS_"),
+    Emotion  = haas_item_map[item_key],
+    Quadrant = haas_quad_map[item_key],
+    VigNro   = as.character(VigNro)
+  ) %>%
+  filter(!is.na(Emotion), !is.na(value))
+
+haas_quad_sum <- haas_data %>%
+  group_by(Source, VigNro, Quadrant) %>%
+  summarise(M = mean(value, na.rm = TRUE),
+            SE = sd(value, na.rm = TRUE) / sqrt(n()),
+            .groups = "drop") %>%
+  mutate(VigNro = factor(VigNro, levels = c("1","2","3")))
+
+# Participant-level valence/arousal (CFA only)
+haas_circ_cfa <- haas_data %>%
+  filter(Source == "CFA") %>%
+  mutate(
+    valence_sign = ifelse(str_detect(Quadrant, "Positive"),  1, -1),
+    arousal_sign = ifelse(str_detect(Quadrant, "High"),       1, -1)
+  ) %>%
+  group_by(ID, VigNro) %>%
+  summarise(
+    Valence = mean(value * valence_sign, na.rm = TRUE),
+    Arousal = mean(value * arousal_sign, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(VigNro = factor(VigNro, levels = c("1","2","3")))
+
+# Vignette-level means
+haas_circ_means_cfa <- haas_circ_cfa %>%
+  group_by(VigNro) %>%
+  summarise(mV = mean(Valence), mA = mean(Arousal), .groups = "drop")
+
+# HAAS Circumplex: means plotted -----------------------------------------------
+
+haas_circumplex <- haas_data %>%
+  mutate(
+    valence_sign = ifelse(str_detect(Quadrant, "Positive"),  1, -1),
+    arousal_sign = ifelse(str_detect(Quadrant, "High"),       1, -1)
+  ) %>%
+  group_by(Source, ID, VigNro) %>%
+  summarise(
+    Valence = mean(value * valence_sign, na.rm = TRUE),
+    Arousal = mean(value * arousal_sign, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(VigNro = factor(VigNro, levels = c("1","2","3")))
+
+haas_circ_means <- haas_circumplex %>%
+  group_by(Source, VigNro) %>%
+  summarise(mV = mean(Valence), mA = mean(Arousal), .groups = "drop")
+
+p_circumplex <- ggplot(haas_circumplex,
+                       aes(x = Valence, y = Arousal,
+                           colour = VigNro, fill = VigNro)) +
+  stat_ellipse(alpha = 0.12, geom = "polygon", level = 0.70) +
+  geom_point(alpha = 0.25, size = 1.2) +
+  geom_point(data = haas_circ_means,
+             aes(x = mV, y = mA, colour = VigNro),
+             shape = 18, size = 5, stroke = 0.8, colour = "black") +
+  geom_point(data = haas_circ_means,
+             aes(x = mV, y = mA, colour = VigNro),
+             shape = 18, size = 4) +
+  geom_hline(yintercept = 0, linetype = "dashed", linewidth = 0.4) +
+  geom_vline(xintercept = 0, linetype = "dashed", linewidth = 0.4) +
+  facet_wrap(~ Source, labeller = labeller(Source = c(EFA = "EFA (Con. 2)",
+                                                      CFA = "CFA Sample"))) +
+  scale_colour_manual(values = vig_colours,
+                      labels = c("1" = "Vignette 1","2" = "Vignette 2","3" = "Vignette 3"),
+                      name = NULL) +
+  scale_fill_manual(values = vig_colours,
+                    labels = c("1" = "Vignette 1","2" = "Vignette 2","3" = "Vignette 3"),
+                    name = NULL) +
+  labs(title = "HAAS Circumplex",
+       subtitle = "ellipses = 70% CI; diamonds = vignette mean",
+       x = "Valence", y = "Arousal") +
+  theme_bw(base_size = 11) +
+  theme(legend.position = "bottom",
+        strip.background = element_rect(fill = "#e8e8e8"))
+
+print(p_circumplex)
+
+################################################################################
+# ---------------------------------- MMI ---------------------------------------
+################################################################################
+
+factor_vignette_means <- bind_rows(lapply(names(factor_items), function(fname) {
+  items <- factor_items[[fname]]
+  CFA_all %>%
+    select(ID, vignette, all_of(items)) %>%
+    pivot_longer(cols = all_of(items),
+                 names_to  = "item",
+                 values_to = "score") %>%
+    group_by(ID, vignette) %>%
+    summarise(person_mean = mean(score, na.rm = TRUE), .groups = "drop") %>%
+    group_by(vignette) %>%
+    summarise(M  = mean(person_mean, na.rm = TRUE),
+              SD = sd(person_mean,   na.rm = TRUE),
+              .groups = "drop") %>%
+    mutate(Factor = fname)
+})) %>%
+  rename(VigNro = vignette) %>%
+  mutate(VigNro = factor(as.character(VigNro), levels = c("1","2","3")),
+         Factor = factor(Factor, levels = factor_names)) %>%
+  arrange(VigNro, desc(M))
+
+knitr::kable(factor_vignette_means, digits = 3,
+             caption = "Mean MMI Scores by CFA Factor and Vignette (1–5 scale)")
+
+factor_dominant <- factor_scores %>%
+  rename(VigNro = vignette) %>%
+  mutate(VigNro = as.character(VigNro)) %>%
+  pivot_longer(cols = all_of(factor_names),
+               names_to  = "Factor",
+               values_to = "score") %>%
+  group_by(ID, VigNro) %>%
+  slice_max(score, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  select(ID, VigNro, Top_Factor = Factor)
+
+factor_dominant %>%
+  mutate(VigNro = factor(VigNro, levels = c("1","2","3"))) %>%
+  count(VigNro, Top_Factor) %>%
+  group_by(VigNro) %>%
+  mutate(
+    Total = sum(n),
+    Pct   = round(100 * n / Total, 1)
+  ) %>%
+  ungroup() %>%
+  arrange(VigNro, desc(Pct)) %>%
+  knitr::kable(caption = "Dominant Factor per Vignette (% of participants)")
+
+# Join MMI onto participant circumplex coordinates ---------------------------------
+haas_circ_factor <- haas_circ_cfa %>%
+  mutate(VigNro = as.character(VigNro)) %>%
+  left_join(factor_dominant, by = c("ID", "VigNro")) %>%
+  mutate(
+    VigNro     = factor(VigNro,     levels = c("1","2","3")),
+    Top_Factor = factor(Top_Factor, levels = factor_names)
+  )
+
+# Vignette-level diamonds
+circ_means_factor <- haas_circ_factor %>%
+  group_by(VigNro) %>%
+  summarise(mV = mean(Valence), mA = mean(Arousal), .groups = "drop")
+
+factor_colours <- c(
+  Structure = "#5BA300",
+  Memory    = "#F57600",
+  Identity  = "#0073E6",
+  Object    = "#E6308A",
+  Culture   = "purple"
+)
+
+p_circumplex_factor <- ggplot(haas_circ_factor,
+                              aes(x = Valence, y = Arousal)) +
+  stat_ellipse(alpha = 0.10, geom = "polygon", level = 0.70,
+               fill = "grey80", colour = "grey60", linewidth = 0.3) +
+  geom_jitter(aes(colour = Top_Factor, shape = VigNro),
+              alpha = 0.55, size = 1.8,
+              width = 0.02, height = 0.02,
+              seed  = 42) +
+  geom_point(data = circ_means_factor,
+             aes(x = mV, y = mA),
+             shape = 23, size = 3, stroke = 1.0,
+             colour = "black", fill = "white",
+             inherit.aes = FALSE) +
+  geom_text(data = circ_means_factor,
+            aes(x = mV, y = mA, label = paste0("")),
+            size = 2.5, fontface = "bold", colour = "black",
+            vjust = -1.2, inherit.aes = FALSE) +
+  geom_hline(yintercept = 0, linetype = "dashed", linewidth = 0.4, colour = "grey50") +
+  geom_vline(xintercept = 0, linetype = "dashed", linewidth = 0.4, colour = "grey50") +
+  facet_wrap(~ VigNro,
+             labeller = labeller(VigNro = c("1" = "Vignette 1 (Structure)",
+                                            "2" = "Vignette 2 (Self)",
+                                            "3" = "Vignette 3 (Source)"))) +
+  scale_colour_manual(values   = factor_colours,
+                      labels   = factor_names,
+                      name     = "Dominant Factor",
+                      na.value = "grey70") +
+  scale_shape_manual(values = c("1" = 17, "2" = 16, "3" = 15),
+                     guide  = "none") +
+  coord_cartesian(xlim = c(-1, 2), ylim = c(-0.75, 0.70)) +
+  labs(
+    x = "Valence  (Negative to Positive)",
+    y = "Arousal  (Low to High)"
+  ) +
+  theme_bw(base_size = 12) +
+  theme(
+    legend.position  = "bottom",
+    legend.direction = "horizontal"
+  ) +
+  guides(colour = guide_legend(override.aes = list(size = 3, alpha = 1),
+                               ncol = 5))
+
+print(p_circumplex_factor)
+
+```
+
+# Other Circumplex plots
+
+```{r}
+#| echo: true
+#| id: circumplex
+
+top2_label <- function(df, group_col, name_col, pct_col) {
+  df %>%
+    group_by({{ group_col }}) %>%
+    slice_max({{ pct_col }}, n = 3, with_ties = FALSE) %>%
+    summarise(
+      label = paste0({{ name_col }}, " (", {{ pct_col }}, "%)",
+                     collapse = "\n"),
+      .groups = "drop"
+    )
+}
+
+# MecScale top-2 (EFA only) ----------------------------------------------------
+mec_top2 <- top2_label(mec_prop_sub, VigNro, Mechanism, pct) %>%
+  rename(mec_label = label)
+
+# GEMS top-2 (CFA only) --------------------------------------------------------
+gems_top2 <- top2_label(gems_prop_sub, VigNro, Emotion, pct) %>%
+  rename(gems_label = label)
+
+# MEEM top-2 (split by source) -------------------------------------------------
+meem_prop_sub_efa <- all_long %>%
+  filter(Scale == "MEEM", Source == "EFA") %>%
+  mutate(
+    item_key   = str_replace(item, "^MEEM\\d+_", "MEEM_"),
+    Subscale   = meem_sub_map[item_key],
+    VigNro     = factor(as.character(VigNro), levels = c("1","2","3")),
+    prop_score = prop_max(value, 5)
+  ) %>%
+  filter(!is.na(Subscale)) %>%
+  group_by(VigNro, Subscale) %>%
+  summarise(pct = round(mean(prop_score, na.rm = TRUE) * 100, 1),
+            .groups = "drop")
+
+meem_prop_sub_cfa <- meem_prop_sub
+
+meem_top2_efa <- top2_label(meem_prop_sub_efa, VigNro, Subscale, pct) %>%
+  rename(meem_label = label)
+
+meem_top2_cfa <- top2_label(meem_prop_sub_cfa, VigNro, Subscale, pct) %>%
+  rename(meem_label = label)
+
+# MMI factor proportions (% of max per factor) ---------------------------------
+
+mmi_prop_cfa <- factor_scores %>%
+  rename(VigNro = vignette) %>%
+  mutate(VigNro = factor(as.character(VigNro), levels = c("1","2","3"))) %>%
+  pivot_longer(cols = all_of(factor_names),
+               names_to  = "Factor",
+               values_to = "score") %>%
+  group_by(VigNro, Factor) %>%
+  summarise(mean_score = mean(score, na.rm = TRUE), .groups = "drop") %>%
+  group_by(VigNro) %>%
+  mutate(
+    shifted = mean_score - min(mean_score) + 0.001,
+    pct     = round(shifted / sum(shifted) * 100, 1)
+  ) %>%
+  ungroup() %>%
+  select(VigNro, Factor, pct)
+
+mmi_top2_cfa <- top2_label(mmi_prop_cfa, VigNro, Factor, pct) %>%
+  rename(mmi_label = label)
+
+# EFA centroid -----------------------------------------------------------------
+haas_circ_efa <- haas_data %>%
+  filter(Source == "EFA") %>%
+  mutate(
+    valence_sign = ifelse(str_detect(Quadrant, "Positive"),  1, -1),
+    arousal_sign = ifelse(str_detect(Quadrant, "High"),       1, -1)
+  ) %>%
+  group_by(ID, VigNro) %>%
+  summarise(
+    Valence = mean(value * valence_sign, na.rm = TRUE),
+    Arousal = mean(value * arousal_sign, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(VigNro = factor(as.character(VigNro), levels = c("1","2","3")))
+
+haas_circ_means_efa <- haas_circ_efa %>%
+  group_by(VigNro) %>%
+  summarise(mV = mean(Valence), mA = mean(Arousal), .groups = "drop")
+
+# EFA: MecScale + MEEM (EFA) + MMI (EFA) ---------------------------------------
+top_annot_efa <- mec_top2 %>%
+  left_join(meem_top2_efa, by = "VigNro") %>%
+  left_join(haas_circ_means_efa, by = "VigNro") %>%
+  mutate(
+    Source   = "EFA",
+    VigNro   = factor(as.character(VigNro), levels = c("1","2","3")),
+    ann      = paste0(
+      "── MecScale ──\n", mec_label,  "\n",
+      "── MEEM ──\n",     meem_label
+    ),
+    nudge_x  = c( -0.5, -1.9, -1.50),
+    nudge_y  = c( 1.3,  1.2, -0.85),
+    box_xmin = mV + nudge_x - 0.60,
+    box_xmax = mV + nudge_x + 0.60,
+    box_ymin = mA + nudge_y - 0.68,
+    box_ymax = mA + nudge_y + 0.68
+  )
+
+# CFA: GEMS + MEEM (CFA) + MMI (CFA) -------------------------------------------
+top_annot_cfa <- gems_top2 %>%
+  left_join(meem_top2_cfa, by = "VigNro") %>%
+  left_join(haas_circ_means_cfa, by = "VigNro") %>%
+  mutate(
+    Source   = "CFA",
+    VigNro   = factor(as.character(VigNro), levels = c("1","2","3")),
+    ann      = paste0(
+      "── GEMS ──\n",  gems_label, "\n",
+      "── MEEM ──\n",  meem_label
+    ),
+      nudge_x  = c( -0.5, -1.8, -1.90),
+    nudge_y  = c( 1.4,  1.3, -0.8),
+    box_xmin = mV + nudge_x - 0.60,
+    box_xmax = mV + nudge_x + 0.60,
+    box_ymin = mA + nudge_y - 0.68,
+    box_ymax = mA + nudge_y + 0.68
+  )
+
+top_annot_both <- bind_rows(top_annot_efa, top_annot_cfa)
+
+# plotting with annotation boxes -----------------------------------------------
+p_circumplex <- ggplot(haas_circumplex,
+                       aes(x = Valence, y = Arousal,
+                           colour = VigNro, fill = VigNro)) +
+  stat_ellipse(alpha = 0.12, geom = "polygon", level = 0.70) +
+  geom_point(alpha = 0.20, size = 1.0) +
+  geom_hline(yintercept = 0, linetype = "dashed",
+             linewidth = 0.4, colour = "grey50") +
+  geom_vline(xintercept = 0, linetype = "dashed",
+             linewidth = 0.4, colour = "grey50") +
+  geom_point(data = top_annot_both,
+             aes(x = mV, y = mA),
+             shape = 18, size = 5, colour = "black",
+             inherit.aes = FALSE) +
+  geom_point(data = top_annot_both,
+             aes(x = mV, y = mA, colour = VigNro),
+             shape = 18, size = 4,
+             inherit.aes = FALSE) +
+  geom_segment(data = top_annot_both,
+               aes(x = mV, y = mA,
+                   xend = mV + nudge_x * 0.82,
+                   yend = mA + nudge_y * 0.82,
+                   colour = VigNro),
+               linewidth = 0.35, linetype = "dotted",
+               inherit.aes = FALSE) +
+  geom_rect(data = top_annot_both,
+            aes(xmin = box_xmin, xmax = box_xmax,
+                ymin = box_ymin, ymax = box_ymax),
+            fill = "white", colour = "grey70",
+            linewidth = 0.3, alpha = 0.90,
+            inherit.aes = FALSE) +
+  geom_text(data = top_annot_both,
+            aes(x = mV + nudge_x,
+                y = mA + nudge_y,
+                label = ann,
+                colour = VigNro),
+            size = 2.2, lineheight = 1.20,
+            hjust = 0.5, vjust = 0.5,
+            fontface = "plain",
+            inherit.aes = FALSE) +
+  facet_wrap(~ Source,
+             labeller = labeller(Source = c(EFA = "EFA (Con. 2)",
+                                            CFA = "CFA Sample"))) +
+  scale_colour_manual(
+    values = vig_colours,
+    labels = c("1" = "Vignette 1 (Structure)",
+               "2" = "Vignette 2 (Self)",
+               "3" = "Vignette 3 (Source)"),
+    name = NULL
+  ) +
+  scale_fill_manual(
+    values = vig_colours,
+    labels = c("1" = "Vignette 1 (Structure)",
+               "2" = "Vignette 2 (Self)",
+               "3" = "Vignette 3 (Source)"),
+    name = NULL
+  ) +
+  coord_fixed(ratio = 1,
+              xlim = c(-1.5, 2.0),
+              ylim = c(-1.5, 2.0)) +
+  labs(
+    title    = "HAAS Circumplex",
+    subtitle = paste0(
+      "Ellipses = 70% CI; diamonds = vignette centroid\n",
+      "EFA boxes: top-2 MecScale, MEEM, MMI sub-scales (% of relative weight); ",
+      "CFA boxes: top-2 GEMS, MEEM, MMI"
+    ),
+    x = "Valence",
+    y = "Arousal"
+  ) +
+  theme_bw(base_size = 11) +
+  theme(
+    legend.position  = "bottom",
+    strip.background = element_rect(fill = "#e8e8e8"),
+    panel.grid.minor = element_blank(),
+    aspect.ratio     = 1
+  )
+
+print(p_circumplex)
+
+# Uses CFA-only annotation: GEMS + MEEM (CFA) + MMI (CFA) ----------------------
+
+top_annot_f <- mmi_top2_cfa %>%
+  left_join(circ_means_factor, by = "VigNro") %>%
+  mutate(
+    VigNro   = factor(as.character(VigNro), levels = c("1","2","3")),
+    ann      = paste0(
+      "── MMI ──\n",   mmi_label
+    ),
+    nudge_x  =  -1,
+    nudge_y  = 1.2,
+    box_xmin = mV + nudge_x - 0.6,
+    box_xmax = mV + nudge_x + 0.6,
+    box_ymin = mA + nudge_y - 0.68,
+    box_ymax = mA + nudge_y + 0.68
+  )
+
+p_circumplex_factor <- ggplot(haas_circ_factor,
+                              aes(x = Valence, y = Arousal)) +
+  stat_ellipse(alpha = 0.10, geom = "polygon", level = 0.70,
+               fill = "grey80", colour = "grey60", linewidth = 0.3) +
+  geom_jitter(aes(colour = Top_Factor, shape = VigNro),
+              alpha = 0.50, size = 1.6,
+              width = 0.02, height = 0.02, seed = 42) +
+  geom_hline(yintercept = 0, linetype = "dashed",
+             linewidth = 0.4, colour = "grey50") +
+  geom_vline(xintercept = 0, linetype = "dashed",
+             linewidth = 0.4, colour = "grey50") +
+  geom_point(data = top_annot_f,
+             aes(x = mV, y = mA),
+             shape = 23, size = 3, stroke = 1.0,
+             colour = "black", fill = "white",
+             inherit.aes = FALSE) +
+  geom_segment(data = top_annot_f,
+               aes(x = mV, y = mA,
+                   xend = mV + nudge_x * 0.82,
+                   yend = mA + nudge_y * 0.82),
+               linewidth = 0.35, linetype = "dotted",
+               colour = "grey40",
+               inherit.aes = FALSE) +
+  geom_rect(data = top_annot_f,
+            aes(xmin = box_xmin, xmax = box_xmax,
+                ymin = box_ymin, ymax = box_ymax),
+            fill = "white", colour = "grey70",
+            linewidth = 0.3, alpha = 0.90,
+            inherit.aes = FALSE) +
+  geom_text(data = top_annot_f,
+            aes(x = mV + nudge_x,
+                y = mA + nudge_y,
+                label = ann),
+            size = 2.2, lineheight = 1.20,
+            hjust = 0.5, vjust = 0.5,
+            colour = "grey20", fontface = "plain",
+            inherit.aes = FALSE) +
+  facet_wrap(~ VigNro,
+             labeller = labeller(VigNro = c(
+               "1" = "Vignette 1 (Structure)",
+               "2" = "Vignette 2 (Self)",
+               "3" = "Vignette 3 (Source)"))) +
+  scale_colour_manual(
+    values   = factor_colours,
+    labels   = factor_names,
+    name     = "MMI Factor",
+    na.value = "grey20"
+  ) +
+  scale_fill_manual(
+    values = c(factor_colours, setNames(rep("grey20", 3), c("1","2","3"))),
+    guide  = "none"
+  ) +
+  scale_shape_manual(
+    values = c("1" = 17, "2" = 16, "3" = 15),
+    guide  = "none"
+  ) +
+  coord_fixed(ratio = 1,
+              xlim = c(-1, 2.0),
+              ylim = c(-1, 2.0)) +
+  labs(
+    x = "Valence",
+    y = "Arousal"
+  ) +
+  theme_bw(base_size = 12) +
+  theme(
+    legend.position    = "bottom",
+    legend.direction   = "horizontal",
+    panel.grid.minor   = element_blank(),
+    aspect.ratio       = 1
+  ) +
+  guides(colour = guide_legend(
+    override.aes = list(size = 3, alpha = 1),
+    ncol = 5
+  ))
+
+print(p_circumplex_factor) 
+
+```

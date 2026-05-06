@@ -1,0 +1,867 @@
+StartDate,EndDate,Status,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,DistributionChannel,UserLanguage,"Prolific ID ","Consent ","Age ","Gender ",OMSI,MM1_1,MM1_2,MM1_3,MM1_4,MM1_5,MM1_6,MM1_7,MM1_8,MM1_9,MM1_10,MM1_11,MM1_12,MM1_13,MM1_14,MM1_15,MM1_16,MM1_17,MM1_18,MM1_19,MM1_20,MM1_21,MM1_22,MM1_23,MM1_24,MM1_25,MM1_26,MM1_27,MM1_28,MM1_29,MM1_30,MM1_31,MM1_32,MM1_33,MM1_34,HAAS1_1,HAAS1_2,HAAS1_3,HAAS1_4,HAAS1_5,HAAS1_6,HAAS1_7,HAAS1_8,HAAS1_9,HAAS1_10,HAAS1_11,HAAS1_12,MEEM1_1,MEEM1_2,MEEM1_3,MEEM1_4,MEEM1_5,MEEM1_6,MEEM1_7,MEEM1_8,MEEM1_9,MEEM1_10,MEEM1_11,MEEM1_12,MEEM1_13,MEEM1_14,MEEM1_15,MEEM1_16,MEEM1_17,MEEM1_18,MEEM1_19,MEEM1_20,MEEM1_21,MEEM1_22,MEEM1_23,MEEM1_24,MEEM1_25,MEEM1_26,MEEM1_27,MEEM1_28,MEEM1_29,MEEM1_30,MEEM1_31,MEEM1_32,MEEM1_33,MEEM1_34,MEEM1_35,MecScale1_1,MecScale1_2,MecScale1_3,MecScale1_4,MecScale1_5,MecScale1_6,MecScale1_7,MecScale1_8,MM2_1,MM2_2,MM2_3,MM2_4,MM2_5,MM2_6,MM2_7,MM2_8,MM2_9,MM2_10,MM2_11,MM2_12,MM2_13,MM2_14,MM2_15,MM2_16,MM2_17,MM2_18,MM2_19,MM2_20,MM2_21,MM2_22,MM2_23,MM2_24,MM2_25,MM2_26,MM2_27,MM2_28,MM2_29,MM2_30,MM2_31,MM2_32,MM2_33,MM2_34,HAAS2 _1,HAAS2 _2,HAAS2 _3,HAAS2 _4,HAAS2 _5,HAAS2 _6,HAAS2 _7,HAAS2 _8,HAAS2 _9,HAAS2 _10,HAAS2 _11,HAAS2 _12,MEEM2_1,MEEM2_2,MEEM2_3,MEEM2_4,MEEM2_5,MEEM2_6,MEEM2_7,MEEM2_8,MEEM2_9,MEEM2_10,MEEM2_11,MEEM2_12,MEEM2_13,MEEM2_14,MEEM2_15,MEEM2_16,MEEM2_17,MEEM2_18,MEEM2_19,MEEM2_20,MEEM2_21,MEEM2_22,MEEM2_23,MEEM2_24,MEEM2_25,MEEM2_26,MEEM2_27,MEEM2_28,MEEM2_29,MEEM2_30,MEEM2_31,MEEM2_32,MEEM2_33,MEEM2_34,MEEM2_35,MecScale2_1,MecScale2_2,MecScale2_3,MecScale2_4,MecScale2_5,MecScale2_6,MecScale2_7,MecScale2_8,MM3 _1,MM3 _2,MM3 _3,MM3 _4,MM3 _5,MM3 _6,MM3 _7,MM3 _8,MM3 _9,MM3 _10,MM3 _11,MM3 _12,MM3 _13,MM3 _14,MM3 _15,MM3 _16,MM3 _17,MM3 _18,MM3 _19,MM3 _20,MM3 _21,MM3 _22,MM3 _23,MM3 _24,MM3 _25,MM3 _26,MM3 _27,MM3 _28,MM3 _29,MM3 _30,MM3 _31,MM3 _32,MM3 _33,MM3 _34,HAAS3_1,HAAS3_2,HAAS3_3,HAAS3_4,HAAS3_5,HAAS3_6,HAAS3_7,HAAS3_8,HAAS3_9,HAAS3_10,HAAS3_11,HAAS3_12,MEEM3_1,MEEM3_2,MEEM3_3,MEEM3_4,MEEM3_5,MEEM3_6,MEEM3_7,MEEM3_8,MEEM3_9,MEEM3_10,MEEM3_11,MEEM3_12,MEEM3_13,MEEM3_14,MEEM3_15,MEEM3_16,MEEM3_17,MEEM3_18,MEEM3_19,MEEM3_20,MEEM3_21,MEEM3_22,MEEM3_23,MEEM3_24,MEEM3_25,MEEM3_26,MEEM3_27,MEEM3_28,MEEM3_29,MEEM3_30,MEEM3_31,MEEM3_32,MEEM3_33,MEEM3_34,MEEM3_35,MecScale3_1,MecScale3_2,MecScale3_3,MecScale3_4,MecScale3_5,MecScale3_6,MecScale3_7,MecScale3_8,PROLIFIC_PID
+Start Date,End Date,Response Type,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Distribution Channel,User Language,"What is your prolific ID?
+Please note that this response should auto-fill with the correct ID",Do you consent to participating?,"What is your age? (e.g., 99)",What is your gender?,"In terms of your musical interest and expertise, which title best describes you?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The harmony, melody, or rhythm prepared me for upcoming changes","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - How the music was structured was important to me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I appreciated the melodic developments in the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I put together specific parts of the music to understand the meaning of the whole piece","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I found meaning by listening to individual parts of the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - It was important to me that the music developed in a certain way","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I struggled to find something in the music itself that made it meaningful for me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I associate this music with specific memories","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music reminded me of a certain time in my life","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I was reminded of a past experience I had listening to this type of music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I remembered an experience I had while listening to this music with others","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music is special to someone close to me which is why I find it meaningful","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I found the music to be personally meaningful","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music resonated with my personal identity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music expressed values I found to be personally significant","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I remember a certain place when I hear this music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I recognised myself in the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I connected to the message the artist(s) were trying to convey with the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I considered the music’s historical context to understand what it meant","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music connected me to my cultural identity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I was thinking about the emotional life of the composer or musician","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I was thinking about what life the artist had at the time they created the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - My interest in the artist(s) is why I was listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music was important to my sense of cultural identity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The second choice should be selected for this statement","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - How the music sounded was engaging to me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I felt free to be my true self when the music began playing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I felt free to be a different version of myself when the music began playing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music helped me learn something about myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music helped me sympathise with issues bigger than myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Listening to the music made me feel up-to-date with cultural trends","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I learned more about the world through the musical experience","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music connected me to a prior identity I had","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I felt connected to my heritage through the music","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Interested","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Active","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Strong","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Calm","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Placid","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Content","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Anxious","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Irritable","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Guilty","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Bored","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Sad","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Tired","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Listening to music was a good way of entertaining myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I was having a good time listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I used the music to have a good time","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music helped me break away from the situation","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Music acted as a mental shield against my distressing thoughts","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I wanted the music to help me forget what I was doing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music made me feel calm or relaxed","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I was using the music to relax","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Music provided a relaxing mood","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music was motivating me to do something","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music pumped me up","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I used the music to motivate myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music helped me concentrate","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Music helped me focus on what I was doing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I was more focused while listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I felt connected to the people I was sharing this musical experience with","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I felt a bond with the other people listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music made me feel more connected to a group","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Listening to music made me feel less lonely","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music helped me feel less lonely","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I used the music to keep me company","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I found solace in the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Listening to music comforted me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music was comforting to me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music helped me express myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Listening to music helped me express how I was feeling","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I vented my emotions by listening to music that expressed my feelings","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music provided me with a spiritual experience","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music related to my spirituality","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I wanted the music to take me somewhere spiritually","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Listening to the music stimulated my curiosity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The music sparked my curiosity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I appreciated the beauty of the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - The experience was enhanced by the beauty of the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - I had an unforgettable experience alongside the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Did the music feature an event that startled you?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Did the music have a strong and captivating pulse/rhythm?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Did the music trigger a vivid memory of a particular event?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Did the music evoke emotional associations (to phenomena, objects, or persons)?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Did the music evoke any inner images while you were listening?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Were you ""touched"" by the emotional expression of the music?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Was it difficult to guess how the music (e.g., the melody) would develop over time?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+While listening to your commuting playlist, you become absorbed in how the song unfolds. You notice how the sounds and instruments interact, sense patterns forming, and begin to anticipate what might come next, which makes the impactful moments feel especially powerful. - Did the music make you reflect on its aesthetic qualities?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The harmony, melody, or rhythm prepared me for upcoming changes","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - How the music was structured was important to me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I appreciated the melodic developments in the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I put together specific parts of the music to understand the meaning of the whole piece","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I found meaning by listening to individual parts of the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - It was important to me that the music developed in a certain way","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I struggled to find something in the music itself that made it meaningful for me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I associate this music with specific memories","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music reminded me of a certain time in my life","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I was reminded of a past experience I had listening to this type of music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I remembered an experience I had while listening to this music with others","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music is special to someone close to me which is why I find it meaningful","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I found the music to be personally meaningful","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music resonated with my personal identity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music expressed values I found to be personally significant","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I remember a certain place when I hear this music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I recognised myself in the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I connected to the message the artist(s) were trying to convey with the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I considered the music’s historical context to understand what it meant","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music connected me to my cultural identity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I was thinking about the emotional life of the composer or musician","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I was thinking about what life the artist had at the time they created the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - My interest in the artist(s) is why I was listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music was important to my sense of cultural identity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The second choice should be selected for this statement","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - How the music sounded was engaging to me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I felt free to be my true self when the music began playing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I felt free to be a different version of myself when the music began playing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music helped me learn something about myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music helped me sympathise with issues bigger than myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Listening to the music made me feel up-to-date with cultural trends","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I learned more about the world through the musical experience","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music connected me to a prior identity I had","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I felt connected to my heritage through the music","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Interested","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Active","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Strong","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Calm","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Placid","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Content","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Anxious","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Irritable","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Guilty","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Bored","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Sad","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Tired","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Listening to music was a good way of entertaining myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I was having a good time listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I used the music to have a good time","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music helped me break away from the situation","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Music acted as a mental shield against my distressing thoughts","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I wanted the music to help me forget what I was doing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music made me feel calm or relaxed","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I was using the music to relax","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Music provided a relaxing mood","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music was motivating me to do something","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music pumped me up","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I used the music to motivate myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music helped me concentrate","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Music helped me focus on what I was doing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I was more focused while listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I felt connected to the people I was sharing this musical experience with","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I felt a bond with the other people listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music made me feel more connected to a group","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Listening to music made me feel less lonely","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music helped me feel less lonely","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I used the music to keep me company","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I found solace in the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Listening to music comforted me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music was comforting to me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music helped me express myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Listening to music helped me express how I was feeling","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I vented my emotions by listening to music that expressed my feelings","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music provided me with a spiritual experience","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music related to my spirituality","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I wanted the music to take me somewhere spiritually","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Listening to the music stimulated my curiosity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The music sparked my curiosity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I appreciated the beauty of the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - The experience was enhanced by the beauty of the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - I had an unforgettable experience alongside the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Did the music feature an event that startled you?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Did the music have a strong and captivating pulse/rhythm?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Did the music trigger a vivid memory of a particular event?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Did the music evoke emotional associations (to phenomena, objects, or persons)?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Did the music evoke any inner images while you were listening?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Were you ""touched"" by the emotional expression of the music?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Was it difficult to guess how the music (e.g., the melody) would develop over time?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+As you are listening to music at home, a song that reminds you of a particular time in your life starts. You find yourself reflecting on why this music brings back previous moments that make you feel a certain way. - Did the music make you reflect on its aesthetic qualities?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The harmony, melody, or rhythm prepared me for upcoming changes","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - How the music was structured was important to me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I appreciated the melodic developments in the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I put together specific parts of the music to understand the meaning of the whole piece","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I found meaning by listening to individual parts of the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - It was important to me that the music developed in a certain way","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I struggled to find something in the music itself that made it meaningful for me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I associate this music with specific memories","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music reminded me of a certain time in my life","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I was reminded of a past experience I had listening to this type of music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I remembered an experience I had while listening to this music with others","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music is special to someone close to me which is why I find it meaningful","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I found the music to be personally meaningful","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music resonated with my personal identity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music expressed values I found to be personally significant","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I remember a certain place when I hear this music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I recognised myself in the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I connected to the message the artist(s) were trying to convey with the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I considered the music’s historical context to understand what it meant","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music connected me to my cultural identity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I was thinking about the emotional life of the composer or musician","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I was thinking about what life the artist had at the time they created the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - My interest in the artist(s) is why I was listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music was important to my sense of cultural identity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The second choice should be selected for this statement","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - How the music sounded was engaging to me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I felt free to be my true self when the music began playing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I felt free to be a different version of myself when the music began playing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music helped me learn something about myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music helped me sympathise with issues bigger than myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Listening to the music made me feel up-to-date with cultural trends","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I learned more about the world through the musical experience","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music connected me to a prior identity I had","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I felt connected to my heritage through the music","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Interested","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Active","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Strong","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Calm","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Placid","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Content","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Anxious","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Irritable","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Guilty","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Bored","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Sad","Rate to what extent each adjective describes how you would feel in the given scenario:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Tired","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Listening to music was a good way of entertaining myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I was having a good time listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I used the music to have a good time","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music helped me break away from the situation","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Music acted as a mental shield against my distressing thoughts","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I wanted the music to help me forget what I was doing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music made me feel calm or relaxed","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I was using the music to relax","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Music provided a relaxing mood","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music was motivating me to do something","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music pumped me up","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I used the music to motivate myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music helped me concentrate","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Music helped me focus on what I was doing","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I was more focused while listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I felt connected to the people I was sharing this musical experience with","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I felt a bond with the other people listening to the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music made me feel more connected to a group","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Listening to music made me feel less lonely","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music helped me feel less lonely","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I used the music to keep me company","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I found solace in the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Listening to music comforted me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music was comforting to me","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music helped me express myself","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Listening to music helped me express how I was feeling","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I vented my emotions by listening to music that expressed my feelings","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music provided me with a spiritual experience","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music related to my spirituality","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I wanted the music to take me somewhere spiritually","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Listening to the music stimulated my curiosity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The music sparked my curiosity","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I appreciated the beauty of the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - The experience was enhanced by the beauty of the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - I had an unforgettable experience alongside the music","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Did the music feature an event that startled you?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Did the music have a strong and captivating pulse/rhythm?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Did the music trigger a vivid memory of a particular event?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Did the music evoke emotional associations (to phenomena, objects, or persons)?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Did the music evoke any inner images while you were listening?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Were you ""touched"" by the emotional expression of the music?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Was it difficult to guess how the music (e.g., the melody) would develop over time?","Imagine yourself listening to music in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+By chance, you tune into a documentary about celebrated musicians. Listening to them explain their music gives you a deeper perspective. Their musical story lets you grasp why the music was made and how it has impacted others across the generations. - Did the music make you reflect on its aesthetic qualities?",PROLIFIC_PID
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID1218656811_TEXT""}","{""ImportId"":""QID1218656807""}","{""ImportId"":""QID1218656808_TEXT""}","{""ImportId"":""QID1218656809""}","{""ImportId"":""QID1218656810""}","{""ImportId"":""QID58_1""}","{""ImportId"":""QID58_2""}","{""ImportId"":""QID58_3""}","{""ImportId"":""QID58_4""}","{""ImportId"":""QID58_5""}","{""ImportId"":""QID58_6""}","{""ImportId"":""QID58_7""}","{""ImportId"":""QID58_8""}","{""ImportId"":""QID58_9""}","{""ImportId"":""QID58_10""}","{""ImportId"":""QID58_11""}","{""ImportId"":""QID58_12""}","{""ImportId"":""QID58_13""}","{""ImportId"":""QID58_14""}","{""ImportId"":""QID58_15""}","{""ImportId"":""QID58_16""}","{""ImportId"":""QID58_17""}","{""ImportId"":""QID58_18""}","{""ImportId"":""QID58_19""}","{""ImportId"":""QID58_20""}","{""ImportId"":""QID58_21""}","{""ImportId"":""QID58_22""}","{""ImportId"":""QID58_23""}","{""ImportId"":""QID58_24""}","{""ImportId"":""QID58_25""}","{""ImportId"":""QID58_26""}","{""ImportId"":""QID58_27""}","{""ImportId"":""QID58_28""}","{""ImportId"":""QID58_29""}","{""ImportId"":""QID58_30""}","{""ImportId"":""QID58_31""}","{""ImportId"":""QID58_32""}","{""ImportId"":""QID58_33""}","{""ImportId"":""QID58_34""}","{""ImportId"":""QID62_1""}","{""ImportId"":""QID62_4""}","{""ImportId"":""QID62_5""}","{""ImportId"":""QID62_6""}","{""ImportId"":""QID62_7""}","{""ImportId"":""QID62_8""}","{""ImportId"":""QID62_9""}","{""ImportId"":""QID62_10""}","{""ImportId"":""QID62_11""}","{""ImportId"":""QID62_12""}","{""ImportId"":""QID62_13""}","{""ImportId"":""QID62_14""}","{""ImportId"":""QID64_1""}","{""ImportId"":""QID64_2""}","{""ImportId"":""QID64_3""}","{""ImportId"":""QID64_4""}","{""ImportId"":""QID64_5""}","{""ImportId"":""QID64_6""}","{""ImportId"":""QID64_7""}","{""ImportId"":""QID64_8""}","{""ImportId"":""QID64_9""}","{""ImportId"":""QID64_10""}","{""ImportId"":""QID64_11""}","{""ImportId"":""QID64_12""}","{""ImportId"":""QID64_13""}","{""ImportId"":""QID64_14""}","{""ImportId"":""QID64_15""}","{""ImportId"":""QID64_16""}","{""ImportId"":""QID64_17""}","{""ImportId"":""QID64_18""}","{""ImportId"":""QID64_19""}","{""ImportId"":""QID64_20""}","{""ImportId"":""QID64_21""}","{""ImportId"":""QID64_22""}","{""ImportId"":""QID64_23""}","{""ImportId"":""QID64_24""}","{""ImportId"":""QID64_25""}","{""ImportId"":""QID64_26""}","{""ImportId"":""QID64_27""}","{""ImportId"":""QID64_28""}","{""ImportId"":""QID64_29""}","{""ImportId"":""QID64_30""}","{""ImportId"":""QID64_31""}","{""ImportId"":""QID64_32""}","{""ImportId"":""QID64_33""}","{""ImportId"":""QID64_34""}","{""ImportId"":""QID64_35""}","{""ImportId"":""QID63_1""}","{""ImportId"":""QID63_2""}","{""ImportId"":""QID63_3""}","{""ImportId"":""QID63_4""}","{""ImportId"":""QID63_5""}","{""ImportId"":""QID63_6""}","{""ImportId"":""QID63_7""}","{""ImportId"":""QID63_8""}","{""ImportId"":""QID65_1""}","{""ImportId"":""QID65_2""}","{""ImportId"":""QID65_3""}","{""ImportId"":""QID65_4""}","{""ImportId"":""QID65_5""}","{""ImportId"":""QID65_6""}","{""ImportId"":""QID65_7""}","{""ImportId"":""QID65_8""}","{""ImportId"":""QID65_9""}","{""ImportId"":""QID65_10""}","{""ImportId"":""QID65_11""}","{""ImportId"":""QID65_12""}","{""ImportId"":""QID65_13""}","{""ImportId"":""QID65_14""}","{""ImportId"":""QID65_15""}","{""ImportId"":""QID65_16""}","{""ImportId"":""QID65_17""}","{""ImportId"":""QID65_18""}","{""ImportId"":""QID65_19""}","{""ImportId"":""QID65_20""}","{""ImportId"":""QID65_21""}","{""ImportId"":""QID65_22""}","{""ImportId"":""QID65_23""}","{""ImportId"":""QID65_24""}","{""ImportId"":""QID65_25""}","{""ImportId"":""QID65_26""}","{""ImportId"":""QID65_27""}","{""ImportId"":""QID65_28""}","{""ImportId"":""QID65_29""}","{""ImportId"":""QID65_30""}","{""ImportId"":""QID65_31""}","{""ImportId"":""QID65_32""}","{""ImportId"":""QID65_33""}","{""ImportId"":""QID65_34""}","{""ImportId"":""QID66_1""}","{""ImportId"":""QID66_4""}","{""ImportId"":""QID66_5""}","{""ImportId"":""QID66_6""}","{""ImportId"":""QID66_7""}","{""ImportId"":""QID66_8""}","{""ImportId"":""QID66_9""}","{""ImportId"":""QID66_10""}","{""ImportId"":""QID66_11""}","{""ImportId"":""QID66_12""}","{""ImportId"":""QID66_13""}","{""ImportId"":""QID66_14""}","{""ImportId"":""QID67_1""}","{""ImportId"":""QID67_2""}","{""ImportId"":""QID67_3""}","{""ImportId"":""QID67_4""}","{""ImportId"":""QID67_5""}","{""ImportId"":""QID67_6""}","{""ImportId"":""QID67_7""}","{""ImportId"":""QID67_8""}","{""ImportId"":""QID67_9""}","{""ImportId"":""QID67_10""}","{""ImportId"":""QID67_11""}","{""ImportId"":""QID67_12""}","{""ImportId"":""QID67_13""}","{""ImportId"":""QID67_14""}","{""ImportId"":""QID67_15""}","{""ImportId"":""QID67_16""}","{""ImportId"":""QID67_17""}","{""ImportId"":""QID67_18""}","{""ImportId"":""QID67_19""}","{""ImportId"":""QID67_20""}","{""ImportId"":""QID67_21""}","{""ImportId"":""QID67_22""}","{""ImportId"":""QID67_23""}","{""ImportId"":""QID67_24""}","{""ImportId"":""QID67_25""}","{""ImportId"":""QID67_26""}","{""ImportId"":""QID67_27""}","{""ImportId"":""QID67_28""}","{""ImportId"":""QID67_29""}","{""ImportId"":""QID67_30""}","{""ImportId"":""QID67_31""}","{""ImportId"":""QID67_32""}","{""ImportId"":""QID67_33""}","{""ImportId"":""QID67_34""}","{""ImportId"":""QID67_35""}","{""ImportId"":""QID68_1""}","{""ImportId"":""QID68_2""}","{""ImportId"":""QID68_3""}","{""ImportId"":""QID68_4""}","{""ImportId"":""QID68_5""}","{""ImportId"":""QID68_6""}","{""ImportId"":""QID68_7""}","{""ImportId"":""QID68_8""}","{""ImportId"":""QID69_1""}","{""ImportId"":""QID69_2""}","{""ImportId"":""QID69_3""}","{""ImportId"":""QID69_4""}","{""ImportId"":""QID69_5""}","{""ImportId"":""QID69_6""}","{""ImportId"":""QID69_7""}","{""ImportId"":""QID69_8""}","{""ImportId"":""QID69_9""}","{""ImportId"":""QID69_10""}","{""ImportId"":""QID69_11""}","{""ImportId"":""QID69_12""}","{""ImportId"":""QID69_13""}","{""ImportId"":""QID69_14""}","{""ImportId"":""QID69_15""}","{""ImportId"":""QID69_16""}","{""ImportId"":""QID69_17""}","{""ImportId"":""QID69_18""}","{""ImportId"":""QID69_19""}","{""ImportId"":""QID69_20""}","{""ImportId"":""QID69_21""}","{""ImportId"":""QID69_22""}","{""ImportId"":""QID69_23""}","{""ImportId"":""QID69_24""}","{""ImportId"":""QID69_25""}","{""ImportId"":""QID69_26""}","{""ImportId"":""QID69_27""}","{""ImportId"":""QID69_28""}","{""ImportId"":""QID69_29""}","{""ImportId"":""QID69_30""}","{""ImportId"":""QID69_31""}","{""ImportId"":""QID69_32""}","{""ImportId"":""QID69_33""}","{""ImportId"":""QID69_34""}","{""ImportId"":""QID70_1""}","{""ImportId"":""QID70_4""}","{""ImportId"":""QID70_5""}","{""ImportId"":""QID70_6""}","{""ImportId"":""QID70_7""}","{""ImportId"":""QID70_8""}","{""ImportId"":""QID70_9""}","{""ImportId"":""QID70_10""}","{""ImportId"":""QID70_11""}","{""ImportId"":""QID70_12""}","{""ImportId"":""QID70_13""}","{""ImportId"":""QID70_14""}","{""ImportId"":""QID71_1""}","{""ImportId"":""QID71_2""}","{""ImportId"":""QID71_3""}","{""ImportId"":""QID71_4""}","{""ImportId"":""QID71_5""}","{""ImportId"":""QID71_6""}","{""ImportId"":""QID71_7""}","{""ImportId"":""QID71_8""}","{""ImportId"":""QID71_9""}","{""ImportId"":""QID71_10""}","{""ImportId"":""QID71_11""}","{""ImportId"":""QID71_12""}","{""ImportId"":""QID71_13""}","{""ImportId"":""QID71_14""}","{""ImportId"":""QID71_15""}","{""ImportId"":""QID71_16""}","{""ImportId"":""QID71_17""}","{""ImportId"":""QID71_18""}","{""ImportId"":""QID71_19""}","{""ImportId"":""QID71_20""}","{""ImportId"":""QID71_21""}","{""ImportId"":""QID71_22""}","{""ImportId"":""QID71_23""}","{""ImportId"":""QID71_24""}","{""ImportId"":""QID71_25""}","{""ImportId"":""QID71_26""}","{""ImportId"":""QID71_27""}","{""ImportId"":""QID71_28""}","{""ImportId"":""QID71_29""}","{""ImportId"":""QID71_30""}","{""ImportId"":""QID71_31""}","{""ImportId"":""QID71_32""}","{""ImportId"":""QID71_33""}","{""ImportId"":""QID71_34""}","{""ImportId"":""QID71_35""}","{""ImportId"":""QID72_1""}","{""ImportId"":""QID72_2""}","{""ImportId"":""QID72_3""}","{""ImportId"":""QID72_4""}","{""ImportId"":""QID72_5""}","{""ImportId"":""QID72_6""}","{""ImportId"":""QID72_7""}","{""ImportId"":""QID72_8""}","{""ImportId"":""PROLIFIC_PID""}"
+2026-03-05 03:58:48,2026-03-05 04:03:26,0,100,278,1,2026-03-05 04:03:27,R_2kyLZY65jZSU6eR,anonymous,EN,6847fbd96237884b522218cf,2,99,5,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6847fbd96237884b522218cf
+2026-03-05 04:11:00,2026-03-05 04:14:19,0,100,198,1,2026-03-05 04:14:20,R_87PoGwsINrl78el,anonymous,EN,6847fbd96237884b522218cf,2,99,5,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6847fbd96237884b522218cf
+2026-03-05 04:21:09,2026-03-05 04:35:37,0,100,868,1,2026-03-05 04:35:37,R_82J81JXzj4kqr3X,anonymous,EN,64142c7e4b3677e0550fdee9,2,39,2,2,3,2,5,4,5,1,2,5,5,5,4,4,5,5,4,5,4,4,3,1,4,4,3,1,2,5,5,5,4,5,2,5,4,1,5,5,4,3,3,3,2,1,1,1,2,1,5,5,5,2,5,5,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,3,5,4,5,5,5,3,4,4,5,5,5,5,2,3,5,5,5,5,5,4,1,4,4,5,5,5,5,1,5,5,5,5,4,5,5,5,5,5,5,5,1,4,4,1,1,2,5,4,5,4,4,1,5,5,1,5,5,5,3,2,4,2,1,2,1,3,1,5,5,5,5,5,5,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,3,5,5,5,5,4,5,5,5,5,5,5,1,3,3,2,5,3,4,1,2,5,5,5,5,5,4,4,5,5,4,4,4,1,5,5,3,1,2,4,5,5,4,4,2,4,5,1,5,5,4,3,3,4,1,1,1,1,2,1,5,5,5,4,4,5,4,3,4,5,5,5,5,5,5,4,5,5,5,5,5,3,5,4,4,4,5,4,4,4,5,5,4,5,4,4,4,5,5,4,5,2,2,64142c7e4b3677e0550fdee9
+2026-03-05 04:23:07,2026-03-05 04:39:06,0,100,958,1,2026-03-05 04:39:06,R_214LL5sm7ZGS2Yo,anonymous,EN,6663169a78b219802886f482,2,36,1,2,4,4,4,1,3,2,2,3,1,1,2,4,4,1,2,3,2,1,1,1,1,1,1,1,2,4,2,3,2,2,4,2,1,1,3,4,4,4,1,3,1,1,1,1,2,1,3,4,4,3,3,3,2,1,2,2,4,2,2,2,2,3,3,3,3,2,3,2,2,3,2,3,2,2,1,2,3,3,3,2,1,1,4,2,3,2,2,2,2,2,3,4,1,4,2,1,5,5,5,5,4,4,3,2,5,3,2,1,1,1,1,4,1,2,5,3,3,2,3,2,3,5,1,4,5,4,2,2,4,1,1,1,2,2,1,4,5,5,4,4,4,2,4,2,3,4,4,2,2,2,4,4,4,3,4,3,4,3,4,3,2,2,2,2,2,3,3,4,4,4,1,5,4,3,5,4,1,3,4,3,4,3,4,3,1,4,4,3,4,3,3,3,3,4,4,5,4,1,3,4,5,1,2,5,3,3,4,3,2,4,2,1,4,4,4,2,2,3,2,1,1,1,2,1,5,4,4,4,4,4,3,3,3,4,4,3,2,2,3,4,4,3,4,4,4,3,4,3,3,4,4,2,3,3,3,4,4,4,3,1,5,4,4,3,4,2,3,6663169a78b219802886f482
+2026-03-05 04:25:15,2026-03-05 04:39:35,0,100,859,1,2026-03-05 04:39:35,R_2woc8Xmg8ZRR4Ug,anonymous,EN,574da26c7f1e770007f42d11,2,70,1,3,3,3,4,2,2,3,2,3,3,3,3,2,2,2,3,3,2,2,2,2,2,2,3,2,2,4,2,2,2,2,3,2,2,2,4,2,3,3,3,4,1,1,1,1,1,1,4,4,4,2,2,1,3,3,3,2,2,3,4,3,2,2,2,2,2,2,2,1,3,3,2,2,2,2,2,2,2,3,4,4,1,2,4,2,2,2,3,4,4,3,3,4,2,3,2,3,4,5,4,4,4,4,3,2,4,3,3,4,3,3,2,3,3,2,4,3,2,3,3,3,3,3,3,3,3,3,4,3,4,1,1,1,1,1,1,4,4,4,2,2,3,3,3,4,3,2,3,3,3,2,3,2,2,2,2,2,3,3,4,2,3,2,2,2,2,2,2,4,3,3,2,3,4,3,2,3,2,3,3,3,4,3,4,3,3,4,5,4,4,3,4,4,2,3,3,3,3,4,4,4,3,4,2,5,4,4,3,2,4,3,4,4,4,3,3,3,3,4,1,1,1,1,1,1,4,4,4,2,2,3,4,4,4,2,3,3,3,2,3,3,2,3,3,3,3,3,4,4,2,2,4,2,2,3,2,2,4,4,3,2,4,3,4,2,3,2,2,574da26c7f1e770007f42d11
+2026-03-05 04:21:10,2026-03-05 04:39:51,0,100,1121,1,2026-03-05 04:39:51,R_2wzXbcmZZiGcGSa,anonymous,EN,5f87ec72bcee242284725d55,2,68,2,2,2,2,2,2,2,2,2,5,4,4,4,3,3,3,2,4,3,2,2,2,2,2,4,2,2,3,3,3,3,2,2,2,3,2,4,2,3,3,1,2,1,1,1,1,3,1,4,4,4,3,2,3,4,4,4,3,2,3,2,2,2,2,2,2,3,4,4,3,3,3,2,3,2,2,2,2,3,2,3,3,2,2,3,4,4,3,3,2,3,2,2,3,2,2,2,2,5,5,5,5,4,4,3,3,5,3,3,2,2,2,2,4,2,2,4,3,2,3,2,2,2,5,2,4,2,3,4,1,3,1,1,1,1,3,1,4,4,3,2,3,2,3,3,3,2,2,2,2,2,2,2,2,2,3,3,3,3,3,4,2,3,2,2,3,3,3,4,3,2,3,2,2,5,5,4,3,2,2,1,1,3,1,2,2,3,5,5,5,4,4,3,1,3,5,1,3,2,2,2,1,4,2,2,4,3,2,2,1,2,1,3,1,4,2,3,3,2,4,1,1,1,1,3,1,4,4,4,2,3,3,3,4,4,2,3,3,2,3,3,3,2,2,3,4,4,3,4,4,3,3,2,2,2,3,3,4,3,3,3,2,3,4,3,3,3,2,2,5f87ec72bcee242284725d55
+2026-03-05 04:24:54,2026-03-05 04:40:36,0,100,942,1,2026-03-05 04:40:38,R_2FOFk7qOqGHC7Zd,anonymous,EN,6148ae5c9a0186fc51a4085f,2,34,2,2,4,4,4,4,3,4,2,3,3,3,4,2,3,3,2,4,3,4,1,2,4,4,4,2,2,4,4,2,2,3,3,2,2,2,4,5,5,4,1,5,1,1,1,1,3,1,4,5,5,4,4,1,4,4,5,4,4,4,5,5,5,2,2,3,5,4,5,3,5,5,3,4,4,3,3,4,4,3,5,5,3,2,4,3,2,2,4,3,4,4,2,5,1,1,1,2,5,5,5,5,4,5,1,4,4,5,2,2,3,1,3,2,3,2,5,5,4,4,3,3,5,4,5,4,5,4,2,1,5,1,1,1,1,1,1,5,5,5,2,2,5,2,2,3,5,5,5,3,5,3,5,3,4,5,4,5,4,5,5,5,4,2,4,3,3,5,2,4,4,3,1,5,4,1,1,2,1,2,3,3,4,5,2,3,3,2,2,2,2,1,2,1,3,2,2,5,4,2,5,5,5,2,2,4,2,2,2,4,3,2,3,2,4,3,2,3,1,3,2,1,1,1,3,1,4,5,3,4,2,4,4,2,4,3,3,3,4,3,2,4,1,2,4,5,4,3,4,2,3,3,3,2,1,4,5,3,5,3,2,1,4,2,1,1,3,5,3,6148ae5c9a0186fc51a4085f
+2026-03-05 04:22:55,2026-03-05 04:40:48,0,100,1073,1,2026-03-05 04:40:49,R_8YVSLbGQyCHy7Of,anonymous,EN,66095f32c9a782ed6acaf8fb,2,20,1,2,3,4,4,4,3,4,2,4,5,3,3,3,3,3,4,3,4,4,3,4,3,4,4,3,2,3,4,3,3,4,4,4,3,3,3,4,4,4,1,4,1,1,1,1,1,2,4,4,3,4,3,4,4,4,5,4,4,4,4,4,5,3,3,4,3,3,3,4,4,4,3,3,3,3,4,4,4,4,4,4,3,2,4,3,3,4,3,2,2,4,4,4,4,4,4,4,4,4,3,3,4,3,3,4,4,3,2,3,3,2,4,3,3,2,3,3,4,3,5,4,3,4,4,4,4,4,4,1,3,1,1,1,1,1,1,4,5,4,4,2,4,4,4,4,4,4,5,5,4,5,4,4,4,2,4,3,3,4,5,4,4,3,4,5,4,3,5,4,4,3,3,4,4,4,4,4,4,3,4,2,4,3,3,3,3,3,4,3,4,3,4,4,2,4,3,3,3,3,2,2,4,3,2,4,3,3,2,4,3,2,4,3,3,3,4,3,1,3,1,1,1,1,1,1,3,4,3,3,3,3,3,3,4,3,3,3,4,3,3,3,3,3,2,2,2,3,4,3,4,4,3,4,3,3,2,3,3,3,3,3,3,3,3,2,2,2,2,66095f32c9a782ed6acaf8fb
+2026-03-05 04:24:58,2026-03-05 04:45:04,0,100,1205,1,2026-03-05 04:45:04,R_2I0Qc9vNOW2xdJg,anonymous,EN,5bfbf60d18430e000186a0b6,2,58,2,2,4,4,4,2,2,3,1,5,5,5,5,4,4,3,3,4,3,4,2,1,3,2,3,1,2,5,3,3,1,1,1,3,4,2,4,3,2,4,3,3,2,1,2,1,2,3,5,4,5,5,4,4,4,2,4,4,4,4,2,3,4,4,4,2,2,3,4,4,4,4,3,3,3,3,2,5,4,2,5,4,4,3,4,5,4,4,4,1,3,3,4,4,1,3,4,1,5,5,5,5,5,4,5,2,5,2,3,2,2,2,2,3,2,2,4,3,1,4,2,3,3,5,2,4,4,3,3,1,4,1,1,1,1,3,1,4,4,4,4,3,2,3,3,4,3,4,4,2,2,4,3,3,3,2,4,2,4,4,3,3,4,4,3,2,3,3,3,5,4,4,1,5,4,4,4,3,1,3,4,4,5,3,5,3,1,5,4,4,4,3,4,4,3,4,4,5,5,2,5,5,5,2,2,5,4,3,3,5,4,4,4,4,5,2,2,2,2,4,4,2,2,1,3,1,3,4,2,2,2,2,2,2,3,2,2,2,2,3,2,2,2,2,2,2,2,3,3,2,2,2,2,2,2,2,2,3,3,3,2,2,3,3,3,3,3,3,3,5bfbf60d18430e000186a0b6
+2026-03-05 04:44:03,2026-03-05 05:06:36,0,100,1353,1,2026-03-05 05:06:37,R_81ECD82UU9qK265,anonymous,EN,66d31a1b0515fe747830bab9,2,61,1,3,4,2,2,1,2,1,1,5,5,5,5,4,5,3,2,5,4,2,1,4,1,1,2,3,2,4,2,3,1,1,1,1,5,2,4,3,4,5,3,5,1,1,1,1,1,1,3,5,3,1,1,1,4,3,4,1,1,2,3,2,2,4,4,5,4,4,4,1,4,3,2,3,1,1,1,1,1,1,3,3,2,1,5,5,5,3,4,1,1,5,2,4,3,2,3,1,5,5,5,5,4,5,4,4,5,5,2,2,2,1,1,1,2,2,5,5,4,4,3,1,1,5,4,3,3,4,5,2,5,1,1,1,1,1,1,3,4,3,3,3,1,4,4,4,3,3,3,3,4,4,5,4,4,4,4,5,3,2,4,3,3,2,3,2,2,2,2,5,5,3,1,4,5,5,5,4,1,2,4,2,2,1,3,1,1,5,5,5,5,4,5,4,3,5,4,3,1,4,1,2,2,3,2,5,3,5,2,1,1,1,5,4,4,3,4,5,1,4,1,1,1,1,3,1,5,4,3,1,1,2,3,3,4,2,1,2,4,2,4,4,5,5,5,4,5,2,3,3,2,1,2,1,1,1,2,2,3,3,3,2,4,5,3,5,3,1,1,66d31a1b0515fe747830bab9
+2026-03-05 04:22:13,2026-03-05 05:17:15,0,100,3301,1,2026-03-05 05:17:15,R_27wzN3xwPkSDr0d,anonymous,EN,6105ba07b4fa0867eaed2f5b,2,42,2,1,5,4,4,3,3,3,1,5,5,3,4,3,5,5,4,5,5,4,4,4,4,2,3,5,2,4,4,5,4,3,3,3,4,5,5,3,3,5,1,3,1,1,1,1,2,1,5,4,5,3,4,5,4,5,5,4,2,5,4,4,5,5,5,3,4,5,5,4,5,5,5,4,5,5,5,5,3,5,5,5,3,5,5,5,5,5,5,5,5,2,5,3,4,4,1,3,4,4,4,3,2,4,4,5,4,5,4,4,5,4,4,4,1,4,4,3,4,4,5,4,4,5,4,5,2,5,5,1,5,2,1,1,1,1,1,5,5,5,5,5,5,5,5,5,4,1,5,5,5,5,5,5,5,5,5,5,5,4,4,5,5,5,3,5,5,5,5,5,5,3,1,3,5,5,5,5,5,2,5,3,4,3,5,5,4,4,4,5,4,3,5,5,4,5,5,4,3,4,5,4,5,4,2,5,5,5,4,5,5,3,5,5,5,4,4,4,1,5,1,1,1,1,1,1,5,5,5,5,5,5,5,5,5,4,5,4,5,5,5,3,5,2,5,5,5,5,5,4,4,5,5,5,5,5,5,5,5,4,4,1,4,3,4,3,5,4,3,6105ba07b4fa0867eaed2f5b
+2026-03-05 05:18:48,2026-03-05 05:41:19,0,100,1351,1,2026-03-05 05:41:20,R_8q407ta8DaS2aop,anonymous,EN,5f620fdcc464341e830b3866,2,37,2,2,4,4,4,4,4,4,1,3,3,3,3,2,4,4,4,3,3,2,2,1,2,2,2,1,2,4,5,5,3,4,1,3,2,1,5,5,5,3,1,3,1,1,1,1,2,1,5,5,5,5,5,5,4,3,3,4,5,5,3,2,4,3,2,3,4,4,5,5,5,3,5,5,5,4,4,5,5,4,5,5,5,3,5,3,5,5,5,3,1,3,2,4,2,2,3,1,5,5,5,5,2,5,4,5,5,5,4,2,1,3,2,2,1,2,4,5,5,3,2,1,1,3,1,4,3,4,4,1,5,1,1,1,1,1,1,5,5,4,2,2,2,3,3,3,3,3,3,3,3,3,3,3,2,2,2,1,3,5,4,4,3,4,4,3,3,3,3,4,3,4,1,3,3,4,3,4,2,1,2,1,2,2,2,2,2,3,3,3,3,3,3,3,3,2,3,4,2,1,5,5,5,1,2,3,4,4,3,4,1,1,1,1,2,2,1,2,2,1,1,1,1,2,1,2,2,3,2,1,1,1,3,2,2,2,1,1,3,1,2,2,2,2,1,1,1,2,3,3,2,2,1,1,1,1,2,2,3,2,1,1,2,1,1,1,2,3,1,5f620fdcc464341e830b3866
+2026-03-05 08:24:22,2026-03-05 08:36:11,0,100,708,1,2026-03-05 08:36:11,R_2pl0oIvRmiZw4FG,anonymous,EN,5b673490e89b0d0001a885e7,2,60,2,2,5,5,4,5,4,4,1,5,4,4,4,4,4,4,4,4,3,4,4,4,4,4,4,4,2,4,4,4,4,4,4,4,4,4,4,2,4,4,4,4,1,1,1,1,2,1,5,5,4,2,2,2,5,5,5,4,2,4,4,4,5,4,4,3,4,4,4,4,4,5,4,4,2,4,4,4,4,4,5,4,2,1,4,5,5,4,4,2,4,4,4,4,4,4,4,1,5,5,5,5,4,4,4,4,5,4,4,4,4,2,2,4,4,2,5,4,4,4,3,5,4,5,4,4,2,4,4,4,4,1,1,1,1,2,1,4,5,5,2,1,1,5,5,5,4,2,4,4,4,4,4,4,4,4,4,5,4,5,5,4,4,2,4,4,4,4,4,5,4,3,1,4,5,4,4,4,2,4,4,5,5,4,4,4,2,4,5,5,4,4,4,4,4,4,4,5,4,4,4,4,4,4,2,5,5,4,4,4,5,4,4,4,4,2,4,4,4,4,1,1,1,1,2,1,5,5,4,4,2,2,5,4,5,4,3,4,4,4,4,4,4,4,4,4,4,4,5,5,4,4,4,4,4,4,4,4,5,5,3,1,4,4,3,4,4,2,4,5b673490e89b0d0001a885e7
+2026-03-05 08:26:14,2026-03-05 08:37:14,0,100,659,1,2026-03-05 08:37:14,R_8Ey6gCqkEenqn3B,anonymous,EN,5a9ea9fe1ade740001b92063,2,52,2,3,4,4,4,4,3,3,3,2,2,2,2,2,2,2,2,2,2,2,3,2,2,2,2,2,2,4,2,2,2,2,2,2,2,2,4,4,3,3,2,3,1,1,1,1,1,2,2,2,2,3,2,3,2,2,3,4,2,3,3,3,4,3,3,2,2,2,3,3,3,2,2,2,3,2,2,2,3,2,3,3,2,2,4,2,2,2,2,3,3,4,3,4,4,4,4,2,4,4,4,4,4,4,4,4,4,4,4,4,4,3,4,4,4,5,4,4,4,4,4,3,5,4,4,4,3,3,3,3,3,2,1,2,1,2,2,4,3,4,3,4,3,3,4,4,3,3,3,3,4,3,4,3,3,4,4,3,4,3,4,4,3,3,3,3,3,3,4,3,3,4,4,3,4,3,4,4,2,3,3,4,4,3,3,3,2,3,3,3,4,3,3,3,3,3,3,4,4,3,4,3,4,3,2,4,3,3,4,3,3,3,3,3,5,3,3,3,3,3,1,1,1,1,2,2,4,3,3,4,3,3,4,4,4,4,3,4,4,3,4,4,4,4,3,4,4,4,4,4,4,4,3,4,3,3,4,4,4,4,3,4,4,4,4,4,4,4,4,5a9ea9fe1ade740001b92063
+2026-03-05 08:23:47,2026-03-05 08:38:22,0,100,874,1,2026-03-05 08:38:22,R_8DviBkqy6oxK21M,anonymous,EN,641357dbd4fa80820fb5ee68,2,25,1,2,4,4,5,3,2,1,2,1,2,2,2,1,1,1,1,1,1,2,2,1,1,2,4,1,2,5,3,1,1,1,4,2,1,1,5,3,1,2,1,3,1,1,1,1,1,1,5,5,4,3,3,4,3,4,3,4,4,3,3,3,3,2,3,2,3,3,4,2,3,3,2,3,2,1,1,1,4,4,4,3,2,2,4,1,1,1,2,2,4,3,2,3,2,5,2,2,5,5,5,4,5,5,4,2,5,2,4,4,1,2,2,3,1,2,4,4,4,3,3,3,1,5,1,2,2,3,5,2,5,2,1,3,1,4,2,3,4,3,3,4,3,5,3,4,2,3,3,3,3,2,3,3,3,3,3,2,5,5,4,3,5,5,1,1,1,3,3,4,3,5,2,3,5,4,4,5,3,2,2,2,3,2,2,2,3,2,2,2,2,2,4,2,2,2,2,4,4,2,4,4,4,2,2,3,2,2,2,2,2,4,2,4,3,2,2,4,1,3,1,1,1,1,2,1,4,3,3,2,4,2,5,2,4,3,2,4,4,4,4,4,3,2,3,3,3,4,4,5,2,2,3,2,2,2,4,4,5,4,3,3,2,1,2,3,3,3,4,641357dbd4fa80820fb5ee68
+2026-03-05 08:28:04,2026-03-05 08:40:26,0,100,741,1,2026-03-05 08:40:26,R_83adkVAOmYKILtr,anonymous,EN,6716118b2666ca2e80956673,2,41,1,3,3,3,2,4,2,4,3,3,4,4,3,3,3,2,3,3,2,3,3,3,2,2,4,3,2,3,4,3,2,3,3,3,3,3,4,3,2,4,2,4,1,1,1,1,1,2,4,3,3,3,4,3,3,4,4,2,4,3,3,3,3,2,3,2,3,4,4,3,3,3,3,3,3,4,3,3,3,4,3,3,3,3,3,3,3,3,2,2,2,4,3,2,3,3,2,3,3,4,3,2,2,3,3,3,4,2,3,3,3,3,3,2,3,2,3,2,2,3,3,4,3,3,2,3,3,2,2,2,2,2,2,1,1,2,2,2,4,3,3,3,3,3,3,3,2,2,3,3,2,2,3,3,2,3,3,3,3,3,3,3,2,3,2,3,2,3,2,2,2,2,3,3,4,3,3,3,3,4,2,3,2,3,3,2,3,2,2,3,2,3,2,3,2,3,3,3,3,3,2,2,3,3,2,2,3,3,3,3,2,2,2,3,3,2,3,3,2,2,2,1,1,2,2,2,2,3,2,3,2,3,3,2,2,2,3,3,3,3,2,2,2,2,2,2,3,3,3,3,3,2,3,2,3,2,3,3,3,2,2,2,3,2,3,2,2,2,3,6716118b2666ca2e80956673
+2026-03-05 08:26:15,2026-03-05 08:40:28,0,100,852,1,2026-03-05 08:40:28,R_2HcyoJuv9zIReN3,anonymous,EN,6762a1453b3bc252b8ea3bb8,2,50,1,2,3,3,5,4,4,4,2,5,5,4,5,5,5,4,4,5,4,4,5,3,4,4,3,2,2,4,4,4,2,4,3,4,4,2,4,2,3,4,4,4,2,2,2,1,3,1,5,5,4,4,2,4,4,5,4,3,2,3,4,4,4,4,3,4,4,4,4,5,4,5,3,4,3,2,2,4,3,3,5,5,4,2,2,5,4,5,5,2,4,4,2,4,4,4,3,1,4,5,5,5,5,4,5,4,4,3,4,4,5,3,3,3,5,2,5,4,4,3,3,3,5,4,3,4,3,4,4,4,4,2,2,1,1,3,1,4,5,4,3,3,3,4,4,3,3,3,3,5,5,4,5,4,5,3,4,3,4,4,4,3,4,4,2,3,3,4,4,4,4,4,2,5,5,5,5,5,2,4,2,2,3,3,3,2,3,3,3,3,2,2,3,3,2,3,3,4,2,2,4,3,4,2,2,4,2,3,3,4,3,2,2,2,4,3,3,4,4,4,2,2,1,2,4,2,4,4,3,3,2,4,4,4,4,2,2,3,2,4,3,4,3,4,4,4,4,2,3,2,3,3,2,2,2,2,3,4,4,3,3,3,3,4,3,4,3,4,3,6762a1453b3bc252b8ea3bb8
+2026-03-05 08:23:44,2026-03-05 08:41:09,0,100,1044,1,2026-03-05 08:41:10,R_88N7JjSi4nQc4Ko,anonymous,EN,6978c486511a8f887a7b0047,2,21,2,2,3,4,4,4,3,4,2,4,4,4,3,2,4,2,4,3,2,4,3,3,2,2,2,4,2,4,3,3,2,3,4,3,2,2,3,1,3,2,1,2,1,1,1,1,3,1,4,3,3,3,2,3,3,3,3,4,3,4,2,2,2,2,2,3,2,2,2,3,3,3,3,3,3,2,2,2,3,3,3,3,2,2,4,4,4,4,4,2,4,3,3,4,3,4,3,2,4,4,3,2,2,4,3,3,2,3,2,3,2,2,2,2,2,2,3,3,3,3,2,2,2,2,2,3,1,4,3,1,3,1,1,1,1,1,1,3,3,4,2,3,3,4,4,4,3,4,3,2,2,2,2,2,2,2,2,2,3,3,4,3,3,3,2,2,2,3,3,3,3,3,2,4,4,4,4,4,2,4,3,3,4,4,3,2,3,3,3,3,2,2,4,3,3,4,3,3,3,3,3,3,2,3,2,3,3,2,3,3,3,3,2,3,3,1,2,1,1,2,2,1,1,1,2,2,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,3,2,2,3,3,3,3,3,3,2,2,2,3,3,3,3,3,2,3,3,3,3,3,2,3,6978c486511a8f887a7b0047
+2026-03-05 08:30:06,2026-03-05 08:41:28,0,100,681,1,2026-03-05 08:41:29,R_2IR3LrTkabLbHd7,anonymous,EN,60537fdcda0ac05f1c59c57f,2,41,2,2,5,5,5,4,4,4,2,2,2,3,3,2,4,3,3,4,3,2,2,1,2,2,3,1,2,5,4,4,2,3,3,3,2,1,4,3,2,2,2,3,1,1,1,1,2,1,4,4,4,4,2,4,4,4,4,4,4,4,4,4,4,3,3,3,4,3,3,4,4,4,4,3,3,3,2,3,4,4,5,4,3,2,4,4,5,5,4,2,5,4,3,4,3,4,3,1,5,5,5,5,4,4,4,5,5,4,3,1,2,2,3,4,2,2,4,4,4,4,3,1,2,4,2,4,3,3,2,2,3,1,1,1,1,2,1,4,5,4,4,3,5,4,4,4,3,4,3,3,3,3,4,4,4,4,4,3,4,5,5,3,3,3,2,1,3,4,4,4,4,4,1,4,5,5,5,3,1,4,4,3,4,3,4,3,3,4,4,4,3,2,4,4,3,4,3,4,2,2,3,3,4,2,2,4,4,4,3,3,2,3,2,2,4,3,3,3,2,3,1,1,1,1,2,1,4,4,4,4,3,4,4,4,4,3,4,3,3,3,4,4,4,2,3,3,3,3,4,3,4,4,4,3,2,2,4,4,4,4,3,1,4,3,3,5,3,2,3,60537fdcda0ac05f1c59c57f
+2026-03-05 08:23:48,2026-03-05 08:41:44,0,100,1076,1,2026-03-05 08:41:45,R_2PU1HBMdtltzqyl,anonymous,EN,5c0c3112594d92000167bdcd,2,54,2,1,3,2,4,2,3,2,2,3,3,3,3,2,3,2,2,3,2,3,2,2,1,1,3,2,2,4,2,2,2,2,2,2,1,2,2,3,1,3,2,2,1,1,1,1,1,1,4,3,2,2,1,2,3,3,3,4,3,3,2,2,2,2,2,2,1,1,2,3,3,3,2,2,2,3,2,2,3,2,3,3,2,1,3,2,2,3,2,2,2,3,3,3,2,3,2,1,4,4,3,3,3,4,3,3,3,3,3,2,2,3,1,3,2,2,3,3,1,2,1,1,1,1,2,3,2,1,3,3,3,1,1,1,1,1,1,3,3,2,2,1,2,3,2,3,2,3,3,2,2,2,1,1,2,1,1,2,2,3,2,1,1,3,1,1,1,2,2,2,3,2,1,3,4,3,3,3,2,3,3,2,3,2,3,2,2,3,3,3,3,2,3,2,2,3,1,4,2,2,3,4,4,2,2,3,2,1,2,1,1,3,2,2,3,2,1,3,2,3,1,1,1,1,1,1,4,4,3,1,1,1,3,2,3,3,3,3,2,2,1,2,1,2,1,1,1,2,2,2,1,1,1,1,1,1,1,1,3,4,1,1,3,3,2,3,2,2,2,5c0c3112594d92000167bdcd
+2026-03-05 08:23:56,2026-03-05 08:42:48,0,100,1131,1,2026-03-05 08:42:48,R_2I4qqWlnuXAyvUl,anonymous,EN,5c5cad3e4ee81200018eafe2,2,75,2,2,3,4,4,4,4,4,2,5,5,5,5,5,3,2,4,5,3,4,2,1,4,4,5,2,2,5,4,2,3,3,1,3,1,2,5,2,3,5,3,5,1,1,1,1,2,1,1,3,1,1,1,1,5,5,5,2,1,2,2,2,4,3,4,2,2,2,3,2,5,5,2,2,1,2,2,2,3,3,5,5,3,1,1,5,4,4,4,2,4,2,3,3,3,4,3,2,5,5,5,5,5,5,3,4,5,3,4,2,2,3,2,4,2,2,4,4,2,3,2,2,2,3,2,3,2,3,4,3,4,1,1,1,1,2,2,3,5,3,1,1,1,5,5,5,2,1,2,3,3,3,4,4,2,3,3,3,5,5,5,3,4,2,4,4,4,3,3,5,4,3,1,1,5,5,5,4,1,4,3,4,4,3,3,3,1,5,4,5,5,5,4,3,4,5,3,4,3,2,4,4,4,2,2,5,4,2,3,4,2,4,2,2,5,2,3,4,4,4,1,1,1,1,2,1,2,4,2,2,1,1,5,5,5,2,1,1,2,2,4,4,4,2,2,2,2,5,5,4,3,3,1,2,2,2,3,3,5,5,3,1,2,5,4,4,5,2,4,5c5cad3e4ee81200018eafe2
+2026-03-05 08:27:15,2026-03-05 08:42:53,0,100,937,1,2026-03-05 08:42:53,R_8n2u4EGVdYDPqh1,anonymous,EN,6447a16ea956d5fcabc3c3b0,2,29,2,5,5,5,5,5,5,5,2,2,2,2,3,3,5,4,3,2,4,5,3,1,3,2,3,2,2,5,4,4,4,5,2,3,2,2,5,4,4,3,3,3,2,1,1,1,2,1,4,5,4,3,2,4,3,2,4,5,4,5,3,3,5,3,3,3,4,3,3,4,3,3,5,5,3,3,2,3,5,5,5,5,4,4,5,3,3,4,3,2,4,3,4,3,4,3,3,1,5,5,5,5,5,5,4,4,5,4,4,4,2,3,3,3,2,2,5,4,4,4,4,2,3,5,3,5,3,3,4,3,4,2,1,1,1,2,1,4,4,4,3,3,2,4,4,4,3,3,3,3,3,3,5,4,5,4,4,4,5,4,5,4,3,5,1,1,1,4,4,4,4,4,2,4,5,5,5,4,2,4,4,3,4,4,4,3,1,4,4,5,4,3,4,4,4,4,4,4,5,3,5,4,3,2,2,4,4,3,4,4,2,4,3,3,5,3,3,4,3,4,2,1,1,2,2,2,5,5,5,3,2,3,4,4,4,4,3,3,3,3,3,5,3,4,4,4,3,4,4,4,4,4,4,2,2,2,4,4,5,4,3,2,4,3,3,3,4,2,4,6447a16ea956d5fcabc3c3b0
+2026-03-05 08:28:07,2026-03-05 08:43:28,0,100,920,1,2026-03-05 08:43:28,R_2e2dkrxGcbU7Vjf,anonymous,EN,665c89bfc048d14185cac307,2,24,2,4,4,4,4,5,4,5,4,5,4,4,5,5,5,5,5,5,5,5,3,5,4,5,5,4,5,4,5,4,5,3,5,4,3,4,5,3,3,5,1,4,1,1,1,1,1,2,5,5,5,4,4,5,5,5,4,5,5,5,3,5,4,5,5,5,3,3,5,3,5,5,3,4,5,5,3,2,4,5,5,5,5,1,4,4,1,3,5,4,4,4,4,4,4,5,5,1,5,5,5,5,5,5,5,5,4,5,3,1,5,5,5,5,5,2,5,5,5,4,5,4,5,5,5,5,2,4,5,1,5,1,1,1,1,1,1,5,4,4,4,5,5,4,4,5,4,4,4,3,3,4,5,3,3,4,5,5,5,5,5,5,4,5,4,4,3,5,5,5,4,5,5,5,5,3,5,5,5,5,5,5,5,5,5,4,1,5,3,5,5,5,5,4,5,3,5,5,4,5,5,5,5,4,2,5,5,5,5,5,5,5,3,3,5,4,3,5,1,5,1,1,1,1,1,3,4,5,3,3,5,4,5,5,5,5,2,4,3,4,5,5,5,5,3,3,5,3,5,4,5,4,5,2,1,4,5,5,5,4,5,1,5,5,1,5,5,3,5,665c89bfc048d14185cac307
+2026-03-05 08:28:10,2026-03-05 08:44:49,0,100,999,1,2026-03-05 08:44:50,R_8N2eymsQA1JXFUU,anonymous,EN,5b2b83b10ec82d0001d29549,2,54,2,1,3,4,4,2,1,3,4,3,3,3,2,2,2,2,2,3,2,2,2,3,1,1,4,2,2,4,2,2,2,1,4,1,2,3,3,4,2,5,4,2,2,4,1,3,2,3,4,4,3,2,4,4,4,3,3,3,3,3,2,3,3,1,1,2,2,2,4,3,3,3,2,2,3,1,1,1,4,3,3,3,1,3,4,2,3,3,2,3,4,2,3,3,1,1,3,3,3,4,4,3,2,2,2,2,4,1,1,1,3,1,1,3,3,2,4,2,2,2,1,1,2,3,2,5,3,3,4,4,2,1,3,1,2,3,2,5,4,4,3,4,4,3,3,3,3,3,3,2,2,3,1,1,2,2,2,3,3,3,3,2,1,3,1,1,1,3,4,3,2,1,1,3,3,2,3,2,5,3,2,4,4,2,2,3,4,3,3,3,3,3,2,1,2,2,1,2,3,2,1,1,4,2,2,3,3,4,2,2,3,2,1,3,4,1,2,3,4,2,1,3,1,2,3,2,5,3,4,2,3,4,3,3,3,2,3,2,2,2,3,1,1,1,1,1,2,3,3,3,1,2,2,1,1,1,4,4,4,2,1,2,4,3,2,2,2,4,4,5b2b83b10ec82d0001d29549
+2026-03-05 08:32:11,2026-03-05 08:47:11,0,100,899,1,2026-03-05 08:47:11,R_2QL5eOm0KF9syL8,anonymous,EN,615ed10d0d5f13159d41df8c,2,53,1,2,4,4,4,4,5,3,3,4,4,4,3,2,4,4,3,4,4,4,3,2,3,5,3,2,2,4,3,4,4,3,4,3,4,2,4,4,4,2,1,3,1,1,1,1,2,1,4,4,4,4,3,4,4,3,2,4,4,4,4,2,2,4,4,4,4,4,4,4,4,3,4,3,2,1,1,2,2,4,4,4,4,1,4,4,3,2,4,4,4,4,4,4,4,4,3,2,4,4,3,4,3,4,4,3,3,1,3,3,2,2,3,4,3,2,4,4,2,3,2,4,4,2,2,4,4,4,2,2,4,1,1,2,1,2,1,4,4,4,4,4,4,4,4,3,4,4,4,2,2,3,2,4,4,4,4,2,4,4,4,2,3,4,1,1,1,4,4,4,4,2,1,5,4,4,4,4,4,5,4,4,4,4,4,2,1,4,3,2,4,3,3,3,3,4,3,4,4,3,2,4,4,2,2,4,3,3,2,3,3,4,2,3,4,3,4,2,1,3,2,1,1,1,2,1,4,4,4,3,4,4,4,4,4,4,4,4,4,4,3,4,3,4,4,4,4,4,4,4,4,4,2,4,3,2,4,4,4,1,4,3,4,4,4,4,4,4,3,615ed10d0d5f13159d41df8c
+2026-03-05 08:26:15,2026-03-05 08:47:20,0,100,1264,1,2026-03-05 08:47:20,R_2uU7fsficDtiIXb,anonymous,EN,58106d17a513590001b1ec9e,2,65,1,1,1,1,2,1,2,1,5,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,1,2,2,3,3,1,1,3,1,5,1,3,2,2,1,1,2,1,1,1,2,1,2,1,1,2,2,1,1,1,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,2,2,2,2,1,5,1,2,1,2,1,2,2,4,3,3,3,2,1,2,1,2,2,2,1,2,1,1,1,1,2,2,2,3,2,1,1,1,1,1,2,2,2,2,3,4,2,1,1,1,3,2,1,2,2,2,2,1,2,3,1,3,1,2,2,2,3,2,2,2,1,3,3,3,2,2,2,2,2,2,1,1,1,2,2,2,2,2,2,3,3,2,2,2,2,2,1,1,3,1,1,1,5,2,1,1,1,3,1,1,1,1,1,1,1,2,1,1,2,2,2,2,3,2,1,2,2,1,1,1,1,2,1,3,5,3,1,2,1,5,3,3,2,1,1,1,2,1,3,1,1,1,2,1,1,2,2,2,1,1,1,2,3,1,1,2,2,1,1,1,1,1,1,1,2,2,1,1,2,1,1,1,1,5,2,58106d17a513590001b1ec9e
+2026-03-05 08:25:45,2026-03-05 08:48:38,0,100,1372,1,2026-03-05 08:48:38,R_81v1hRzTFsUUZC3,anonymous,EN,66c5e966b2fe5aaf2cb5c393,2,38,2,2,3,4,3,1,2,4,2,5,4,5,5,4,4,4,4,5,4,4,4,1,3,4,5,1,2,4,3,4,3,1,1,4,3,2,4,4,3,2,2,5,1,1,1,1,1,1,3,5,4,3,4,3,2,2,2,3,4,3,2,3,3,2,3,4,5,5,5,4,5,4,3,4,4,1,1,1,2,2,1,1,3,1,4,5,5,5,3,2,2,2,1,1,1,2,1,1,3,5,5,4,5,4,4,4,5,3,4,1,3,1,2,5,3,2,4,4,4,4,2,1,1,4,3,4,4,2,4,1,3,1,1,1,1,1,1,5,5,4,3,2,1,2,2,2,3,3,4,1,1,2,4,4,4,3,2,3,4,4,4,5,5,5,1,1,1,2,2,2,1,2,2,4,5,5,4,4,1,2,3,2,1,1,3,1,2,5,5,5,5,5,2,4,2,3,2,2,2,4,3,3,4,5,2,4,4,5,2,4,2,4,3,4,5,4,2,3,1,4,1,1,1,1,1,1,4,4,4,3,3,3,2,2,2,3,4,3,2,1,2,3,3,4,4,4,4,3,4,4,3,3,4,1,1,1,3,3,2,4,2,2,3,1,3,1,3,1,1,66c5e966b2fe5aaf2cb5c393
+2026-03-05 08:35:57,2026-03-05 08:49:31,0,100,814,1,2026-03-05 08:49:32,R_8sEnlUNgzP6NkJz,anonymous,EN,5adb9688e0feeb0001ca9622,2,37,2,2,3,1,4,2,2,1,4,3,3,3,3,2,4,1,1,3,2,2,1,1,1,1,1,1,2,4,2,2,2,2,2,1,1,1,3,3,3,3,2,3,1,1,1,1,1,1,3,3,2,2,1,2,3,2,2,2,2,2,1,1,2,1,1,1,1,2,1,1,1,2,1,2,1,1,1,1,4,4,3,3,1,1,3,1,1,1,1,3,1,2,1,3,1,3,1,2,5,5,5,5,4,4,4,4,5,3,3,1,1,1,1,1,2,2,3,3,3,2,1,1,1,3,1,4,3,3,3,3,3,2,1,1,1,3,2,2,3,2,4,3,4,3,3,3,2,3,3,3,3,2,2,2,1,3,3,2,4,3,4,3,4,4,1,1,1,2,2,2,2,1,1,3,5,2,4,2,3,2,2,1,3,1,1,1,2,2,3,3,2,1,2,1,2,3,1,2,2,1,3,3,3,1,2,3,1,1,1,1,1,2,1,1,4,3,3,3,3,3,1,1,1,1,1,1,3,3,2,2,1,2,3,1,2,2,2,1,1,1,3,3,3,2,1,1,3,1,1,3,1,1,1,1,1,1,3,3,3,3,1,2,2,2,1,3,2,3,3,5adb9688e0feeb0001ca9622
+2026-03-05 08:34:16,2026-03-05 08:53:07,0,100,1130,1,2026-03-05 08:53:07,R_8Jfy8mQO5bAgigx,anonymous,EN,5a7335bfefd3a700012128c9,2,60,2,2,1,4,5,1,5,2,1,5,5,5,5,4,5,5,3,5,5,3,4,1,1,1,2,1,2,5,5,4,1,1,1,1,5,5,5,3,4,5,4,5,1,1,1,1,4,1,5,5,5,1,2,1,5,5,5,1,5,2,1,1,2,5,5,4,1,1,5,5,5,5,4,5,5,1,1,1,3,4,5,5,4,1,4,5,5,5,5,1,2,1,4,5,1,4,2,1,5,5,5,5,4,5,5,2,5,2,4,5,4,2,1,3,5,2,4,4,4,1,2,1,1,3,5,5,1,1,5,5,5,1,1,1,1,5,1,5,5,5,2,3,1,5,4,4,2,5,3,2,2,3,5,5,5,1,1,5,4,5,5,3,4,3,2,2,1,3,4,5,5,5,1,3,5,5,5,5,2,4,2,3,5,1,3,3,1,5,5,5,5,4,5,4,3,5,4,4,2,1,3,3,4,1,2,5,3,2,1,1,1,1,4,1,5,3,5,5,5,5,1,1,1,1,5,1,5,5,5,1,4,3,5,5,5,1,5,2,1,1,1,4,4,4,1,1,5,3,5,5,4,5,5,1,1,1,2,4,5,5,5,1,3,5,5,5,5,1,4,5a7335bfefd3a700012128c9
+2026-03-05 08:24:51,2026-03-05 08:54:06,0,100,1755,1,2026-03-05 08:54:06,R_8Xe9YGFwJw5tRW9,anonymous,EN,67529d0aecb73bfe140d521f,2,31,1,2,4,4,4,4,4,3,4,4,4,4,3,4,4,4,4,3,4,4,4,2,2,3,2,4,2,4,4,4,4,4,4,4,4,2,4,4,4,2,2,3,3,1,1,2,2,1,4,4,4,3,3,3,4,4,4,4,4,4,4,4,3,2,2,2,3,4,4,4,4,4,4,4,3,2,2,2,4,4,4,4,2,2,4,3,4,4,4,2,4,4,4,4,4,4,3,2,3,4,4,4,4,4,4,4,4,4,4,2,2,4,2,2,2,2,4,4,4,3,4,2,4,4,4,4,4,4,4,2,4,2,2,1,1,3,2,4,4,4,4,3,3,4,4,4,4,4,4,4,4,4,2,4,2,2,4,4,4,4,4,4,4,4,2,2,2,4,4,4,4,3,2,4,4,4,4,4,2,4,4,4,4,4,4,4,2,4,4,4,3,3,4,4,4,3,3,4,4,2,4,3,4,4,2,4,4,4,4,4,2,4,4,2,4,3,3,4,2,4,3,1,2,2,3,2,4,4,4,4,3,3,4,4,4,4,4,4,4,4,4,4,4,2,4,4,4,4,4,4,3,4,4,2,2,2,4,3,4,4,2,4,4,4,4,4,4,2,4,67529d0aecb73bfe140d521f
+2026-03-05 08:30:07,2026-03-05 08:54:10,0,100,1443,1,2026-03-05 08:54:11,R_8yl5jDJ7iD2UAc2,anonymous,EN,5bf2f728bd9f150001f6cc42,2,60,1,2,3,3,3,2,3,3,4,4,2,3,3,3,3,2,2,3,2,3,2,3,2,2,4,3,2,4,3,2,2,3,2,3,3,2,3,3,3,3,3,3,2,2,1,2,2,2,3,3,2,3,2,3,3,3,3,3,3,3,3,3,3,2,2,2,3,2,3,2,3,3,2,3,3,1,1,1,2,3,3,3,2,2,3,2,2,2,2,2,2,2,2,2,2,3,2,3,4,4,4,3,2,3,2,4,4,3,2,2,1,2,2,2,1,2,3,2,3,3,2,1,2,4,2,1,2,1,1,1,1,5,4,1,4,4,3,3,2,2,2,2,4,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,1,1,2,2,2,2,2,4,2,4,4,3,2,2,2,2,2,2,2,2,2,4,2,4,4,2,2,3,2,2,2,2,2,1,2,2,2,2,1,2,2,2,2,2,2,1,2,2,1,3,2,2,1,1,1,3,3,1,2,4,3,2,2,2,2,2,3,2,3,2,2,2,2,2,2,3,2,2,1,2,2,2,2,2,2,2,2,2,1,1,1,2,2,3,2,1,2,2,3,3,2,2,2,2,5bf2f728bd9f150001f6cc42
+2026-03-05 08:37:46,2026-03-05 08:56:38,0,100,1131,1,2026-03-05 08:56:38,R_2ZpFupO0qQu2eat,anonymous,EN,5f53f6458dff8f755bac4a9d,2,25,1,2,4,4,5,4,1,3,1,4,1,2,2,5,3,4,1,4,2,4,1,1,1,2,3,1,2,5,1,3,1,1,1,4,3,1,5,3,4,4,1,5,1,1,1,1,1,1,5,5,5,4,2,3,3,3,3,3,4,1,4,4,4,1,1,1,1,1,3,3,4,1,3,3,4,1,1,1,5,4,4,3,2,1,5,3,4,4,4,1,4,3,5,5,3,4,5,1,3,3,5,1,5,4,4,3,4,4,1,1,1,2,3,4,1,2,4,4,3,1,4,4,2,1,1,5,3,3,3,1,4,1,1,1,1,1,1,5,5,4,2,2,3,4,3,4,3,4,3,4,4,4,1,1,1,1,2,1,2,5,3,4,3,3,1,1,1,4,3,5,3,2,1,4,2,3,3,2,1,1,5,5,3,4,2,4,1,3,3,3,3,5,1,3,3,2,4,2,3,4,3,3,2,2,2,3,3,4,4,2,2,4,1,4,5,5,1,4,1,5,1,1,1,1,1,1,4,3,5,4,3,3,4,3,4,4,4,4,4,3,3,4,3,3,1,1,2,2,4,4,5,3,2,3,1,4,5,4,1,2,4,1,4,2,2,3,3,2,2,5f53f6458dff8f755bac4a9d
+2026-03-05 08:24:01,2026-03-05 08:59:23,0,100,2121,1,2026-03-05 08:59:23,R_2pR1rlKDsosdvyU,anonymous,EN,5efcb50255a06b097b8d5d29,2,38,1,2,3,3,2,3,3,3,1,1,1,1,1,1,1,1,1,1,3,4,1,1,3,2,1,1,2,5,3,5,1,3,1,1,1,1,3,3,3,1,1,4,2,1,1,2,2,1,3,5,2,5,2,4,1,1,1,1,5,1,2,1,3,1,1,1,5,3,5,4,3,4,2,2,3,3,1,1,3,3,3,2,1,1,5,1,1,1,3,4,3,2,1,3,3,2,1,1,2,3,2,1,1,3,1,1,1,3,4,1,1,2,3,2,1,2,3,3,5,2,1,1,1,2,1,2,4,3,3,1,5,1,1,1,1,2,1,4,5,5,4,2,1,3,1,2,2,5,2,1,2,2,1,2,2,4,5,3,4,3,5,3,3,3,2,1,2,1,1,4,1,1,1,5,1,1,1,1,2,1,3,1,5,3,4,3,1,2,4,3,1,1,3,3,1,1,3,3,1,1,2,3,1,1,2,4,4,2,2,2,1,1,3,1,3,1,2,5,1,5,1,1,1,1,1,1,2,5,2,4,2,4,4,2,2,2,1,1,3,3,2,2,1,1,4,4,5,5,5,5,5,5,5,3,1,2,1,2,5,4,2,1,1,1,1,1,5,1,1,5efcb50255a06b097b8d5d29
+2026-03-05 08:49:40,2026-03-05 09:01:58,0,100,738,1,2026-03-05 09:01:59,R_2IqRegMvUv3gk81,anonymous,EN,60663a9105dd44817ea56abb,2,52,1,2,4,2,4,2,2,2,2,4,2,4,1,3,4,1,3,4,4,3,2,2,1,1,2,2,2,4,2,1,4,3,1,2,3,2,4,4,3,4,2,4,1,1,1,1,1,1,4,4,4,4,2,2,3,4,4,3,4,4,4,4,4,3,3,3,4,4,4,2,4,4,4,4,4,2,3,3,3,2,4,4,3,4,3,4,2,4,3,2,3,2,3,3,2,3,1,2,4,4,4,3,3,4,3,3,4,4,2,2,1,1,1,4,1,2,4,3,3,2,2,2,3,2,2,4,4,4,4,1,4,1,1,1,1,1,2,4,3,4,4,4,4,4,4,3,3,4,4,2,2,3,3,4,3,4,4,3,3,4,4,3,3,3,2,2,3,3,3,4,2,4,2,4,4,3,4,3,2,4,2,2,3,2,3,2,2,4,4,2,4,4,4,4,2,4,2,2,4,2,1,2,1,4,2,2,2,2,4,2,4,3,2,2,3,3,4,4,1,5,1,1,1,1,1,1,3,4,4,4,2,3,4,4,4,3,4,3,2,4,4,4,3,4,4,4,4,2,4,3,2,4,4,2,2,2,4,2,3,4,2,2,2,4,3,3,4,4,3,60663a9105dd44817ea56abb
+2026-03-05 08:26:54,2026-03-05 09:02:09,0,100,2114,1,2026-03-05 09:02:09,R_2ztQRo2GRWCys7v,anonymous,EN,676053d1c484953696284bd8,2,22,2,2,4,3,5,3,3,4,1,2,2,2,4,5,4,4,4,3,4,4,4,5,1,3,4,5,2,5,5,4,4,2,5,4,3,5,4,2,4,2,1,5,1,1,1,1,1,1,5,5,5,3,5,4,4,4,4,2,5,4,2,3,3,4,3,4,4,3,5,4,5,4,4,4,3,2,2,2,4,5,5,5,3,2,5,4,4,4,3,2,3,5,3,5,3,3,4,2,5,5,5,2,3,4,4,4,5,4,4,3,4,1,1,2,5,2,5,4,5,4,4,3,4,4,4,3,1,3,3,1,3,2,1,2,1,4,2,5,4,4,3,4,5,4,5,4,4,4,3,4,4,3,3,3,2,3,3,4,5,5,5,5,5,5,3,3,3,3,5,5,5,4,1,4,5,4,5,5,1,3,3,4,4,3,3,4,2,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,2,4,4,4,4,4,4,4,2,3,5,2,4,3,1,4,1,1,1,1,2,1,4,4,4,4,4,4,4,4,4,3,4,3,3,4,3,4,4,4,4,4,4,4,4,4,3,4,3,3,3,3,4,4,4,4,3,2,3,5,5,5,5,3,3,676053d1c484953696284bd8
+2026-03-05 08:46:05,2026-03-05 09:02:52,0,100,1006,1,2026-03-05 09:02:53,R_8MSd5uQoXEGSZgd,anonymous,EN,57681fca8e454c000133a203,2,28,1,2,4,4,5,1,4,1,1,3,4,4,4,1,4,4,1,2,1,1,1,1,1,1,1,1,2,5,5,4,1,1,1,1,1,1,5,3,5,3,3,5,1,1,1,1,1,1,5,5,5,1,1,1,4,4,4,3,4,3,4,4,4,1,1,1,1,1,1,5,5,5,1,1,1,4,4,4,5,5,5,5,4,1,5,4,3,2,5,1,1,1,5,5,1,1,5,1,5,5,5,4,1,5,5,5,5,5,1,1,1,1,1,3,1,2,5,5,4,3,1,1,1,5,1,5,1,5,5,5,5,1,1,1,1,1,1,5,5,5,1,1,1,5,5,5,1,1,1,1,1,1,1,1,1,1,1,1,5,5,5,1,1,1,4,4,5,5,5,5,5,1,1,5,5,5,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,5,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,57681fca8e454c000133a203
+2026-03-05 08:47:24,2026-03-05 09:03:02,0,100,937,1,2026-03-05 09:03:03,R_2IDTg6AcjfQzqed,anonymous,EN,677c455afc1062faab5b165e,2,44,1,1,4,3,4,3,1,1,1,1,1,1,1,1,1,1,1,1,1,4,1,1,1,1,3,1,2,4,1,1,1,1,1,1,1,1,4,3,1,3,1,1,1,1,1,1,1,1,1,4,4,3,1,1,2,1,3,1,4,3,1,1,4,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,2,1,4,4,1,1,4,1,1,1,3,1,1,1,1,1,1,3,1,1,5,5,5,4,1,3,1,1,5,1,1,1,1,1,1,3,1,2,3,2,1,1,1,1,1,3,1,5,1,1,5,3,3,1,1,1,1,1,1,4,4,5,3,1,2,5,5,4,1,3,1,1,1,3,1,1,1,1,1,1,4,3,4,1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,3,1,1,3,3,4,1,2,3,1,1,1,1,1,1,1,1,4,1,1,4,1,1,1,1,1,1,1,1,1,3,3,1,1,1,1,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,1,1,1,1,1,1,1,1,3,1,1,677c455afc1062faab5b165e
+2026-03-05 08:49:30,2026-03-05 09:04:30,0,100,899,1,2026-03-05 09:04:30,R_8ckNith9tymu5Dr,anonymous,EN,577a0a7aadbc7500015d2479,2,46,2,3,4,4,3,4,4,4,2,3,4,4,3,2,4,3,3,4,3,3,2,3,2,2,4,2,2,4,3,2,3,3,3,3,4,2,4,4,4,4,4,4,2,1,2,1,1,2,4,4,4,4,4,2,4,4,4,4,4,4,4,3,4,3,3,3,4,3,4,4,4,4,4,4,4,2,2,2,4,3,4,3,2,1,4,3,4,2,4,2,2,4,4,4,4,4,4,2,4,4,5,4,4,5,4,4,5,5,4,2,3,2,2,2,2,2,4,4,4,4,4,2,4,5,2,4,3,3,3,3,4,2,2,1,2,3,2,4,4,3,4,3,2,4,5,4,4,4,4,4,4,4,4,3,4,4,4,3,4,5,4,4,4,5,2,2,2,4,4,3,4,4,4,4,5,5,4,4,2,3,3,3,4,2,3,3,2,3,2,2,4,3,3,4,4,2,2,4,4,4,5,4,4,4,2,4,3,3,4,4,3,4,4,4,4,3,3,3,3,3,2,1,1,1,2,1,2,3,4,2,2,2,3,2,2,3,2,4,3,3,4,4,4,4,4,3,3,3,3,2,3,2,2,4,2,2,4,4,4,4,3,2,3,2,3,3,3,3,3,577a0a7aadbc7500015d2479
+2026-03-05 08:49:44,2026-03-05 09:04:42,0,100,897,1,2026-03-05 09:04:43,R_82ccVmV5QEQQJvn,anonymous,EN,5c4782d9cae0ab000188d2b4,2,54,2,2,4,3,4,4,4,3,2,4,4,4,3,4,4,3,4,4,3,4,3,1,2,3,3,2,2,4,4,4,3,3,1,3,3,2,4,3,3,4,4,4,1,1,1,1,1,1,5,5,4,3,4,5,4,4,4,4,4,5,3,3,4,3,3,3,5,5,5,5,5,5,4,3,4,4,5,4,4,4,5,5,3,1,4,4,4,4,4,2,4,2,3,4,4,3,4,1,5,5,5,5,5,5,4,4,5,4,4,2,2,2,2,3,2,2,5,4,4,3,4,2,4,4,5,4,2,3,4,4,4,1,1,1,1,2,1,5,5,5,4,5,4,5,4,4,4,5,4,4,4,4,4,4,3,5,5,5,5,5,5,4,5,5,5,4,5,4,4,5,5,4,2,4,5,4,4,5,1,4,3,4,5,4,4,3,1,5,5,5,4,4,4,3,4,5,3,4,5,3,5,5,5,3,2,5,4,4,4,4,2,5,4,3,4,2,4,4,4,4,1,1,1,1,1,1,5,5,4,4,4,5,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,4,4,3,5,4,5,5,5,5,5,3,1,4,4,4,4,4,2,4,5c4782d9cae0ab000188d2b4
+2026-03-05 08:46:24,2026-03-05 09:04:50,0,100,1106,1,2026-03-05 09:04:50,R_87vsbeeporFDrzP,anonymous,EN,66fc6008cda3d277a8978dbf,2,37,2,2,5,5,5,4,5,3,1,3,4,4,4,2,4,4,3,4,4,4,2,1,2,2,1,1,2,5,4,4,3,3,4,4,3,1,5,4,1,2,2,4,1,1,1,1,1,1,5,5,5,5,3,4,3,3,3,3,4,4,4,3,4,2,2,2,5,4,5,4,5,4,4,4,4,1,1,1,5,5,5,5,5,2,5,4,4,4,5,2,5,2,3,3,2,4,1,1,5,5,5,5,5,5,5,5,5,5,5,2,3,2,1,3,3,2,4,4,4,5,4,1,5,5,3,5,3,3,1,3,3,2,1,4,1,5,1,4,4,3,2,2,4,3,2,3,2,2,3,2,2,3,4,2,5,4,4,5,3,3,4,4,5,5,2,1,2,5,5,4,5,5,4,3,5,5,5,4,2,3,4,5,5,5,4,3,1,5,5,5,5,3,5,4,5,5,5,5,5,2,5,5,3,4,2,5,5,2,5,3,3,4,5,3,5,1,1,3,5,4,1,1,1,1,2,4,5,5,4,5,5,4,3,5,3,5,4,5,2,3,3,5,3,5,4,5,4,5,5,5,5,5,5,2,2,2,4,5,5,5,4,2,4,4,5,3,5,1,5,66fc6008cda3d277a8978dbf
+2026-03-05 08:49:40,2026-03-05 09:05:01,0,100,920,1,2026-03-05 09:05:01,R_2oBh70546X7pXVc,anonymous,EN,66f69dcc061074dacb886b52,2,27,1,2,4,5,5,4,4,3,2,5,4,4,4,4,5,5,4,5,5,4,3,5,3,2,3,3,2,5,4,4,3,4,4,3,5,4,5,3,4,3,1,5,2,1,1,1,2,2,4,5,5,5,5,5,5,4,4,5,5,5,4,4,3,4,3,4,5,4,5,5,4,5,4,5,4,4,5,5,5,5,5,5,4,4,5,5,4,5,4,2,4,5,4,4,5,4,5,1,5,5,5,5,5,5,5,5,5,5,4,3,5,3,3,4,5,2,5,5,5,5,4,4,5,5,4,4,3,4,4,1,4,2,1,2,1,2,1,4,5,4,5,5,5,5,5,4,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,4,2,5,5,4,4,4,2,4,4,5,4,5,4,3,2,4,4,4,4,4,5,4,4,4,4,4,4,5,4,5,4,4,2,5,4,4,4,5,5,5,4,5,5,3,4,3,1,4,1,1,1,1,1,1,5,5,4,5,3,4,4,4,4,4,4,5,4,4,5,5,4,4,4,4,5,5,5,4,4,5,5,4,4,5,4,4,5,5,4,3,5,4,4,4,4,4,4,66f69dcc061074dacb886b52
+2026-03-05 08:50:01,2026-03-05 09:05:38,0,100,937,1,2026-03-05 09:05:39,R_8ffPnU91STbGYv8,anonymous,EN,5ea1e407df1e160c7db497c7,2,70,1,2,3,3,4,3,4,3,2,3,3,3,2,2,3,2,3,3,3,4,3,3,3,3,4,2,2,4,3,2,3,2,2,2,2,3,4,3,3,4,3,4,1,1,1,1,1,1,4,3,4,3,2,3,4,4,4,3,2,3,4,3,4,2,2,2,3,2,4,3,4,3,3,3,3,3,3,3,4,4,4,4,3,2,3,2,3,3,4,3,4,3,2,3,2,2,3,1,4,4,4,2,2,4,3,2,4,3,4,2,2,2,2,3,2,2,4,3,2,2,2,2,2,2,3,4,2,2,4,4,4,1,1,1,1,1,1,4,4,3,2,2,2,4,4,4,3,3,3,4,4,4,2,2,2,4,3,4,3,4,4,3,3,3,3,3,3,3,3,4,4,2,2,3,4,3,3,4,3,3,3,3,4,3,3,3,2,3,3,4,3,2,3,3,4,3,3,4,4,3,4,4,4,3,2,4,3,2,3,3,3,3,3,4,5,3,3,4,4,4,1,1,1,1,1,1,4,4,3,3,3,2,4,3,4,3,2,3,3,3,3,3,3,3,3,3,3,3,4,3,3,3,2,3,3,3,4,4,4,4,3,2,4,3,3,3,3,3,4,5ea1e407df1e160c7db497c7
+2026-03-05 08:49:24,2026-03-05 09:06:28,0,100,1024,1,2026-03-05 09:06:28,R_84vSAebqlEfgL0B,anonymous,EN,66435e2e5c5b5aceb2195908,2,35,1,1,3,3,5,3,2,2,1,4,4,4,3,4,4,4,4,4,3,4,4,1,3,4,5,1,2,5,3,2,2,2,2,3,2,1,4,3,4,3,2,4,1,1,1,1,1,1,5,5,5,2,2,2,4,2,4,3,4,4,4,5,4,3,1,2,2,2,3,3,4,4,2,3,2,1,1,1,4,4,4,3,2,1,4,3,4,4,2,1,4,2,3,4,2,3,3,2,5,5,5,5,5,5,4,4,5,2,2,1,1,1,2,4,2,2,5,3,2,3,2,2,4,2,1,4,3,4,5,2,5,1,1,1,1,1,1,5,4,5,4,4,2,5,4,5,4,4,5,5,5,5,2,1,1,2,2,2,3,4,5,3,4,4,1,1,1,4,4,4,4,2,1,5,4,5,3,2,1,2,2,1,4,1,1,2,2,4,2,2,2,2,3,4,2,2,3,4,5,1,5,5,5,1,2,3,3,3,2,2,1,4,2,1,4,2,3,3,2,4,1,1,1,1,1,1,4,4,4,2,1,2,4,5,5,2,4,4,3,2,4,2,4,2,2,2,2,3,4,4,2,3,2,1,1,1,4,4,5,4,1,1,4,2,3,2,4,1,4,66435e2e5c5b5aceb2195908
+2026-03-05 08:49:41,2026-03-05 09:07:25,0,100,1064,1,2026-03-05 09:07:26,R_8WJC27SpLfyeiwQ,anonymous,EN,5d3821f0ddea5a0001757f93,2,61,2,2,5,5,5,5,3,5,1,4,5,4,4,4,4,4,4,4,4,3,2,2,2,2,3,3,2,4,4,4,3,4,2,3,3,2,3,2,2,3,2,4,1,1,1,1,1,1,3,4,4,3,2,3,3,3,3,4,4,4,3,3,4,3,2,2,2,1,4,3,3,3,4,3,4,2,2,2,3,3,4,4,3,1,5,4,4,4,4,1,5,3,4,4,3,3,2,2,5,5,4,5,5,4,5,4,5,4,2,2,2,1,2,4,2,2,4,3,4,2,4,2,2,4,2,3,2,3,3,2,4,1,1,1,1,1,1,4,4,4,3,2,1,3,3,3,4,4,3,4,3,3,2,2,2,1,3,4,3,3,4,2,4,2,2,2,2,2,3,5,4,3,1,3,5,4,4,3,2,4,4,5,4,5,4,4,1,4,4,3,4,3,3,4,3,4,3,5,5,3,5,5,5,3,2,4,3,3,2,4,5,4,4,3,5,3,3,3,3,3,1,1,1,1,1,1,4,4,4,3,1,3,3,3,3,3,3,4,4,4,4,3,4,3,2,2,4,3,3,3,3,3,2,3,2,3,4,5,5,5,2,1,4,3,4,3,4,2,5,5d3821f0ddea5a0001757f93
+2026-03-05 08:55:42,2026-03-05 09:07:28,0,100,706,1,2026-03-05 09:07:28,R_2QDJonLCv7iUQJZ,anonymous,EN,5bbc3d95f1f9ba000141d855,2,67,2,2,2,4,5,4,2,4,1,5,4,4,2,4,3,3,3,4,2,3,1,2,2,3,4,2,2,4,3,4,3,2,3,3,4,1,4,4,3,2,2,5,1,1,1,1,1,1,5,4,2,4,3,3,3,2,2,2,1,5,2,3,3,2,1,2,2,3,5,4,3,5,5,3,4,1,1,1,3,5,3,3,3,2,5,4,5,5,5,1,4,4,5,4,4,4,5,1,5,4,5,5,5,5,4,4,5,5,5,1,3,2,1,2,4,2,5,3,2,4,1,1,1,2,1,5,4,4,2,3,5,1,1,1,1,1,1,5,5,3,1,1,1,4,2,3,3,4,5,3,5,4,2,2,2,1,2,4,2,4,5,4,5,1,1,1,1,5,5,5,4,4,1,5,5,5,4,5,3,4,3,3,3,4,3,2,1,2,4,2,3,2,2,1,2,2,2,4,2,2,5,5,5,2,2,4,3,4,1,5,1,1,1,1,5,3,3,2,2,4,1,1,1,2,1,1,5,4,4,2,1,2,4,2,3,4,4,3,1,4,4,4,5,5,4,1,4,2,4,3,2,4,2,1,1,1,4,4,5,4,3,1,4,4,5,4,4,2,5,5bbc3d95f1f9ba000141d855
+2026-03-05 08:52:13,2026-03-05 09:07:47,0,100,934,1,2026-03-05 09:07:47,R_8P6V6rUNZYr5EW1,anonymous,EN,61485270e1957e4bc3686dfc,2,45,2,2,4,3,4,3,3,2,1,3,4,3,3,2,3,3,3,3,2,3,1,2,3,3,3,2,2,3,2,3,2,2,4,2,3,2,4,3,4,3,3,3,2,1,1,1,1,2,4,4,2,3,3,3,3,3,4,3,2,4,2,2,2,2,2,3,2,3,2,4,3,4,2,2,3,1,1,1,4,4,5,2,3,1,3,2,3,2,3,1,3,4,4,5,4,3,3,1,5,4,5,5,3,3,3,4,4,3,4,3,2,3,3,3,2,2,4,3,3,2,2,2,3,4,2,3,3,3,3,3,3,2,1,1,1,1,2,3,4,4,3,3,3,3,3,3,1,4,3,2,2,3,3,3,2,3,2,2,4,3,4,2,3,3,1,2,1,4,3,3,3,4,1,4,5,5,4,3,1,4,4,4,3,3,4,1,3,4,4,3,3,2,4,4,4,4,3,3,5,3,5,4,5,3,2,4,2,3,5,3,2,3,4,4,4,3,3,3,3,3,3,1,1,1,2,2,4,3,2,2,2,2,3,3,3,2,2,2,2,2,2,3,4,3,2,2,3,3,2,3,2,2,2,1,1,1,4,4,3,2,2,1,2,4,2,4,3,3,3,61485270e1957e4bc3686dfc
+2026-03-05 08:49:28,2026-03-05 09:10:07,0,100,1238,1,2026-03-05 09:10:07,R_8yJuVmRATZWZgXL,anonymous,EN,680e1b9a36b987121bbc9c9a,2,51,2,2,4,5,5,4,4,2,2,1,1,2,1,1,1,4,3,2,3,4,1,2,1,1,4,2,2,4,2,1,1,1,3,2,1,2,5,2,3,3,4,3,2,1,1,2,1,1,4,4,2,2,3,3,3,2,3,3,3,3,3,2,2,1,1,2,4,1,4,4,4,4,2,1,2,1,1,1,4,5,4,4,1,1,4,1,1,3,3,2,4,1,2,4,2,2,2,1,4,5,5,3,2,4,4,3,4,3,3,2,4,1,1,3,4,2,5,4,3,3,3,1,2,4,4,3,2,2,4,3,3,3,1,2,1,4,1,5,4,2,3,4,2,3,2,3,2,3,3,3,2,1,2,2,3,2,2,3,4,4,5,4,4,4,1,1,1,2,4,4,3,3,1,5,2,4,4,4,1,4,3,2,4,4,4,1,1,1,3,3,1,1,2,2,3,2,2,3,5,3,5,5,4,3,2,2,1,2,2,4,2,4,2,3,2,1,1,4,3,3,1,1,1,3,2,2,3,2,2,1,3,3,3,1,3,2,1,2,2,3,3,2,2,4,1,1,1,2,2,2,1,1,1,1,1,1,4,4,5,4,1,1,3,1,4,2,3,1,5,680e1b9a36b987121bbc9c9a
+2026-03-05 08:55:30,2026-03-05 09:10:08,0,100,877,1,2026-03-05 09:10:08,R_2s3XdAgPczNyDV7,anonymous,EN,609927903afe14c2f5a33136,2,27,1,2,4,3,4,4,4,3,1,4,4,4,3,4,4,3,3,4,4,4,2,2,3,3,4,2,2,4,4,4,3,3,1,2,4,2,4,3,3,4,1,2,1,1,1,1,2,1,4,4,4,4,4,3,4,4,4,3,3,3,3,3,3,3,3,4,4,4,4,3,4,4,4,4,4,4,4,4,3,3,4,3,4,3,3,3,3,3,3,2,3,3,3,3,4,4,3,2,4,4,4,4,4,3,3,4,4,4,4,2,1,3,3,4,4,2,3,4,4,3,2,1,2,4,2,4,3,2,3,1,2,1,1,1,1,2,1,4,4,4,3,4,3,4,4,4,3,3,4,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,3,4,3,4,2,3,3,3,3,3,2,3,3,3,4,4,4,3,2,4,4,4,4,4,4,4,3,4,4,4,2,3,3,3,4,2,2,3,4,3,4,2,2,2,4,2,3,3,2,3,2,3,1,1,1,1,3,1,4,4,4,4,4,2,4,4,4,3,3,4,4,4,4,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,3,3,4,4,3,2,4,3,3,3,2,2,4,609927903afe14c2f5a33136
+2026-03-05 08:50:36,2026-03-05 09:11:51,0,100,1274,1,2026-03-05 09:11:51,R_8muderKUTmbEEmJ,anonymous,EN,59a09748617ca80001fcd28c,2,49,2,2,4,5,5,4,5,4,1,5,5,5,4,1,5,5,2,4,4,3,1,2,2,2,2,2,2,5,5,4,3,2,4,2,4,2,4,4,4,4,3,5,1,1,1,1,2,1,5,5,5,4,2,3,4,3,4,4,4,5,3,4,5,2,3,2,3,3,3,4,3,4,4,3,2,4,2,5,5,5,4,5,4,1,5,4,4,3,3,2,4,4,4,5,3,5,4,1,5,5,5,5,2,5,5,3,5,4,4,4,4,2,4,4,4,2,5,4,4,3,3,2,4,4,2,3,3,3,4,2,4,1,1,1,1,2,1,4,5,4,4,2,4,4,4,4,3,3,3,3,3,5,2,2,2,4,3,3,5,4,5,4,4,2,4,2,4,4,4,5,5,4,1,4,5,5,5,4,2,3,3,5,5,5,5,4,1,4,4,3,4,2,4,4,4,3,3,5,4,2,5,5,4,2,2,5,3,3,4,4,4,4,3,2,4,3,3,3,3,3,1,1,1,1,1,1,4,4,2,4,2,4,4,4,4,3,3,3,4,3,4,4,4,4,4,4,3,4,4,4,3,4,2,3,2,3,5,4,4,4,4,1,3,3,3,4,4,2,4,59a09748617ca80001fcd28c
+2026-03-05 08:52:20,2026-03-05 09:16:24,0,100,1444,1,2026-03-05 09:16:25,R_2p4uw2MX5yPLMDI,anonymous,EN,60ce6af707bcd42cbc885210,2,70,2,3,4,4,5,3,2,2,3,3,3,2,2,3,3,2,2,2,1,4,5,3,5,5,5,3,2,5,5,2,1,2,2,2,1,3,5,4,1,5,5,5,1,1,1,1,1,1,1,4,4,1,1,1,5,5,5,3,1,2,3,4,4,1,1,3,2,1,2,1,1,5,1,1,1,1,1,1,3,3,5,4,1,1,3,3,1,3,3,1,1,4,2,4,1,3,1,3,4,5,3,1,1,1,1,3,1,2,3,2,1,1,1,5,2,2,5,4,1,1,1,2,1,3,1,5,3,3,5,5,5,1,1,1,1,1,5,5,5,5,3,3,1,5,5,5,4,3,3,3,3,3,1,1,2,1,1,3,3,5,2,1,3,2,1,1,1,3,3,5,4,1,1,2,1,3,1,4,1,3,4,2,4,3,4,4,2,4,4,3,2,4,4,3,3,3,2,4,5,3,5,4,3,4,2,4,5,2,3,5,4,4,1,3,5,3,3,5,5,3,1,1,1,1,2,1,4,5,4,1,1,1,4,3,4,3,2,3,4,3,4,3,3,1,2,1,2,1,3,2,3,2,1,1,2,2,4,4,5,3,1,2,3,2,1,3,3,2,2,60ce6af707bcd42cbc885210
+2026-03-05 09:02:33,2026-03-05 09:17:22,0,100,889,1,2026-03-05 09:17:23,R_2FwSXiCGT2VjGjD,anonymous,EN,697938c09291ba65dedf7b64,2,29,1,5,5,3,5,4,5,5,4,5,5,2,5,5,5,3,5,4,5,5,4,3,5,5,3,5,2,5,5,5,5,5,4,4,5,5,5,5,5,5,1,5,5,1,1,1,1,1,5,5,5,5,4,5,5,4,4,4,5,5,5,4,5,4,5,5,4,4,5,5,5,5,4,4,5,5,4,5,4,5,5,4,5,5,5,1,5,5,5,1,5,5,3,4,4,4,2,4,4,3,4,5,4,5,5,4,3,5,5,3,4,4,5,4,4,2,4,5,4,4,4,4,5,4,3,5,5,5,4,4,4,4,4,4,4,5,5,4,4,3,4,4,4,5,4,5,4,5,5,4,4,4,5,5,4,4,4,5,4,5,4,5,4,3,5,4,5,4,5,5,5,5,4,5,5,4,5,5,5,5,4,4,5,4,5,5,4,5,5,4,4,4,4,4,4,5,4,2,3,4,5,4,4,4,2,4,5,5,4,4,4,5,5,4,5,5,5,5,4,5,5,5,1,1,1,1,5,4,5,4,4,5,5,4,4,4,5,4,4,4,5,5,4,4,4,5,5,5,5,4,5,4,5,5,5,4,5,5,4,5,5,5,5,5,4,4,5,1,5,697938c09291ba65dedf7b64
+2026-03-05 09:05:31,2026-03-05 09:17:54,0,100,742,1,2026-03-05 09:17:55,R_87ZFUsReugH0HzX,anonymous,EN,6560d43fc84f57af66b900f8,2,51,1,2,4,5,5,4,4,3,1,2,2,2,1,1,4,1,2,3,2,4,3,3,1,1,2,4,2,5,4,3,1,2,4,1,1,3,5,3,3,5,5,5,1,1,1,1,1,1,5,5,5,5,1,2,5,5,5,3,4,3,3,2,5,1,1,1,1,1,5,4,5,5,1,2,1,4,4,5,3,3,5,4,4,1,5,3,2,4,5,3,4,1,1,3,1,1,2,3,5,5,5,5,2,5,4,1,5,1,4,1,3,1,1,3,4,2,5,3,3,1,1,3,3,1,3,5,3,3,4,5,4,1,1,1,1,2,1,5,5,5,4,2,3,5,5,5,3,4,5,3,3,3,5,3,4,4,5,4,5,5,5,3,4,1,4,1,2,4,3,5,4,3,2,3,4,4,4,5,4,5,1,1,1,1,1,1,1,4,4,3,2,1,3,4,2,2,2,4,4,4,5,5,5,3,2,4,2,2,3,4,4,4,1,4,5,3,3,5,5,5,1,1,1,1,1,1,5,4,4,4,1,3,5,3,5,1,1,3,3,2,2,5,2,2,3,2,3,1,4,4,3,3,1,1,1,1,4,5,4,1,2,1,2,3,3,4,1,1,4,6560d43fc84f57af66b900f8
+2026-03-05 09:07:28,2026-03-05 09:18:06,0,100,638,1,2026-03-05 09:18:07,R_8h5sjd8l5J3T3GO,anonymous,EN,65bbf83dbe0f27e1a871bf48,2,32,1,2,2,2,5,4,5,2,1,5,4,4,5,4,3,4,4,5,4,4,3,5,5,5,4,3,2,4,4,4,5,2,3,4,4,5,5,5,5,3,2,3,1,1,1,1,1,2,4,5,3,5,4,5,4,5,4,4,5,4,4,4,3,3,1,4,1,2,4,4,4,4,5,3,1,1,5,4,4,5,4,5,2,2,4,5,3,1,4,4,5,4,4,4,4,3,5,4,4,5,5,5,5,3,4,2,5,5,3,4,3,2,5,4,2,2,4,3,3,4,2,4,5,3,4,4,3,4,5,2,4,1,1,2,1,3,1,3,4,3,4,1,4,3,3,5,3,4,3,4,4,4,5,3,5,3,4,2,2,3,5,3,3,3,4,4,4,4,4,5,2,5,3,3,4,4,4,4,1,2,4,3,5,3,3,4,1,2,2,2,3,4,4,4,3,4,4,4,4,5,3,4,2,5,2,4,4,3,4,5,5,5,1,4,5,4,4,1,2,5,1,1,2,2,1,1,4,4,2,4,2,3,4,1,2,2,1,4,1,2,1,5,5,4,2,4,3,1,3,4,4,5,4,2,1,2,5,4,1,5,4,3,4,2,4,5,4,3,3,65bbf83dbe0f27e1a871bf48
+2026-03-05 08:50:20,2026-03-05 09:19:52,0,100,1772,1,2026-03-05 09:19:53,R_829jJqKkuDUXpKx,anonymous,EN,679153802a458f825959cf4a,2,46,1,3,4,4,4,4,4,4,4,4,5,4,4,2,5,4,4,4,4,4,3,4,1,2,4,4,2,4,4,4,4,4,2,4,3,3,4,3,3,3,2,3,2,1,1,1,1,1,4,4,4,4,4,4,4,5,4,4,4,4,3,3,4,4,4,4,4,5,4,4,4,5,4,3,4,3,3,4,4,4,4,4,4,2,4,4,4,5,4,2,4,4,4,4,4,4,4,1,4,5,4,4,2,5,4,4,4,4,4,4,3,1,2,3,3,2,4,4,4,4,4,2,4,3,3,4,2,3,4,2,3,1,1,1,1,2,1,5,5,5,4,4,2,4,5,4,4,4,4,4,3,4,4,4,4,4,5,4,5,4,4,4,4,4,3,3,3,4,4,4,5,4,2,4,4,4,5,4,2,4,4,4,4,3,4,4,2,4,4,4,4,2,4,4,4,4,4,3,4,3,2,4,4,4,2,4,4,4,4,4,1,4,3,3,4,3,4,4,2,3,2,1,1,2,1,2,4,4,4,4,4,3,4,4,5,5,4,4,3,4,4,5,4,4,4,4,4,5,4,4,5,4,4,3,3,4,4,4,4,5,4,2,5,4,4,5,4,4,4,679153802a458f825959cf4a
+2026-03-05 08:50:40,2026-03-05 09:20:47,0,100,1806,1,2026-03-05 09:20:47,R_2frwFf2OumzwyNn,anonymous,EN,62347ee217c402f4acae35d0,2,61,1,2,3,4,4,3,4,2,2,4,4,4,4,3,4,4,3,4,2,4,4,3,2,2,4,3,2,4,3,2,2,3,2,3,3,3,3,3,2,4,4,4,1,1,1,1,1,1,4,4,3,3,4,4,4,4,4,3,3,4,3,3,3,2,2,2,2,2,2,4,4,4,3,2,2,3,3,3,4,4,4,4,3,2,3,4,4,4,3,3,3,2,3,4,3,5,2,2,5,5,5,5,4,4,3,3,5,3,4,3,2,3,3,3,2,2,4,2,2,3,3,2,3,3,2,4,3,2,4,3,4,1,1,1,1,2,1,4,4,3,4,3,2,4,4,4,3,3,3,2,2,2,3,2,3,2,2,2,3,4,4,3,2,3,3,3,4,3,3,4,4,5,2,3,5,5,4,4,2,4,3,3,4,4,4,3,2,4,4,4,4,3,4,3,3,4,2,3,4,3,4,4,4,3,2,4,2,2,2,3,2,4,3,3,4,3,3,4,4,4,1,1,1,1,1,1,4,4,3,4,3,3,4,4,4,3,3,3,2,2,2,2,2,2,2,2,2,4,4,4,2,2,2,3,3,3,4,4,4,4,3,2,3,4,4,4,4,3,4,62347ee217c402f4acae35d0
+2026-03-05 08:51:35,2026-03-05 09:21:19,0,100,1784,1,2026-03-05 09:21:19,R_2CNkSqeDeCZQmSK,anonymous,EN,62b4403257f7d42730f83394,2,41,1,2,4,5,5,5,4,4,2,5,4,4,4,4,5,5,4,4,5,4,4,4,4,4,4,4,2,5,5,4,4,4,4,5,4,4,5,3,4,5,3,5,1,1,1,1,1,2,5,5,5,5,4,4,5,5,5,4,4,4,5,5,5,4,4,4,4,4,4,4,5,5,4,4,4,5,5,5,5,5,5,5,5,4,5,5,3,4,5,3,5,4,5,5,4,5,5,2,5,5,5,4,3,4,4,4,5,5,4,4,4,3,4,4,4,2,5,4,4,4,4,4,4,4,3,4,3,4,5,3,5,2,1,2,1,2,2,4,5,5,5,4,3,5,5,5,4,4,5,4,4,4,4,3,3,4,4,4,5,4,4,4,4,4,4,4,4,4,5,5,4,4,3,5,4,2,4,4,2,5,4,4,5,4,5,4,2,5,5,5,4,4,4,5,5,5,5,4,4,4,4,4,5,4,2,5,4,3,4,4,4,4,5,4,4,2,4,5,3,5,1,1,1,1,1,2,4,4,5,4,4,4,5,5,5,4,4,4,4,5,4,4,4,3,4,4,4,4,5,5,4,4,4,4,4,4,4,4,5,4,4,3,4,4,2,4,4,4,4,62b4403257f7d42730f83394
+2026-03-05 08:47:43,2026-03-05 09:24:55,0,100,2231,1,2026-03-05 09:24:55,R_2Ht8lpfMy5lnoGn,anonymous,EN,66fad26e4b07f6149ceb136d,2,42,1,2,5,5,5,5,5,5,1,2,2,2,1,2,5,4,3,2,4,3,1,4,3,3,3,3,2,5,3,3,4,3,3,4,2,3,5,5,5,2,1,3,2,1,1,1,2,2,4,5,3,4,3,3,2,2,2,4,4,4,3,3,4,1,2,3,4,5,4,4,3,3,4,3,1,5,5,5,5,5,5,5,3,3,5,2,3,4,5,2,5,2,1,3,1,3,2,2,5,5,4,4,2,5,4,3,5,4,4,3,3,3,3,2,3,2,4,4,4,4,3,1,3,4,5,3,4,5,3,3,4,2,1,3,1,3,2,3,4,3,5,4,4,2,2,3,4,4,4,2,2,3,2,2,5,5,5,4,5,4,5,2,4,4,5,4,5,4,4,3,3,4,3,3,5,5,4,5,2,2,2,4,3,4,4,3,2,3,3,3,4,2,4,3,4,3,4,4,5,3,5,5,5,4,2,3,3,3,4,4,3,5,3,3,5,3,3,4,3,4,1,2,2,1,2,1,5,4,4,3,4,4,4,4,4,3,2,4,3,3,4,4,4,4,5,5,5,4,4,4,3,3,1,4,4,4,5,5,4,4,2,2,2,3,4,4,4,2,5,66fad26e4b07f6149ceb136d
+2026-03-05 08:59:31,2026-03-05 09:27:44,0,100,1693,1,2026-03-05 09:27:44,R_8lz6ev6CKxcLI84,anonymous,EN,65107641138d7e50e2a290d0,2,28,1,2,4,5,5,5,4,4,5,2,3,1,3,3,3,4,2,2,3,5,1,1,5,5,2,1,2,5,1,2,3,3,3,3,1,1,5,3,2,4,2,5,1,1,1,1,1,1,3,4,4,2,1,3,4,5,4,2,4,3,2,3,3,1,2,2,1,1,2,4,4,4,2,2,3,1,1,1,5,5,4,4,1,1,5,1,2,2,2,4,5,2,3,4,3,4,2,1,5,5,3,2,2,5,3,3,5,4,4,1,1,2,2,3,1,2,4,3,3,3,3,2,2,5,2,4,4,3,4,2,3,1,1,2,1,1,1,4,4,4,2,3,2,4,4,4,2,3,4,3,3,3,2,2,2,4,3,4,4,4,4,4,2,3,1,1,1,4,2,4,3,4,3,4,5,4,4,2,2,2,3,4,3,4,4,4,2,4,2,2,3,1,3,3,3,3,3,5,3,1,3,5,4,1,2,4,3,2,2,4,3,4,1,1,4,3,2,4,1,4,1,1,1,1,1,1,4,4,3,3,2,2,4,4,4,2,3,2,3,3,3,4,5,5,3,2,3,3,3,3,3,3,2,1,1,1,4,3,4,4,3,1,3,4,4,5,4,3,3,65107641138d7e50e2a290d0
+2026-03-05 08:30:29,2026-03-05 09:28:31,0,100,3481,1,2026-03-05 09:28:31,R_2OTBOmDQNLM1Arv,anonymous,EN,5c3f0b7ca98c4c000111fee2,2,59,1,2,2,2,4,1,2,2,1,2,3,2,2,2,3,3,3,3,2,3,2,2,2,2,4,2,2,4,3,1,2,2,2,2,2,3,3,3,3,3,2,4,1,1,1,1,2,1,4,3,4,3,3,2,4,4,3,2,4,4,4,4,4,1,2,2,2,2,3,3,4,4,2,3,3,2,3,2,2,4,4,3,2,2,4,3,4,4,4,2,2,3,3,4,1,3,2,2,5,5,5,5,4,5,4,3,5,2,3,3,2,2,3,5,2,2,4,4,3,2,2,1,2,5,2,5,3,3,3,3,4,1,1,1,1,2,1,4,4,3,3,2,3,4,3,3,3,3,3,3,3,2,1,2,2,3,3,3,3,4,4,3,3,3,2,1,1,2,4,4,3,2,1,3,4,1,3,3,2,3,3,2,3,1,2,2,3,3,3,2,2,1,2,3,1,2,1,2,2,2,1,1,4,2,2,4,2,2,1,2,1,2,2,2,4,1,2,3,3,3,1,1,1,1,1,1,4,4,4,4,3,3,4,3,4,3,4,4,4,3,3,1,1,2,3,3,3,3,4,4,2,3,3,2,2,3,3,4,4,4,2,1,4,2,2,3,3,1,3,5c3f0b7ca98c4c000111fee2
+2026-03-05 09:07:12,2026-03-05 09:32:08,0,100,1496,1,2026-03-05 09:32:09,R_87ewqnUlkLBXG5s,anonymous,EN,5d42cf5669717700013c822f,2,46,1,2,3,3,3,4,4,3,2,4,4,4,4,3,4,4,4,3,4,4,3,2,4,3,4,2,2,4,3,4,4,4,2,3,3,3,3,1,3,3,2,3,1,1,2,1,2,1,3,3,2,3,3,3,4,2,3,3,2,3,3,3,3,2,2,2,3,3,2,4,4,4,2,3,2,2,2,2,3,3,3,4,3,2,3,4,4,4,4,3,4,3,3,4,4,4,3,1,4,4,4,4,3,4,4,4,4,4,3,2,2,3,3,2,2,2,4,3,3,4,3,2,2,2,2,3,1,2,2,2,1,2,1,2,1,2,1,3,4,2,3,2,3,2,2,3,2,1,3,2,3,2,2,2,2,3,2,3,2,3,2,2,3,2,2,2,2,3,3,3,3,3,1,3,4,4,4,4,3,3,3,3,3,3,4,3,2,4,4,3,3,3,4,4,4,4,4,4,3,2,4,3,4,2,2,4,3,4,3,3,2,3,2,2,4,2,2,3,2,3,1,1,2,1,2,1,2,3,2,3,2,3,4,3,4,3,2,3,3,3,3,3,2,2,2,3,3,3,4,4,2,3,2,2,2,2,3,3,4,4,2,1,3,4,4,4,3,2,4,5d42cf5669717700013c822f
+2026-03-05 09:05:29,2026-03-05 09:40:30,0,100,2100,1,2026-03-05 09:40:30,R_28YRgEDOnLDyUCW,anonymous,EN,697929da26fc7a6fe77684e4,2,34,2,3,5,5,5,4,5,4,5,5,4,5,5,5,5,5,5,5,5,5,5,3,5,4,5,5,2,5,5,5,5,5,5,5,5,4,5,5,5,5,1,5,1,1,1,1,1,1,5,5,5,2,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,4,5,1,5,5,5,5,5,5,4,5,5,5,5,5,1,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,2,5,5,2,5,5,5,5,5,5,5,5,5,5,1,5,1,1,1,1,1,1,5,5,4,4,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,4,5,5,5,5,5,4,5,5,5,5,5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,4,5,5,5,5,2,4,5,5,5,5,5,4,5,4,4,4,5,5,2,4,1,1,1,1,1,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,4,5,5,5,5,5,4,5,5,4,5,5,5,1,5,697929da26fc7a6fe77684e4
+2026-03-05 09:40:16,2026-03-05 09:53:49,0,100,813,1,2026-03-05 09:53:50,R_8NsRr3PfpJc7rsl,anonymous,EN,5bf54dd783653500016776ec,2,41,2,2,3,3,3,4,3,2,2,4,3,4,4,3,3,4,3,4,3,4,2,2,2,1,3,3,2,4,3,3,2,2,2,2,3,1,4,2,4,3,2,3,1,1,1,1,1,1,3,4,3,3,2,4,4,4,3,2,3,2,2,3,2,2,2,2,2,2,3,4,4,4,3,3,3,2,2,2,2,3,4,3,2,2,4,2,2,2,2,3,2,3,3,3,2,3,2,1,4,4,4,4,3,4,4,3,4,3,2,2,3,1,2,4,4,2,4,4,4,2,2,2,2,4,2,3,4,4,3,3,3,1,1,1,2,1,1,4,4,4,4,3,2,3,3,3,2,4,2,2,2,2,3,3,2,3,3,1,3,3,4,4,3,4,1,1,2,4,3,3,2,4,1,4,4,2,3,2,2,1,2,2,3,3,2,3,2,2,3,2,2,2,2,3,3,3,2,3,3,3,1,3,3,2,2,4,3,3,2,2,1,3,2,2,3,2,2,3,3,3,1,1,1,2,1,2,3,3,3,3,2,1,3,4,3,1,2,2,2,2,2,2,2,1,2,2,2,1,3,4,2,2,2,1,1,1,3,4,3,3,1,1,2,2,1,2,2,3,1,5bf54dd783653500016776ec
